@@ -6,7 +6,8 @@ WEAP.ActiveArea = 'WEAP_Test_Area'
 WEAP.BaseYear = 1985
 WEAP.EndYear = 2009
 scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
-
+start_year = 1986
+end_year = 2009
 
 # for i in range(1, WEAP.Branch('\Demand Sites').Children.Count+1):
 #     print(WEAP.Branch('\Demand Sites').Children.Item(i).Children.Item(0))
@@ -175,45 +176,43 @@ def get_WEAP_flow_value():
 	link = ['\\from CAPWithdral', '\\from GW', '\\from SRPwithdral', '\\from WWTP']
 	for j in range(3):
 		flow_senario = {}
-
-		Municipal_flow = Flow()
-		Agriculture_flow = Flow()
-		Agriculture2_flow = Flow()
-		Industrial_flow = Flow()
-		PowerPlant_flow = Flow()
-		Indian_flow = Flow()
-
-		for year in range(1986, 2009):
+		for year in range(start_year, end_year):
+			Municipal_flow = Flow()
+			Agriculture_flow = Flow()
+			Agriculture2_flow = Flow()
+			Industrial_flow = Flow()
+			PowerPlant_flow = Flow()
+			Indian_flow = Flow()
 			for i in range(len(link)):
 				Municipal_flow.value[link[i]] = WEAP.ResultValue(
 					'\Supply and Resources\Transmission Links' + node[0] + link[i] + ':Flow[m^3]', year, 1,
-					scenarios[j], year, 12, 'Average')
-				# print(Municipal_flow.value[link[i]])
+					scenarios[j], year, 12, 'Total')
+				# print(link[i], "Municipal", Municipal_flow.value[link[i]], year)
 				Agriculture_flow.value[link[i]] = WEAP.ResultValue(
 					'\Supply and Resources\Transmission Links' + node[1] + link[i] + ':Flow[m^3]', year, 1,
-					scenarios[j], year, 12, 'Average')
+					scenarios[j], year, 12, 'Total')
 				Agriculture2_flow.value[link[i]] = WEAP.ResultValue(
 					'\Supply and Resources\Transmission Links' + node[2] + link[i] + ':Flow[m^3]', year, 1,
-					scenarios[j], year, 12, 'Average')
+					scenarios[j], year, 12, 'Total')
 				Industrial_flow.value[link[i]] = WEAP.ResultValue(
 					'\Supply and Resources\Transmission Links' + node[3] + link[i] + ':Flow[m^3]', year, 1,
-					scenarios[j], year, 12, 'Average')
+					scenarios[j], year, 12, 'Total')
 
 			PowerPlant_flow.value['\\from WWTP'] = WEAP.ResultValue(
 				'\Supply and Resources\Transmission Links' + node[4] + link[3] + ':Flow[m^3]', year, 1, scenarios[j],
-				year, 12, 'Average')
+				year, 12, 'Total')
 			PowerPlant_flow.value['\\from GW'] = WEAP.ResultValue(
 				'\Supply and Resources\Transmission Links' + node[4] + link[1] + ':Flow[m^3]', year, 1, scenarios[j],
-				year, 12, 'Average')
+				year, 12, 'Total')
 			Indian_flow.value['\\from CAPWithdral'] = WEAP.ResultValue(
 				'\Supply and Resources\Transmission Links' + node[6] + link[0] + ':Flow[m^3]', year, 1, scenarios[j],
-				year, 12, 'Average')
+				year, 12, 'Total')
 			Indian_flow.value['\\from GW'] = WEAP.ResultValue(
 				'\Supply and Resources\Transmission Links' + node[6] + link[1] + ':Flow[m^3]', year, 1, scenarios[j],
-				year, 12, 'Average')
+				year, 12, 'Total')
 			Indian_flow.value['\\from SRPwithdral'] = WEAP.ResultValue(
 				'\Supply and Resources\Transmission Links' + node[6] + link[2] + ':Flow[m^3]', year, 1, scenarios[j],
-				year, 12, 'Average')
+				year, 12, 'Total')
 			# print(Municipal_flow.value)
 			# print(Agriculture_flow.value)
 			# print(Agriculture2_flow.value)
@@ -227,9 +226,9 @@ def get_WEAP_flow_value():
 			flow_year['Industrial'] = Industrial_flow.value
 			flow_year['PowerPlant'] = PowerPlant_flow.value
 			flow_year['Indian'] = Indian_flow.value
-			flow_senario[year] = flow_year
-
+			flow_senario[str(year)] = flow_year
 		flow[scenarios[j]] = flow_senario
+	print(flow)
 	win32com.CoUninitialize()
 	sites = ['Municipal', 'Agriculture', 'Agriculture2', 'Industrial', 'PowerPlant', 'Indian']
 	source = {'\\from CAPWithdral': 'CAP to', '\\from GW': 'GW to', '\\from SRPwithdral': 'SRP to',
@@ -240,15 +239,17 @@ def get_WEAP_flow_value():
 		for site in sites:
 			for l in link:
 				var = []
-				for y in range(1987, 2009):
-					var.append(flow[s][y][site][l])
+				for y in range(start_year, end_year):
+					var.append(flow[s][str(y)][site][l])
+					# print(flow[s][str(y)][site][l])
 				# print(var)
 				value_year.append({'name': source[l] + ' ' + site, 'value': var, 'site': site, 'source': source[l],
 				                   'format': 'series'})
 		# print(value_year)
 		value[s] = value_year
-	# print(value)
-	# print(flow['Reference'][1986])
+		value["timeRange"] = [start_year, end_year]
+	print(value)
+
 	return value
 
 

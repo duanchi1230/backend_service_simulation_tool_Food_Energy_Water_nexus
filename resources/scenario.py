@@ -15,15 +15,15 @@ class Scenario(Resource):
 		# The returned dict includes all the input and output variables
 		scenarios = ["Reference", "5% Population Growth", "10% Population Growth"]
 		path = {"branch": "\Demand Sites\Municipal", "variable": "Annual Activity Level"}
-		year = [1986, 2008]
+
 		para = WEAP_Data.get_WEAP_para_value(path)
 		value = WEAP_Data.get_WEAP_flow_value()
 		return {
 			       'sid': sid,
 			       'name': scenarios[sid],
 			       'runStatus': 'finished',
-			       'timeRange': year,
-			       'numTimeSteps': (year[1] - year[0]),
+			       'timeRange': value["timeRange"],
+			       'numTimeSteps': (value["timeRange"][1] - value["timeRange"][0]),
 			       'var': {"input": para,
 			               "output": value[scenarios[sid]]}
 		       }, 200
