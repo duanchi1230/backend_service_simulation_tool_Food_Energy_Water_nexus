@@ -1,5 +1,4 @@
-#!env python3
-
+#########!env python3
 from flask import Flask, request
 from flask_restful import Resource, Api, abort
 import sys
@@ -23,3 +22,6 @@ if __name__ == '__main__':
         port = int(sys.argv[1])
 
     app.run(host='0.0.0.0', port=port)
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
