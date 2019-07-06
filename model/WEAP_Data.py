@@ -1,5 +1,7 @@
 import win32com.client
 import json
+import numpy as np
+from operator import sub
 
 WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 WEAP.ActiveArea = 'WEAP_Test_Area'
@@ -8,6 +10,9 @@ WEAP.EndYear = 2009
 scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
 start_year = 1986
 end_year = 2009
+
+
+# WEAP.Calculate()
 
 # for i in range(1, WEAP.Branch('\Demand Sites').Children.Count+1):
 #     print(WEAP.Branch('\Demand Sites').Children.Item(i).Children.Item(0))
@@ -170,6 +175,7 @@ GW_SRP.state['Natural Recharge'] = 101
 def get_WEAP_flow_value():
 	win32com.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
+	# WEAP.AutoCalc = "TRUE"
 	flow = {}
 	node = ['\\to Municipal', '\\to Agriculture', '\\to Agriculture2',
 	        '\\to Industrial', '\\to PowerPlant', '\\to SRP_GW', '\\to Indian']
@@ -228,11 +234,26 @@ def get_WEAP_flow_value():
 			flow_year['Indian'] = Indian_flow.value
 			flow_senario[str(year)] = flow_year
 		flow[scenarios[j]] = flow_senario
-	print(flow)
+
 	win32com.CoUninitialize()
 	sites = ['Municipal', 'Agriculture', 'Agriculture2', 'Industrial', 'PowerPlant', 'Indian']
 	source = {'\\from CAPWithdral': 'CAP to', '\\from GW': 'GW to', '\\from SRPwithdral': 'SRP to',
 	          '\\from WWTP': 'WWTP to'}
+#######################################################################################################
+	"""
+	Sort the flow value in the following data structure
+		{
+			"scenario":{
+				"name": "",
+				"value": [],
+				"delta_to_reference": [],
+				"site": "",
+				"source": ""
+			}
+			
+		}
+	"""
+
 	value = {}
 	for s in scenarios:
 		value_year = []
@@ -241,15 +262,22 @@ def get_WEAP_flow_value():
 				var = []
 				for y in range(start_year, end_year):
 					var.append(flow[s][str(y)][site][l])
-					# print(flow[s][str(y)][site][l])
+				# print(flow[s][str(y)][site][l])
 				# print(var)
-				value_year.append({'name': source[l] + ' ' + site, 'value': var, 'site': site, 'source': source[l],
-				                   'format': 'series'})
-		# print(value_year)
+				value_year.append(
+					{'name': source[l] + ' ' + site, 'value': var, 'site': site, 'source': source[l],
+					 'format': 'series'})
 		value[s] = value_year
-		value["timeRange"] = [start_year, end_year]
-	print(value)
-
+		value['timeRange'] = [start_year, end_year]
+	# Add percentage change compared to "Reference" scenario
+	for s in scenarios:
+		for i in range(len(value[s])):
+			v = []
+			for j in range(len(value[s][i]["value"])):
+				v.append("{:.1%}".format((value[s][i]["value"][j] - value[scenarios[0]][i]["value"][j]) / (
+							value[scenarios[0]][i]["value"][j]+0.1)))
+			value[s][i]["delta_to_reference"] = v
+	# print(value[scenarios[2]][2]["delta_to_reference"])
 	return value
 
 
