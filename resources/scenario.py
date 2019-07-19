@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api, abort
-from model import WEAP_Data
-
+# from model import WEAP_Data
+from model import WEAP_Simple_Model
 
 class Scenario(Resource):
 
@@ -11,21 +11,23 @@ class Scenario(Resource):
 	def get(self, pid, model, sid):
 		sid = int(sid)
 
-		# Chi: implement a function that gets a scenario based on the "model" and the "sid"
+		# Chi: implement a function that gets a scenario based on the 'model' and the 'sid'
 		# The returned dict includes all the input and output variables
-		scenarios = ["Reference", "5% Population Growth", "10% Population Growth"]
-		path = {"branch": "\Demand Sites\Municipal", "variable": "Annual Activity Level"}
+		scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
+		path = {'branch': '\Demand Sites\Municipal', 'variable': 'Annual Activity Level'}
 
-		para = WEAP_Data.get_WEAP_para_value(path)
-		value = WEAP_Data.get_WEAP_flow_value()
+		# para = WEAP_Simple_Model.get_WEAP_para_value(path)
+		flow = WEAP_Simple_Model.get_WEAP_flow_value()
+		value = flow[list(flow.keys())[sid]]
+		print(value)
 		return {
 			       'sid': sid,
-			       'name': scenarios[sid],
+			       'name': list(flow.keys())[sid],
 			       'runStatus': 'finished',
-			       'timeRange': value["timeRange"],
-			       'numTimeSteps': (value["timeRange"][1] - value["timeRange"][0]),
-			       'var': {"input": para,
-			               "output": value[scenarios[sid]]}
+			       'timeRange': value[0]['timeRange'],
+			       'numTimeSteps': (value[0]['timeRange'][1] - value[0]['timeRange'][0]),
+			       'var': {'input': '1230',
+			               'output': value}
 		       }, 200
 
 
@@ -39,13 +41,13 @@ class ScenarioList(Resource):
 		# and return their brief summary as follows:
 
 		scenario_list = []
-		scenarios = ["Reference", "5% Population Growth", "10% Population Growth"]
+		scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
 		for i in range(3):
 			# get the object of the scenario here
-			path = {"branch": "\Demand Sites\Municipal", "variable": "Annual Activity Level"}
+			path = {'branch': '\Demand Sites\Municipal', 'variable': 'Annual Activity Level'}
 			year = [1986, 2008]
-			para = WEAP_Data.get_WEAP_para_value(path)
-			value = WEAP_Data.get_WEAP_flow_value()
+			# para = WEAP_Data.get_WEAP_para_value(path)
+			value = WEAP_Simple_Model.get_WEAP_flow_value()
 			scenario_summary = {
 				'sid': i,
 				'name': scenarios[i],
@@ -72,12 +74,12 @@ class ScenarioList(Resource):
 		# }], 200
 
 	def post(self, pid, model):
-		"""
+		'''
 		Create a new scenario based on a reference
 		:param pid:
 		:param model:
 		:return:
-		"""
+		'''
 
 		# return the newly-created scenario together with CREATED 201 status code
 		return {}, 201

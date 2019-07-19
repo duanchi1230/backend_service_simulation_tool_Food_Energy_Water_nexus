@@ -278,6 +278,7 @@ def get_WEAP_flow_value():
 							value[scenarios[0]][i]["value"][j]+0.1)))
 			value[s][i]["delta_to_reference"] = v
 	# print(value[scenarios[2]][2]["delta_to_reference"])
+	print(value)
 	return value
 
 
