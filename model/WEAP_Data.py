@@ -9,7 +9,7 @@ WEAP.BaseYear = 1985
 WEAP.EndYear = 2009
 scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
 start_year = 1986
-end_year = 2009
+end_year = 2008
 
 
 # WEAP.Calculate()
@@ -182,7 +182,7 @@ def get_WEAP_flow_value():
 	link = ['\\from CAPWithdral', '\\from GW', '\\from SRPwithdral', '\\from WWTP']
 	for j in range(3):
 		flow_senario = {}
-		for year in range(start_year, end_year):
+		for year in range(start_year, end_year+1):
 			Municipal_flow = Flow()
 			Agriculture_flow = Flow()
 			Agriculture2_flow = Flow()
@@ -260,7 +260,7 @@ def get_WEAP_flow_value():
 		for site in sites:
 			for l in link:
 				var = []
-				for y in range(start_year, end_year):
+				for y in range(start_year, end_year+1):
 					var.append(flow[s][str(y)][site][l])
 				# print(flow[s][str(y)][site][l])
 				# print(var)
@@ -268,7 +268,7 @@ def get_WEAP_flow_value():
 					{'name': source[l] + ' ' + site, 'value': var, 'site': site, 'source': source[l],
 					 'format': 'series'})
 		value[s] = value_year
-		value['timeRange'] = [start_year, end_year]
+		timeRange = [start_year, end_year]
 	# Add percentage change compared to "Reference" scenario
 	for s in scenarios:
 		for i in range(len(value[s])):
@@ -278,8 +278,8 @@ def get_WEAP_flow_value():
 							value[scenarios[0]][i]["value"][j]+0.1)))
 			value[s][i]["delta_to_reference"] = v
 	# print(value[scenarios[2]][2]["delta_to_reference"])
-	print(value)
-	return value
+	print(list(value.keys()))
+	return value, timeRange
 
 
 get_WEAP_flow_value()

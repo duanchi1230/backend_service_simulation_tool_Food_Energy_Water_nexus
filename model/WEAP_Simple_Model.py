@@ -35,17 +35,17 @@ def get_WEAP_flow_value():
 					                  year, 12, 'Total')
 					value_year.append(value)
 
-				item['name'] = p['source'] + ' ' +p['demand']
-				item['site'] = p['demand']
+				item['name'] = p['source'][5:] + ' ' +p['demand']
+				item['site'] = p['demand'][3:]
 				item['source'] = p['source']
 				item['value'] = value_year
 				item['format'] = 'series'
-				item['timeRange'] = [start_year + 1, end_year]
 				output.append(item)
 			flow[str(s)] = output
+	timeRange = [start_year + 1, end_year]
 	win32com.CoUninitialize()
-	return flow
-flow = get_WEAP_flow_value()
+	return flow, timeRange
+flow, timeRange= get_WEAP_flow_value()
 print(flow)
 print(flow[list(flow.keys())[0]])
 

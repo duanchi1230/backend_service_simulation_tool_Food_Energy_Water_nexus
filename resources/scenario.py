@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api, abort
-# from model import WEAP_Data
-from model import WEAP_Simple_Model
+# from model import WEAP_Data as WEAP_model
+from model import WEAP_Simple_Model as WEAP_model
 
 class Scenario(Resource):
 
@@ -17,15 +17,15 @@ class Scenario(Resource):
 		path = {'branch': '\Demand Sites\Municipal', 'variable': 'Annual Activity Level'}
 
 		# para = WEAP_Simple_Model.get_WEAP_para_value(path)
-		flow = WEAP_Simple_Model.get_WEAP_flow_value()
+		flow, timeRange = WEAP_model.get_WEAP_flow_value()
 		value = flow[list(flow.keys())[sid]]
 		print(value)
 		return {
 			       'sid': sid,
 			       'name': list(flow.keys())[sid],
 			       'runStatus': 'finished',
-			       'timeRange': value[0]['timeRange'],
-			       'numTimeSteps': (value[0]['timeRange'][1] - value[0]['timeRange'][0]),
+			       'timeRange': timeRange,
+			       'numTimeSteps': timeRange[1] - timeRange[0],
 			       'var': {'input': '1230',
 			               'output': value}
 		       }, 200
@@ -47,10 +47,10 @@ class ScenarioList(Resource):
 			path = {'branch': '\Demand Sites\Municipal', 'variable': 'Annual Activity Level'}
 			year = [1986, 2008]
 			# para = WEAP_Data.get_WEAP_para_value(path)
-			value = WEAP_Simple_Model.get_WEAP_flow_value()
+			value = WEAP_model.get_WEAP_flow_value()
 			scenario_summary = {
 				'sid': i,
-				'name': scenarios[i],
+				'name':   scenarios[i],
 				'runStatus': 'finished',
 				'timeRange': year,
 				'numTimeSteps': (year[1] - year[0]),
