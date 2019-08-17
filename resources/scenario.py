@@ -2,7 +2,8 @@ from flask import Flask, request
 from flask_restful import Resource, Api, abort
 # from model import WEAP_Data as WEAP_model
 from model import WEAP_Simple_Model as WEAP_model
-
+import win32com.client
+from model.database import Scenarios, session
 class Scenario(Resource):
 
 	def __init__(self):
@@ -29,7 +30,18 @@ class Scenario(Resource):
 			       'var': {'input': '1230',
 			               'output': value}
 		       }, 200
-
+	def post(self, pid, model, sid):
+		data = request.get_json(self)
+		print(data)
+		win32com.CoInitialize()
+		WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
+		start_year = WEAP.BaseYear
+		end_year = WEAP.EndYear
+		area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das']
+		WEAP.ActiveArea = area[2]
+		WEAP.Calculate()
+		win32com.CoUninitialize()
+		return {"response": "POST method was just called!"}, 201
 
 class ScenarioList(Resource):
 
@@ -80,6 +92,5 @@ class ScenarioList(Resource):
 		:param model:
 		:return:
 		'''
-
 		# return the newly-created scenario together with CREATED 201 status code
-		return {}, 201
+		return {"a":model}, 201

@@ -1,0 +1,11 @@
+Crop Gross Margin - All Ten Districts similar
+alfalfa 0.9
+corn 0.9
+sorghum 0.75
+durum_wheat 0.75
+potato 0.8
+sugarbeet 0.8
+cotton 0.8
+barley 0.9
+winter_wheat 0.95
+other 0.7
