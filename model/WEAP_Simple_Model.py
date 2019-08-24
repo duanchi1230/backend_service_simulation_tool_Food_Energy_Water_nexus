@@ -93,4 +93,4 @@ def set_mabia_default():
 	win32com.CoUninitialize()
 
 # set_mabia_default()
-get_WEAP_flow_value()
+# print(get_WEAP_flow_value())

@@ -5,11 +5,11 @@ from operator import sub
 
 WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 WEAP.ActiveArea = 'WEAP_Test_Area'
-WEAP.BaseYear = 1985
-WEAP.EndYear = 2009
+# WEAP.BaseYear = 1985
+# WEAP.EndYear = 2009
 scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
-start_year = 1986
-end_year = 2008
+start_year = WEAP.BaseYear
+end_year = WEAP.EndYear
 
 
 # WEAP.Calculate()
@@ -282,7 +282,7 @@ def get_WEAP_flow_value():
 	return value, timeRange
 
 
-get_WEAP_flow_value()
+print(get_WEAP_flow_value())
 
 # value = WEAP.Branch('\Demand Sites\Municipal').Variables('Annual Activity Level').Expression
 # # print(type(value))

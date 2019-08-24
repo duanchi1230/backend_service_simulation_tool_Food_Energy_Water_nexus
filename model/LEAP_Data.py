@@ -2,8 +2,17 @@ import win32com.client
 
 ### This module is still under development###
 LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
-LEAP.ActiveArea = LEAP.Areas('Phoenix AMA')
+# LEAP.ActiveArea = LEAP.Areas('Internal_linking_test')
 # LEAP.ResultValue()
-LEAP.Branch(1)
+print(LEAP.View)
+print(LEAP.Branch(1).name)
+
 print(
-	LEAP.Branch('Demand\Water\Treatment and Distribution\Surface Water\CAP\White Tanks WTP').Variable('Activity Level'))
+	LEAP.Branch('Demand\Water unrelated\Per capita demand').Variable('Activity Level'))
+
+print(
+	LEAP.Branch('Demand\Water related\CAP pumping').Variable('Energy Demand Final Units').Value(2002))
+print(
+	LEAP.Branch('Demand\Water related\WTP').Variable('Energy Demand Final Units').Value(2002))
+print(
+	LEAP.Branch('Demand\Water related\WWTP').Variable('Energy Demand Final Units').Value(2002))
