@@ -1,6 +1,6 @@
 import win32com.client
 
-### This module is still under development###
+### This module is still under development and is used to extract LEAP results###
 LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 # LEAP.ActiveArea = LEAP.Areas('Internal_linking_test')
 # LEAP.ResultValue()
