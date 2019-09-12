@@ -9,8 +9,8 @@ import win32com.client
 LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 
-print(LEAP.View)
-print(LEAP.Branch(1).name)
+# print(LEAP.View)
+# print(LEAP.Branch(1).name)
 
 
 def CAP_pumping(year):
@@ -46,9 +46,21 @@ def WWTP(year):
 
 
 def Power2(year):
-	v1 = LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power2').Variable(
+	v1 = LEAP.Branch('Transformation\Electricity generation\Processes\Power2').Variable(
 		'Average Power Dispatched').Value(year)
+	obj = LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power1').Variable(
+		'Average Power Dispatched').Value(year)
+	object_methods = [method_name for method_name in dir(obj)
+	                  if callable(getattr(obj, method_name))]
+	print(obj)
 	return v1
 
+# print(LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power1').Variable(
+# 		'Exogenous Capacity'))
+# LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power1').Variable(
+# 		'Exogenous Capacity').Expression = 300
 
-print(Power2(2001))
+print(WEAP.TimeStepName(1))
+WEAP.Calculate(2001, 5, False)
+print(WEAP.TimeStepName(1))
+# Power2(2001)
