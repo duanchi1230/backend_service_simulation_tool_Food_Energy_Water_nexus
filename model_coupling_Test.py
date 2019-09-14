@@ -9,6 +9,7 @@ import win32com.client
 LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 
+
 # print(LEAP.View)
 # print(LEAP.Branch(1).name)
 
@@ -55,12 +56,16 @@ def Power2(year):
 	print(obj)
 	return v1
 
-# print(LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power1').Variable(
-# 		'Exogenous Capacity'))
-# LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power1').Variable(
-# 		'Exogenous Capacity').Expression = 300
+
+print(LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power1').Variable(
+		'Exogenous Capacity'))
+LEAP.Branch('Transformation\\Electricity generation\\Processes\\Power1').Variable(
+		'Exogenous Capacity').Expression = 300
 
 print(WEAP.TimeStepName(1))
-WEAP.Calculate(2001, 5, False)
-print(WEAP.TimeStepName(1))
-# Power2(2001)
+
+
+LEAP.BaseYear=2002
+print(LEAP.BaseYear)
+print(LEAP.EndYear)
+Power2(2001)

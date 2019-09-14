@@ -14,8 +14,8 @@ LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 # 	LEAP.Branch('Demand\Water related\CAP pumping').Variable('Energy Demand Final Units').Value(2002))
 # print(
 # 	LEAP.Branch('Demand\Water related\WTP').Variable('Energy Demand Final Units').Value(2002))
-print(
-	LEAP.Branch('Demand\Water related\WWTP').Variable('Energy Demand Final Units').Value(2002))
+# print(
+# 	LEAP.Branch('Demand\Water related\WWTP').Variable('Energy Demand Final Units').Value(2002))
 
 def get_LEAP_value():
 	win32com.CoInitialize()
