@@ -1,5 +1,5 @@
 import win32com.client
-
+import json
 '''
 	Module Name: WEAP and LEAP time step control
 	Purpose: This module is used to test controlling WEAP (include MABIA economical model and LEAP coupled model 
@@ -13,11 +13,12 @@ WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 
 def get_WEAP_flow_value():
 	### Initialize win32com object###
-	win32com.CoInitialize()
+	# win32com.CoInitialize()
 	### Initialize WEAP application communication port###
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
+
 	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das']
 	WEAP.ActiveArea = area[2]
 	link = []
@@ -59,7 +60,8 @@ def get_WEAP_flow_value():
 			flow[str(s)] = output
 	timeRange = [start_year + 1, end_year]
 	### Uninitialize the win32com object ###
-	win32com.CoUninitialize()
+	# win32com.CoUninitialize()
+
 	return flow, timeRange
 
 
@@ -70,9 +72,10 @@ def iterate_by_month():
 	LEAP.EndYear = 2002
 	WEAP.BaseYear = 2001
 	WEAP.EndYear = 2002
+	WEAP_Result ={}
 	for y in range(year[0], year[1]):
-		# WEAP.BaseYear = y
-		# WEAP.EndYear = y+1
+		WEAP.BaseYear = y
+		WEAP.EndYear = y+1
 		LEAP.EndYear = y + 1
 		LEAP.FirstScenarioYear = y+1
 		LEAP.BaseYear = y
@@ -80,15 +83,39 @@ def iterate_by_month():
 		print('2',LEAP.FirstScenarioYear)
 		print('3',LEAP.EndYear)
 		LEAP.Calculate()
-		# print(WEAP.BaseYear)
-		# print(WEAP.EndYear)
 		# WEAP.Calculate()
-		# print(get_WEAP_flow_value())
-		v2 = WEAP.ResultValue(
-			'Supply and Resources\Transmission Links\\to Municipal\\from Withdrawal Node 1:Total Node Outflow[m^3]', y,
-			1,
-			'Linkage', y, 12, 'Total')
-		print(v2)
+		flow, timeRange = get_WEAP_flow_value()
+		WEAP_Result[str(y+1)] = flow
+		print(flow)
+		print(y+1)
+		# print(WEAP_Result)
+		# v2 = WEAP.ResultValue(
+		# 	'Supply and Resources\Transmission Links\\to Municipal\\from Withdrawal Node 1:Total Node Outflow[m^3]', y,
+		# 	1,
+		# 	'Linkage', y, 12, 'Total')
+		# print(v2)
+	return WEAP_Result
 
+def reformat_WEAP_Result(WEAP_Result):
+	result = WEAP_Result[list(WEAP_Result.keys())[0]]
+	for k in WEAP_Result:
+		for s in WEAP_Result[k]:
+			for c in WEAP_Result[k][s]:
+				for var in result[s]:
+					if var['name']==c['name']:
+						var['value'].append(c['value'][0])
 
-iterate_by_month()
+	print('2', result[s])
+
+# WEAP_Result = iterate_by_month()
+# with open('WEAP_Result.json', 'w') as f:
+# 	json.dump(WEAP_Result, f)
+with open('WEAP_Result.json') as wp:
+	WEAP_Result = json.load(wp)
+# for r in WEAP_Result:
+# 	for v in WEAP_Result[r]:
+# 		for c in WEAP_Result[r][v]:
+# 			c['value'].append(1)
+# 			print(c['value'])
+reformat_WEAP_Result(WEAP_Result)
+# print(get_WEAP_flow_value())

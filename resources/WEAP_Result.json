@@ -1,0 +1,214 @@
+{
+  "2002": {
+    "Linkage": [
+      {
+        "name": "Agricultural Groundwater to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Agricultural Groundwater",
+        "value": [12000000.0],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 4 to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Withdrawal Node 4",
+        "value": [25279082.954751413],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 1 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 1",
+        "value": [2201341.023054648],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 2 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 2",
+        "value": [139794.755871902],
+        "format": "series"
+      },
+      {
+        "name": "Well to Power1",
+        "site": "Power1",
+        "source": "from Well",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 3 to Power2",
+        "site": "Power2",
+        "source": "from Withdrawal Node 3",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "WWTP to Power2",
+        "site": "Power2",
+        "source": "from WWTP",
+        "value": [0.0],
+        "format": "series"
+      }
+    ]
+  },
+  "2003": {
+    "Linkage": [
+      {
+        "name": "Agricultural Groundwater to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Agricultural Groundwater",
+        "value": [11887157.227609385],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 4 to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Withdrawal Node 4",
+        "value": [25314050.7828],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 1 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 1",
+        "value": [1969547.360057142],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 2 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 2",
+        "value": [321634.37879999995],
+        "format": "series"
+      },
+      {
+        "name": "Well to Power1",
+        "site": "Power1",
+        "source": "from Well",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 3 to Power2",
+        "site": "Power2",
+        "source": "from Withdrawal Node 3",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "WWTP to Power2",
+        "site": "Power2",
+        "source": "from WWTP",
+        "value": [0.0],
+        "format": "series"
+      }
+    ]
+  },
+  "2004": {
+    "Linkage": [
+      {
+        "name": "Agricultural Groundwater to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Agricultural Groundwater",
+        "value": [12000000.0],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 4 to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Withdrawal Node 4",
+        "value": [25634042.180411663],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 1 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 1",
+        "value": [1872021.6457714282],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 2 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 2",
+        "value": [70646.66792619585],
+        "format": "series"
+      },
+      {
+        "name": "Well to Power1",
+        "site": "Power1",
+        "source": "from Well",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 3 to Power2",
+        "site": "Power2",
+        "source": "from Withdrawal Node 3",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "WWTP to Power2",
+        "site": "Power2",
+        "source": "from WWTP",
+        "value": [0.0],
+        "format": "series"
+      }
+    ]
+  },
+  "2005": {
+    "Linkage": [
+      {
+        "name": "Agricultural Groundwater to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Agricultural Groundwater",
+        "value": [12000000.0],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 4 to Agricultural Catchment",
+        "site": "Agricultural Catchment",
+        "source": "from Withdrawal Node 4",
+        "value": [25385218.493957046],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 1 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 1",
+        "value": [2189235.225832791],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 2 to Municipal",
+        "site": "Municipal",
+        "source": "from Withdrawal Node 2",
+        "value": [278.3542285715157],
+        "format": "series"
+      },
+      {
+        "name": "Well to Power1",
+        "site": "Power1",
+        "source": "from Well",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "Withdrawal Node 3 to Power2",
+        "site": "Power2",
+        "source": "from Withdrawal Node 3",
+        "value": [0.0],
+        "format": "series"
+      },
+      {
+        "name": "WWTP to Power2",
+        "site": "Power2",
+        "source": "from WWTP",
+        "value": [0.0],
+        "format": "series"
+      }
+    ]
+  }
+}
