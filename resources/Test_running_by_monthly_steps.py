@@ -1,5 +1,6 @@
 import win32com.client
 import json
+import matplotlib.pyplot as plt
 '''
 	Module Name: WEAP and LEAP time step control
 	Purpose: This module is used to test controlling WEAP (include MABIA economical model and LEAP coupled model 
@@ -73,6 +74,7 @@ def iterate_by_month():
 	WEAP.BaseYear = 2001
 	WEAP.EndYear = 2002
 	WEAP_Result ={}
+	WEAP_Population_Growth = 0.03
 	for y in range(year[0], year[1]):
 		WEAP.BaseYear = y
 		WEAP.EndYear = y+1
@@ -99,23 +101,35 @@ def iterate_by_month():
 def reformat_WEAP_Result(WEAP_Result):
 	result = WEAP_Result[list(WEAP_Result.keys())[0]]
 	for k in WEAP_Result:
-		for s in WEAP_Result[k]:
-			for c in WEAP_Result[k][s]:
-				for var in result[s]:
-					if var['name']==c['name']:
-						var['value'].append(c['value'][0])
-
+		print(k)
+		if k !=list(WEAP_Result.keys())[0]:
+			for s in WEAP_Result[k]:
+				for c in WEAP_Result[k][s]:
+					for var in result[s]:
+						if var['name']==c['name']:
+							var['value'].append(c['value'][0])
 	print('2', result[s])
+	return result[s]
+
+def compare_result(flow, WEAP_Result):
+	print(flow[list(flow.keys())[0]])
+
+	for i in range(len(flow[list(flow.keys())[0]])):
+		fig = plt.figure(0)
+		plt.plot(range(2002,2006), flow[list(flow.keys())[0]][i]['value'])
+		plt.plot(range(2002,2006), WEAP_Result[i]['value'])
+		fig.show()
+
+
 
 # WEAP_Result = iterate_by_month()
 # with open('WEAP_Result.json', 'w') as f:
 # 	json.dump(WEAP_Result, f)
 with open('WEAP_Result.json') as wp:
 	WEAP_Result = json.load(wp)
-# for r in WEAP_Result:
-# 	for v in WEAP_Result[r]:
-# 		for c in WEAP_Result[r][v]:
-# 			c['value'].append(1)
-# 			print(c['value'])
-reformat_WEAP_Result(WEAP_Result)
-# print(get_WEAP_flow_value())
+
+WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+flow, timeRange = get_WEAP_flow_value()
+
+compare_result(flow, WEAP_Result)
+
