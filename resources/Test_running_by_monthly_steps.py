@@ -1,6 +1,7 @@
 import win32com.client
 import json
 import matplotlib.pyplot as plt
+
 '''
 	Module Name: WEAP and LEAP time step control
 	Purpose: This module is used to test controlling WEAP (include MABIA economical model and LEAP coupled model 
@@ -62,7 +63,6 @@ def get_WEAP_flow_value():
 	timeRange = [start_year + 1, end_year]
 	### Uninitialize the win32com object ###
 	# win32com.CoUninitialize()
-
 	return flow, timeRange
 
 
@@ -73,63 +73,70 @@ def iterate_by_month():
 	LEAP.EndYear = 2002
 	WEAP.BaseYear = 2001
 	WEAP.EndYear = 2002
-	WEAP_Result ={}
+	WEAP_Result = {}
 	WEAP_Population_Growth = 0.03
+	WEAP_Population = 100000
+
+	WEAP.BranchVariable('\Supply and Resources\Groundwater\Well:Initial Storage').Expression = 50
 	for y in range(year[0], year[1]):
 		WEAP.BaseYear = y
-		WEAP.EndYear = y+1
+		WEAP.EndYear = y + 1
 		LEAP.EndYear = y + 1
-		LEAP.FirstScenarioYear = y+1
+		LEAP.FirstScenarioYear = y + 1
 		LEAP.BaseYear = y
-		print('1',LEAP.BaseYear)
-		print('2',LEAP.FirstScenarioYear)
-		print('3',LEAP.EndYear)
-		LEAP.Calculate()
+		WEAP.ActiveScenario = "Current Accounts"
+		WEAP.BranchVariable('\Key Assumptions\Population').Expression = WEAP_Population * (
+				1 + WEAP_Population_Growth) ** (y - year[0] + 1)
+		WEAP.BranchVariable('\Supply and Resources\Groundwater\Well:Initial Storage').Expression = WEAP.BranchVariable(
+			'\Supply and Resources\Groundwater\Well: Initial Storage').Expression + WEAP.BranchVariable(
+			'\Supply and Resources\Groundwater\Well: Natural Recharge').Expression 
+		print(WEAP_Population * (1 + WEAP_Population_Growth) ** (y - year[0] + 1))
+		WEAP.Calculate()
 		# WEAP.Calculate()
 		flow, timeRange = get_WEAP_flow_value()
-		WEAP_Result[str(y+1)] = flow
+		WEAP_Result[str(y + 1)] = flow
 		print(flow)
-		print(y+1)
-		# print(WEAP_Result)
-		# v2 = WEAP.ResultValue(
-		# 	'Supply and Resources\Transmission Links\\to Municipal\\from Withdrawal Node 1:Total Node Outflow[m^3]', y,
-		# 	1,
-		# 	'Linkage', y, 12, 'Total')
-		# print(v2)
+		print(y + 1)
+	# print(WEAP_Result)
+	# v2 = WEAP.ResultValue(
+	# 	'Supply and Resources\Transmission Links\\to Municipal\\from Withdrawal Node 1:Total Node Outflow[m^3]', y,
+	# 	1,
+	# 	'Linkage', y, 12, 'Total')
+	# print(v2)
 	return WEAP_Result
+
 
 def reformat_WEAP_Result(WEAP_Result):
 	result = WEAP_Result[list(WEAP_Result.keys())[0]]
 	for k in WEAP_Result:
-		print(k)
-		if k !=list(WEAP_Result.keys())[0]:
+		if k != list(WEAP_Result.keys())[0]:
 			for s in WEAP_Result[k]:
 				for c in WEAP_Result[k][s]:
 					for var in result[s]:
-						if var['name']==c['name']:
+						if var['name'] == c['name']:
 							var['value'].append(c['value'][0])
 	print('2', result[s])
 	return result[s]
 
+
 def compare_result(flow, WEAP_Result):
-	print(flow[list(flow.keys())[0]])
+	# print(flow[list(flow.keys())[0]])
 
 	for i in range(len(flow[list(flow.keys())[0]])):
 		fig = plt.figure(0)
-		plt.plot(range(2002,2006), flow[list(flow.keys())[0]][i]['value'])
-		plt.plot(range(2002,2006), WEAP_Result[i]['value'])
+		plt.plot(range(2002, 2006), flow[list(flow.keys())[0]][i]['value'])
+		plt.plot(range(2002, 2006), WEAP_Result[i]['value'])
+		# print(flow[list(flow.keys())[0]])
 		fig.show()
 
 
-
-# WEAP_Result = iterate_by_month()
+WEAP_Result = iterate_by_month()
 # with open('WEAP_Result.json', 'w') as f:
 # 	json.dump(WEAP_Result, f)
 with open('WEAP_Result.json') as wp:
 	WEAP_Result = json.load(wp)
-
-WEAP_Result = reformat_WEAP_Result(WEAP_Result)
-flow, timeRange = get_WEAP_flow_value()
-
-compare_result(flow, WEAP_Result)
-
+#
+# WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+# flow, timeRange = get_WEAP_flow_value()
+# print(flow)
+# compare_result(flow, WEAP_Result)
