@@ -76,7 +76,7 @@ def get_LEAP_flow_value():
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 
 def iterate_by_month():
-	year = [2001, 2005]
+	year = [2001, 2003]
 	LEAP.BaseYear = 2001
 	LEAP.FirstScenarioYear = 2002
 	LEAP.EndYear = 2002
@@ -85,6 +85,8 @@ def iterate_by_month():
 	WEAP_Result = {}
 	WEAP_Population_Growth = 0.03
 	WEAP_Population = 100000
+	LEAP_Population_Growth = 0.03
+	LEAP_Population = 1000000
 
 	WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = 100
 	for y in range(year[0], year[1]):
@@ -102,21 +104,30 @@ def iterate_by_month():
 		WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = WEAP.ResultValue(
 			'\Supply and Resources\Groundwater\Agricultural Groundwater: Storage',
 			y+1, 12, 'Linkage', y+1, 12, 'Total')/1000000
-		print('Groundwater Storage', WEAP.ResultValue(
-			'\Supply and Resources\Groundwater\Agricultural Groundwater: Storage',
-			y+1, 12, 'Linkage', y+1, 12, 'Total')/1000000)
+		LEAP.Branch('\Key Assumptions\Population').Variable().Expression = LEAP_Population * (
+				1 + LEAP_Population_Growth) ** (y - year[0] + 1)
+		print('LEAP population', LEAP.Branch('\Key Assumptions\Population').Variable())
+		# print('Groundwater Storage', WEAP.ResultValue(
+		# 	'\Supply and Resources\Groundwater\Agricultural Groundwater: Storage',
+		# 	y+1, 12, 'Linkage', y+1, 12, 'Total')/1000000)
 		flow, timeRange = get_WEAP_flow_value()
 		WEAP_Result[str(y + 1)] = flow
 		print(flow)
 		print(y + 1)
-	# print(WEAP_Result)
-	# v2 = WEAP.ResultValue(
-	# 	'Supply and Resources\Transmission Links\\to Municipal\\from Withdrawal Node 1:Total Node Outflow[m^3]', y,
-	# 	1,
-	# 	'Linkage', y, 12, 'Total')
-	# print(v2)
+
 	return WEAP_Result
 
+def run_full_time():
+	WEAP.ActiveScenario = "Current Accounts"
+	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 100000
+
+	WEAP.ActiveScenario = "Linkage"
+	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 'Growth(0.03)'
+	WEAP.BaseYear = 2001
+	WEAP.EndYear =2002
+
+	WEAP.ActiveScenario = "Current Accounts"
+	print(WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Value)
 
 def reformat_WEAP_Result(WEAP_Result):
 	result = WEAP_Result[list(WEAP_Result.keys())[0]]
@@ -145,15 +156,16 @@ def compare_result(flow, WEAP_Result):
 
 
 # WEAP_Result = iterate_by_month()
+run_full_time()
 # with open('WEAP_Result.json', 'w') as f:
 # 	json.dump(WEAP_Result, f)
-with open('WEAP_Result.json') as wp:
-	WEAP_Result = json.load(wp)
-
-WEAP_Result = reformat_WEAP_Result(WEAP_Result)
-print(WEAP_Result)
-flow, timeRange = get_WEAP_flow_value()
-print(flow)
-compare_result(flow, WEAP_Result)
+# with open('WEAP_Result.json') as wp:
+# 	WEAP_Result = json.load(wp)
 #
+# WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+# print(WEAP_Result)
+# flow, timeRange = get_WEAP_flow_value()
+# print(flow)
+# compare_result(flow, WEAP_Result)
+# #
 # get_WEAP_update_Parameters(2002)
