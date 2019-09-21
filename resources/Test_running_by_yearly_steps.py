@@ -2,18 +2,22 @@ import win32com.client
 import json
 import matplotlib.pyplot as plt
 
-'''
+"""
 	Module Name: WEAP and LEAP time step control
 	Purpose: This module is used to test controlling WEAP (include MABIA economical model and LEAP coupled model 
 			to run by monthly steps
 	Status: 1. Still testing WEAP and LEAP coupled model
 			2. MABIA economical model not included yet
-'''
+"""
 LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 
 
 def get_WEAP_flow_value():
+	"""
+	This module extracts the result from WEAP and
+	:return: Flow(value) and timeRange
+	"""
 	### Initialize win32com object###
 	# win32com.CoInitialize()
 	### Initialize WEAP application communication port###
@@ -63,20 +67,24 @@ def get_WEAP_flow_value():
 	timeRange = [start_year + 1, end_year]
 	### Uninitialize the win32com object ###
 	# win32com.CoUninitialize()
+	print('flow_by_step', flow)
 	return flow, timeRange
 
 
-def get_WEAP_update_Parameters(year):
-	v= WEAP.ResultValue(
-		'\Supply and Resources\Groundwater\Agricultural Groundwater: Storage',
-		year, 12, 'Linkage', year, 12, 'Total')
-	print(v)
-
 def get_LEAP_flow_value():
+	"""
+	This part is still under development
+	:return:
+	"""
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 
+
 def iterate_by_month():
-	year = [2001, 2003]
+	"""
+	This module runs WEAP and LEAP by steps and is still under development.
+	:return: WEAP_Result, LEAP_Result
+	"""
+	year = [2001, 2005]
 	LEAP.BaseYear = 2001
 	LEAP.FirstScenarioYear = 2002
 	LEAP.EndYear = 2002
@@ -88,7 +96,12 @@ def iterate_by_month():
 	LEAP_Population_Growth = 0.03
 	LEAP_Population = 1000000
 
-	WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = 100
+	WEAP.ActiveScenario = "Current Accounts"
+	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 100000
+	WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = 10000
+	WEAP.ActiveScenario = "Linkage"
+	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 'Growth(0.00)'
+
 	for y in range(year[0], year[1]):
 		WEAP.BaseYear = y
 		WEAP.EndYear = y + 1
@@ -101,9 +114,10 @@ def iterate_by_month():
 		print('Population', WEAP.BranchVariable('\Key Assumptions\Population').Expression)
 		WEAP.Calculate()
 		WEAP.ActiveScenario = "Current Accounts"
-		WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = WEAP.ResultValue(
+		WEAP.BranchVariable(
+			'\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = WEAP.ResultValue(
 			'\Supply and Resources\Groundwater\Agricultural Groundwater: Storage',
-			y+1, 12, 'Linkage', y+1, 12, 'Total')/1000000
+			y + 1, 12, 'Linkage', y + 1, 12, 'Total') / 1000000
 		LEAP.Branch('\Key Assumptions\Population').Variable().Expression = LEAP_Population * (
 				1 + LEAP_Population_Growth) ** (y - year[0] + 1)
 		print('LEAP population', LEAP.Branch('\Key Assumptions\Population').Variable())
@@ -117,19 +131,40 @@ def iterate_by_month():
 
 	return WEAP_Result
 
+
 def run_full_time():
+	"""
+	This module runs the WEAP on the full time span (bulk_run)
+	:return:
+	"""
 	WEAP.ActiveScenario = "Current Accounts"
 	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 100000
-
+	WEAP.BranchVariable(
+		'\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = 100000
 	WEAP.ActiveScenario = "Linkage"
 	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 'Growth(0.03)'
 	WEAP.BaseYear = 2001
-	WEAP.EndYear =2002
+	WEAP.EndYear = 2005
 
-	WEAP.ActiveScenario = "Current Accounts"
-	print(WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Value)
+	LEAP.ActiveScenario = 'Current Accounts'
+	LEAP.Branch('\Key Assumptions\Population').Variable().Expression = 1000000
+	LEAP.ActiveScenario = 'Linkage'
+	LEAP.Branch('\Key Assumptions\Population').Variable().Expression = 'Growth(0.03)'
+	LEAP.EndYear = 2005
+	LEAP.BaseYear = 2001
+	LEAP.FirstScenarioYear = 2002
+
+	WEAP.Calculate()
+	flow, timeRange = get_WEAP_flow_value()
+	return flow, timeRange
+
 
 def reformat_WEAP_Result(WEAP_Result):
+	"""
+	This module reforms the step run result into the same format as bulk run to facilitate the compare module.
+	:param WEAP_Result: Step run result
+	:return: Reformated step run result same as bulk run
+	"""
 	result = WEAP_Result[list(WEAP_Result.keys())[0]]
 	for k in WEAP_Result:
 		if k != list(WEAP_Result.keys())[0]:
@@ -138,34 +173,47 @@ def reformat_WEAP_Result(WEAP_Result):
 					for var in result[s]:
 						if var['name'] == c['name']:
 							var['value'].append(c['value'][0])
-	print('2', result[s])
-	return result[s]
+	print('2', result['Linkage'])
+	return result['Linkage']
 
 
 def compare_result(flow, WEAP_Result):
+	"""
+	This module compare the bulk run and step run result.
+	:param flow: The bulk run result
+	:param WEAP_Result: The step run result
+	:return: The plots of comparing the bulk run and step run results
+	"""
 	# print(flow[list(flow.keys())[0]])
-	year = [2002, 2003, 2004, 2005]
+	year = ['2002', '2003', '2004', '2005']
+
 	for i in range(len(flow[list(flow.keys())[0]])):
 		fig = plt.figure(0)
-		plt.plot(year, flow[list(flow.keys())[0]][i]['value'], color='blue', label='Bulk_Run '+flow[list(flow.keys())[0]][i]['name'])
-		plt.plot(year, WEAP_Result[i]['value'], color='orange', label='Step_Run '+WEAP_Result[i]['name'])
+		plt.plot(year, flow[list(flow.keys())[0]][i]['value'], color='blue',
+		         label='Bulk_Run ' + flow[list(flow.keys())[0]][i]['name'])
+		plt.plot(year, WEAP_Result[i]['value'], color='orange', label='Step_Run ' + WEAP_Result[i]['name'], alpha=0.7,
+		         linewidth=5)
+		plt.xlabel('Scenario Year')
+		plt.ylabel('Flow Value: M^3')
+		plt.title('WEAP Result Value: ' + WEAP_Result[i]['name'])
 		plt.legend(loc=1)
-		plt.axis()
+		bottom, top = plt.ylim()
+		plt.ylim(bottom / 3, top * 1.2)
+		plt.gcf().autofmt_xdate()
 		# print(flow[list(flow.keys())[0]])
 		fig.show()
 
 
 # WEAP_Result = iterate_by_month()
-run_full_time()
 # with open('WEAP_Result.json', 'w') as f:
 # 	json.dump(WEAP_Result, f)
-# with open('WEAP_Result.json') as wp:
-# 	WEAP_Result = json.load(wp)
+
+with open('WEAP_Result.json') as wp:
+	WEAP_Result = json.load(wp)
+WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+print(WEAP_Result)
+flow, timeRange = run_full_time()
+print(flow)
+compare_result(flow, WEAP_Result)
 #
-# WEAP_Result = reformat_WEAP_Result(WEAP_Result)
-# print(WEAP_Result)
-# flow, timeRange = get_WEAP_flow_value()
-# print(flow)
-# compare_result(flow, WEAP_Result)
-# #
 # get_WEAP_update_Parameters(2002)
