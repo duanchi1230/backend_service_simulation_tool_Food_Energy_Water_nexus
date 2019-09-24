@@ -71,12 +71,47 @@ def get_WEAP_flow_value():
 	return flow, timeRange
 
 
-def get_LEAP_flow_value():
+def get_LEAP_value():
 	"""
 	This part is still under development
-	:return:
+	:return: LEAP_Results
 	"""
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
+	start_year = LEAP.BaseYear
+	end_year = LEAP.EndYear
+	LEAP_Result = []
+	print(LEAP.Branch('Transformation\Electricity generation\Processes\Power2').Variable(
+		'Average Power Dispatched').Value(2002))
+	print(LEAP.Branch('Resources\Primary\\Natural Gas').Variable(
+		'Imports').Value(2002))
+	print(LEAP.Branch('Demand\\Water unrelated\\Per capita demand').Variable(
+		'Energy Demand Final Units').Value(2002))
+	demand = ['Per capita demand', 'CAP pumping', 'WTP', 'WWTP']
+	transformation = ['Power1', 'Power2']
+	resources = ['Nuclear', 'Natural Gas', 'Electricity']
+	for b in LEAP.Branches:
+		print(b.name)
+	path = {}
+	for d in demand:
+		if d=='Per capita demand':
+			path[d] = {'name': d, 'path': 'Demand\\Water unrelated\\' + d, 'variable': 'Energy Demand Final Units'}
+		else: path[d] = {'name': d, 'path': 'Demand\\Water related\\' + d, 'variable': 'Energy Demand Final Units'}
+	for t in transformation:
+		path[t] = {'name': t, 'path': 'Transformation\\Electricity generation\\Processes\\' + t, 'variable': 'Average Power Dispatched'}
+	for r in resources:
+		if r =='Electricity':
+			path[r] = {'name': r, 'path': 'Resources\\Secondary\\' + r, 'variable': 'Primary Supply'}
+		else: path[r] = {'name': r, 'path': 'Resources\\Primary\\' + r, 'variable': 'Primary Supply'}
+
+	for v in path.values():
+		print(v)
+	# for y in range(start_year + 1, end_year + 1):
+	# 	print(y)
+	# 	step_result = {}
+	# 	step_result['Energy Demand Final Units'] = [
+	# 	LEAP.Branch('Demand\\Water unrelated\\' + d).Variable(
+	# 		'Energy Demand Final Units').Value(2002)]
+	# print(LEAP_Result)
 
 
 def iterate_by_month():
@@ -177,7 +212,7 @@ def reformat_WEAP_Result(WEAP_Result):
 	return result['Linkage']
 
 
-def compare_result(flow, WEAP_Result):
+def compare_result_WEAP(flow, WEAP_Result):
 	"""
 	This module compare the bulk run and step run result.
 	:param flow: The bulk run result
@@ -204,16 +239,20 @@ def compare_result(flow, WEAP_Result):
 		fig.show()
 
 
+def compare_result_LEAP():
+	pass
+
+
 # WEAP_Result = iterate_by_month()
 # with open('WEAP_Result.json', 'w') as f:
 # 	json.dump(WEAP_Result, f)
 
-with open('WEAP_Result.json') as wp:
-	WEAP_Result = json.load(wp)
-WEAP_Result = reformat_WEAP_Result(WEAP_Result)
-print(WEAP_Result)
-flow, timeRange = run_full_time()
-print(flow)
-compare_result(flow, WEAP_Result)
+# with open('WEAP_Result.json') as wp:
+# 	WEAP_Result = json.load(wp)
+# WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+# print(WEAP_Result)
+# flow, timeRange = run_full_time()
+# print(flow)
+# compare_result_WEAP(flow, WEAP_Result)
 #
-# get_WEAP_update_Parameters(2002)
+get_LEAP_value()
