@@ -100,19 +100,23 @@ def get_LEAP_value():
 		path[t] = {'name': t, 'path': 'Transformation\\Electricity generation\\Processes\\' + t, 'variable': 'Average Power Dispatched'}
 	for r in resources:
 		if r =='Electricity':
-			path[r] = {'name': r, 'path': 'Resources\\Secondary\\' + r, 'variable': 'Primary Supply'}
-		else: path[r] = {'name': r, 'path': 'Resources\\Primary\\' + r, 'variable': 'Primary Supply'}
+			path[r] = {'name': r, 'path': 'Resources\\Secondary\\' + r, 'variable': 'Primary Requirements'}
+		else: path[r] = {'name': r, 'path': 'Resources\\Primary\\' + r, 'variable': 'Primary Requirements'}
 
 	for v in path.values():
 		print(v)
-	# for y in range(start_year + 1, end_year + 1):
-	# 	print(y)
-	# 	step_result = {}
-	# 	step_result['Energy Demand Final Units'] = [
-	# 	LEAP.Branch('Demand\\Water unrelated\\' + d).Variable(
-	# 		'Energy Demand Final Units').Value(2002)]
-	# print(LEAP_Result)
-
+		step_result = {}
+		step_result['name'] = v['name']
+		step_result['variable'] = v['variable']
+		step_result['value'] =[]
+		for y in range(start_year + 1, end_year + 1):
+			step_result['value'].append(
+			LEAP.Branch(v['path']).Variable(v['variable']).Value(y))
+		LEAP_Result.append(step_result)
+	print(LEAP_Result)
+	timeRange = [start_year+1, end_year]
+	# LEAP.Branch('Resources\\Primary\\Nuclear').Variable('Primary Requirements').Value(2002)
+	return LEAP_Result, timeRange
 
 def iterate_by_month():
 	"""
@@ -123,14 +127,15 @@ def iterate_by_month():
 	LEAP.BaseYear = 2001
 	LEAP.FirstScenarioYear = 2002
 	LEAP.EndYear = 2002
+	LEAP_Result = {}
+	LEAP_Population_Growth = 0.03
+	LEAP_Population = 1000000
+
 	WEAP.BaseYear = 2001
 	WEAP.EndYear = 2002
 	WEAP_Result = {}
 	WEAP_Population_Growth = 0.03
 	WEAP_Population = 100000
-	LEAP_Population_Growth = 0.03
-	LEAP_Population = 1000000
-
 	WEAP.ActiveScenario = "Current Accounts"
 	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 100000
 	WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = 10000
@@ -159,12 +164,14 @@ def iterate_by_month():
 		# print('Groundwater Storage', WEAP.ResultValue(
 		# 	'\Supply and Resources\Groundwater\Agricultural Groundwater: Storage',
 		# 	y+1, 12, 'Linkage', y+1, 12, 'Total')/1000000)
-		flow, timeRange = get_WEAP_flow_value()
+		flow, WEAP_timeRange = get_WEAP_flow_value()
+		value, LEAP_timeRange = get_LEAP_value()
 		WEAP_Result[str(y + 1)] = flow
+		LEAP_Result[str(y + 1)] = value
 		print(flow)
 		print(y + 1)
 
-	return WEAP_Result
+	return WEAP_Result, LEAP_Result
 
 
 def run_full_time():
@@ -214,10 +221,10 @@ def reformat_WEAP_Result(WEAP_Result):
 
 def compare_result_WEAP(flow, WEAP_Result):
 	"""
-	This module compare the bulk run and step run result.
-	:param flow: The bulk run result
-	:param WEAP_Result: The step run result
-	:return: The plots of comparing the bulk run and step run results
+	This module compare the bulk run and step run result from WEAP.
+	:param flow: The bulk run result from WEAP.
+	:param WEAP_Result: The step run result from WEAP.
+	:return: The plots of comparing the bulk run and step run results from WEAP.
 	"""
 	# print(flow[list(flow.keys())[0]])
 	year = ['2002', '2003', '2004', '2005']
@@ -239,11 +246,18 @@ def compare_result_WEAP(flow, WEAP_Result):
 		fig.show()
 
 
-def compare_result_LEAP():
+def compare_result_LEAP(value, LEAP_Result):
+	"""
+	This module compares the bulk run and step run results for LEAP.
+	:param value: The bulk run result from LEAP
+	:param LEAP_Result: The step run result from LEAP
+	:return: The plots of comparing the bulk run and step run results from LEAP
+	"""
 	pass
 
-
-# WEAP_Result = iterate_by_month()
+get_LEAP_value()
+WEAP_Result, LEAP_Result = iterate_by_month()
+print(LEAP_Result)
 # with open('WEAP_Result.json', 'w') as f:
 # 	json.dump(WEAP_Result, f)
 
@@ -255,4 +269,4 @@ def compare_result_LEAP():
 # print(flow)
 # compare_result_WEAP(flow, WEAP_Result)
 #
-get_LEAP_value()
+
