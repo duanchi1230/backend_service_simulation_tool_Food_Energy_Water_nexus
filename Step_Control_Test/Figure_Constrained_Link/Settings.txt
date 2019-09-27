@@ -1,0 +1,13 @@
+Transmission Links:
+
+to Agriculture Catchment
+	from Agriculture Groundwater: 50%
+	from Withdrawal Node 4: 70%
+to Municipal
+	from Withdrawal Node 1: 50%
+	from Withdrawal Node 2: 70%
+to Power1
+	from Well: 50%
+to Power2
+	from Withdrawal Node 3:85%
+	from WWTP: 50%
