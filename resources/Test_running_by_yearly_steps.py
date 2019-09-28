@@ -138,7 +138,7 @@ def iterate_by_year():
 	WEAP_Population = 100000
 	WEAP.ActiveScenario = "Current Accounts"
 	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 100000
-	WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = 100
+	WEAP.BranchVariable('\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = 100000
 	WEAP.ActiveScenario = "Linkage"
 	WEAP.BranchVariable('\Key Assumptions\Population').Expression = 'Growth(0.03)'
 	LEAP.ActiveScenario = "Current Accounts"
@@ -160,6 +160,10 @@ def iterate_by_year():
 		WEAP.BranchVariable(
 			'\Supply and Resources\Groundwater\Agricultural Groundwater:Initial Storage').Expression = WEAP.ResultValue(
 			'\Supply and Resources\Groundwater\Agricultural Groundwater: Storage',
+			y + 1, 12, 'Linkage', y + 1, 12, 'Total') / 1000000
+		WEAP.BranchVariable(
+			'\Supply and Resources\Groundwater\Well:Initial Storage').Expression = WEAP.ResultValue(
+			'\Supply and Resources\Groundwater\Well: Storage',
 			y + 1, 12, 'Linkage', y + 1, 12, 'Total') / 1000000
 		LEAP.ActiveScenario = "Current Accounts"
 		LEAP.Branch('\Key Assumptions\Population').Variable().Expression = LEAP_Population * (
@@ -232,6 +236,7 @@ def run_fulltime_LEAP():
 	LEAP.EndYear = 2005
 	LEAP.BaseYear = 2001
 	LEAP.FirstScenarioYear = 2002
+	LEAP.FirstDepletionYear = 2002
 
 	WEAP.Calculate()
 	LEAP.Calculate()
@@ -329,22 +334,22 @@ def compare_result_LEAP(value, LEAP_Result):
 
 WEAP_Result, LEAP_Result = iterate_by_year()
 print(LEAP_Result)
-with open('WEAP_Result.json', 'w') as f:
-	json.dump(WEAP_Result, f)
-# with open('LEAP_Result.json', 'w') as f:
-# 	json.dump(LEAP_Result, f)
-#
-# with open('LEAP_Result.json') as wp:
-# 	LEAP_Result = json.load(wp)
-# LEAP_Result = reformat_LEAP_Result(LEAP_Result)
-# value, timeRange = run_fulltime_LEAP()
-# compare_result_LEAP(value, LEAP_Result)
-# print(timeRange, value)
+# with open('WEAP_Result.json', 'w') as f:
+# 	json.dump(WEAP_Result, f)
+with open('LEAP_Result.json', 'w') as f:
+	json.dump(LEAP_Result, f)
 
-with open('WEAP_Result.json') as wp:
-	WEAP_Result = json.load(wp)
-WEAP_Result = reformat_WEAP_Result(WEAP_Result)
-print(WEAP_Result)
-flow, timeRange = run_fulltime_WEAP()
-print(flow)
-compare_result_WEAP(flow, WEAP_Result)
+with open('LEAP_Result.json') as wp:
+	LEAP_Result = json.load(wp)
+LEAP_Result = reformat_LEAP_Result(LEAP_Result)
+value, timeRange = run_fulltime_LEAP()
+compare_result_LEAP(value, LEAP_Result)
+print(timeRange, value)
+
+# with open('WEAP_Result.json') as wp:
+# 	WEAP_Result = json.load(wp)
+# WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+# print(WEAP_Result)
+# flow, timeRange = run_fulltime_WEAP()
+# print(flow)
+# compare_result_WEAP(flow, WEAP_Result)
