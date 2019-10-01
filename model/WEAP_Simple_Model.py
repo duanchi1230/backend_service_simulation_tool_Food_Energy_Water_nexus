@@ -1,6 +1,6 @@
 import win32com.client
 from mabia_model.script_m import MaxU
-from mabia_model.testing import hello
+from mabia_model.WEAP_MABIA_Time_Series_Test import hello
 
 def get_WEAP_flow_value():
 	### Initialize win32com object###

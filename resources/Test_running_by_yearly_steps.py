@@ -297,7 +297,7 @@ def compare_result_WEAP(flow, WEAP_Result):
 		         linewidth=5)
 		plt.xlabel('Scenario Year (Unconstrained Source and Unconstrained Link)')
 		plt.ylabel('Flow Value: M^3')
-		plt.title('WEAP Result Value: ' + WEAP_Result[i]['name'])
+		plt.title('WEAP Result Value: ' + WEAP_Result[i]['name']+'\n')
 		plt.legend(loc=1)
 		bottom, top = plt.ylim()
 		plt.ylim(bottom / 3, top * 1.2)
@@ -322,7 +322,7 @@ def compare_result_LEAP(value, LEAP_Result):
 		         linewidth=5)
 		plt.xlabel('Scenario Year (Unconstrained Source and Unconstrained Link)')
 		plt.ylabel('Unit: ' + value[i]['unit'])
-		plt.title('LEAP Result Value: ' + LEAP_Result[i]['name'] + ' ' + LEAP_Result[i]['variable'])
+		plt.title('LEAP Result Value: ' + LEAP_Result[i]['name'] + ' ' + LEAP_Result[i]['variable']+'\n')
 		plt.legend(loc=1)
 		bottom, top = plt.ylim()
 		plt.ylim(bottom / 3, top * 1.2)
@@ -334,22 +334,22 @@ def compare_result_LEAP(value, LEAP_Result):
 
 WEAP_Result, LEAP_Result = iterate_by_year()
 print(LEAP_Result)
-# with open('WEAP_Result.json', 'w') as f:
-# 	json.dump(WEAP_Result, f)
-with open('LEAP_Result.json', 'w') as f:
-	json.dump(LEAP_Result, f)
+with open('WEAP_Result.json', 'w') as f:
+	json.dump(WEAP_Result, f)
+# with open('LEAP_Result.json', 'w') as f:
+# 	json.dump(LEAP_Result, f)
+#
+# with open('LEAP_Result.json') as wp:
+# 	LEAP_Result = json.load(wp)
+# LEAP_Result = reformat_LEAP_Result(LEAP_Result)
+# value, timeRange = run_fulltime_LEAP()
+# compare_result_LEAP(value, LEAP_Result)
+# print(timeRange, value)
 
-with open('LEAP_Result.json') as wp:
-	LEAP_Result = json.load(wp)
-LEAP_Result = reformat_LEAP_Result(LEAP_Result)
-value, timeRange = run_fulltime_LEAP()
-compare_result_LEAP(value, LEAP_Result)
-print(timeRange, value)
-
-# with open('WEAP_Result.json') as wp:
-# 	WEAP_Result = json.load(wp)
-# WEAP_Result = reformat_WEAP_Result(WEAP_Result)
-# print(WEAP_Result)
-# flow, timeRange = run_fulltime_WEAP()
-# print(flow)
-# compare_result_WEAP(flow, WEAP_Result)
+with open('WEAP_Result.json') as wp:
+	WEAP_Result = json.load(wp)
+WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+print(WEAP_Result)
+flow, timeRange = run_fulltime_WEAP()
+print(flow)
+compare_result_WEAP(flow, WEAP_Result)

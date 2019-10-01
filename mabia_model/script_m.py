@@ -64,7 +64,7 @@ def MaxU(path1, path2):
 		# So, input into MABIA would be the district,crop, and cropArea arrays (all indexed the same)
 		#  Lists are: district[i],crop[i],pct_Area[i]
 		#  total Area of all crops is: totArea
-		print(crop)
+
 		return district, crop, pct_Area, totArea
 	# except:
 	# 	print("Error in the Max U function")
@@ -571,8 +571,8 @@ path_1 = '..\mabia_model\GrossMarginID.txt'
 path_2 = '..\mabia_model\ID_3.csv'
 out = MaxU(path_1,path_2)
 
-n = len(data)
-test=testing(n)
-print(out)
+# n = len(data)
+# test=testing(n)
+# print(out)
 #
 # ===================================
