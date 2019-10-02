@@ -567,9 +567,9 @@ def testing(n):
 
 # This is where everything is finalized
 
-path_1 = '..\mabia_model\GrossMarginID.txt'
-path_2 = '..\mabia_model\ID_3.csv'
-out = MaxU(path_1,path_2)
+# path_1 = '..\mabia_model\GrossMarginID.txt'
+# path_2 = '..\mabia_model\ID_3.csv'
+# out = MaxU(path_1,path_2)
 
 # n = len(data)
 # test=testing(n)

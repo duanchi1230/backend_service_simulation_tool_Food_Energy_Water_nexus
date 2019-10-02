@@ -72,7 +72,7 @@ def set_mabia_default():
 		WEAP.BranchVariable("\Demand Sites and Catchments\Agricultural Catchment\\: Area").Expression = default_total_area
 	win32com.CoUninitialize()
 # Set MABIA to default
-# set_mabia_default()
+set_mabia_default()
 
 # Set MABIA to time series
-set_mabia_timeSeries(crop_time_series)
+# set_mabia_timeSeries(crop_time_series)
