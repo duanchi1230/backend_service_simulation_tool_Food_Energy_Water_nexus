@@ -51,7 +51,6 @@ class ScenarioList(Resource):
 	def get(self, pid, model):
 		# Chi: implement a function that gets all the existing scenarios
 		# and return their brief summary as follows:
-
 		scenario_list = []
 		scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
 		for i in range(3):

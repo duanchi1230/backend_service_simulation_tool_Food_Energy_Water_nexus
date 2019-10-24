@@ -47,9 +47,6 @@ session.add(ed_user)
 # for row in session.query(user_alias, user_alias.name).all():
 # 	print(row.user_alias)
 
-
-
-
 class Address(Base):
 	__tablename__ = 'addressess'
 
@@ -58,7 +55,6 @@ class Address(Base):
 	user_id = Column(Integer, ForeignKey('users.id'))
 
 	user = relationship("User", back_populates="a")
-
 	def __repr__(self):
 		return "<Address(email_address='%s')>" % self.email_address
 

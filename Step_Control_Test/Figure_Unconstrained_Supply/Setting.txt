@@ -1,6 +1,6 @@
 LEAP: 
 	Power1
-		Exohenous Capacity: 300
+		Exohenous Capacity: 500
 		Maximum Availability: 91
 	Power2
 		Exohenous Capacity: 700

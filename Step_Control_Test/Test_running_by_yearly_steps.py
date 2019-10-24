@@ -332,10 +332,10 @@ def compare_result_LEAP(value, LEAP_Result):
 	pass
 
 
-WEAP_Result, LEAP_Result = iterate_by_year()
-print(LEAP_Result)
-with open('WEAP_Result.json', 'w') as f:
-	json.dump(WEAP_Result, f)
+# WEAP_Result, LEAP_Result = iterate_by_year()
+# print(LEAP_Result)
+# with open('WEAP_Result.json', 'w') as f:
+# 	json.dump(WEAP_Result, f)
 # with open('LEAP_Result.json', 'w') as f:
 # 	json.dump(LEAP_Result, f)
 #
@@ -346,10 +346,10 @@ with open('WEAP_Result.json', 'w') as f:
 # compare_result_LEAP(value, LEAP_Result)
 # print(timeRange, value)
 
-with open('WEAP_Result.json') as wp:
-	WEAP_Result = json.load(wp)
-WEAP_Result = reformat_WEAP_Result(WEAP_Result)
-print(WEAP_Result)
+# with open('WEAP_Result.json') as wp:
+# 	WEAP_Result = json.load(wp)
+# WEAP_Result = reformat_WEAP_Result(WEAP_Result)
+# print(WEAP_Result)
 flow, timeRange = run_fulltime_WEAP()
 print(flow)
-compare_result_WEAP(flow, WEAP_Result)
+# compare_result_WEAP(flow, WEAP_Result)
