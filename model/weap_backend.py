@@ -13,6 +13,7 @@ def get_WEAP_Outputs():
 	end_year = WEAP.EndYear
 	WEAP.ActiveArea = 'Internal_Linking_test_das'
 	WEAP.ActiveScenario = WEAP.Scenarios[1]
+	i = 0
 	for b in WEAP.Branches:
 		for v in b.Variables:
 			print(b.FullName)
@@ -20,9 +21,11 @@ def get_WEAP_Outputs():
 				print(v.name)
 				print(type(WEAP.Branch(b.FullName)))
 				path = b.FullName + ":" +v.name
-				print(WEAP.ResultValue(path, 2002, 1, 'Linkage', 2002,12, 'Total'))
+				print(WEAP.ResultValue(path, 2001, 1, 'Linkage', 2002,12, 'Total'))
+			i = i+1
 
 	print(len(WEAP.Branches))
+	print('i', i)
 	win32com.CoUninitialize()
 
 get_WEAP_Outputs()
