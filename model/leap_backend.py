@@ -5,8 +5,10 @@ import json
 	THIS MODULE IS THE LEAP-BACKEND FOR FEWSIM SYSTEM
 """
 
-
-def get_LEAP_Outputs():
+input_variable = ['Activity Level','Load Shape', 'Final Energy Intensity', 'Final Energy Intensity Time Sliced',
+                  'Planning Reserve Margin', 'Optimize', 'Additions to Reserves', 'Resource Imports',
+                  'Resource Exports','Unmet Requirements']
+def get_LEAP_Variables():
 	"""
 	This function extract all results values from LEAP
 	:return: Structured dictionary of LEAP results value
@@ -22,11 +24,12 @@ def get_LEAP_Outputs():
 		if s != 'Current Account':
 			active_scenario = s
 	LEAP.ActiveScenario = active_scenario
-
+	input_variable_list = ['Activity Level', 'Load Shape', 'Final Energy Intensity', 'Final Energy Intensity Time Sliced',
+	                  'Planning Reserve Margin', 'Optimize', 'Additions to Reserves', 'Resource Imports',
+	                  'Resource Exports', 'Unmet Requirements']
 	LEAP_input = []
 	LEAP_output = []
 	for b in LEAP.Branches:
-		LEAP.Branch(b.FullName)
 		print('\n')
 		print(b.FullName)
 		print(b.Name)
@@ -44,7 +47,10 @@ def get_LEAP_Outputs():
 				'parent': path[-2] if len(path)>1 else 'null',
 				'value': value
 			}
-			LEAP_input = tree_insert_node(path, node, LEAP_input)
+			if v.name in input_variable_list:
+				LEAP_input = tree_insert_node(path, node, LEAP_input)
+			else:
+				LEAP_output = tree_insert_node(path, node, LEAP_output)
 			print(node)
 			# LEAP_input = tree_insert_node(path_parser(v.FullName), node, LEAP_input)
 		# if v.IsResultVariable == True:
@@ -54,8 +60,8 @@ def get_LEAP_Outputs():
 		# print(LEAP.ResultValue(path, 2002, 1, 'Linkage', 2002,12, 'Total'))
 	# print(LEAP.Branch("\Demand\Water unrelated\Per capita demand").Variable('Energy Demand Final Units').Value(2002, 'MWH'))
 	print(LEAP_input)
-	with open('LEAP_input.txt', 'w') as outfile:
-		json.dump(LEAP_input, outfile)
+	with open('LEAP_input.json', 'w') as outfile:
+		json.dump({'LEAP-input':LEAP_input, 'LEAP-output': LEAP_output}, outfile)
 	win32com.CoUninitialize()
 
 
@@ -140,5 +146,5 @@ node = {"name": path_key[-1],
 # print(WEAP_tree)
 # print(tree_find_key(path_key, WEAP_tree))
 
-get_LEAP_Outputs()
+get_LEAP_Variables()
 
