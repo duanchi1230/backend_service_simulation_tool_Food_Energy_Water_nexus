@@ -1,6 +1,7 @@
 import win32com.client
 import json
-
+import pandas as pd
+import numpy as np
 """
 	THIS MODULE IS THE LEAP-BACKEND FOR FEWSIM SYSTEM
 """
@@ -24,9 +25,8 @@ def get_LEAP_Variables():
 		if s != 'Current Account':
 			active_scenario = s
 	LEAP.ActiveScenario = active_scenario
-	input_variable_list = ['Activity Level', 'Load Shape', 'Final Energy Intensity', 'Final Energy Intensity Time Sliced',
-	                  'Planning Reserve Margin', 'Optimize', 'Additions to Reserves', 'Resource Imports',
-	                  'Resource Exports', 'Unmet Requirements']
+	input_variable_list = pd.read_excel('LEAP_Input_Variables.xlsx')
+	input_variable_list = np.array(input_variable_list['variable_name'])
 	LEAP_input = []
 	LEAP_output = []
 	for b in LEAP.Branches:
@@ -38,15 +38,15 @@ def get_LEAP_Variables():
 			if v != None:
 				for y in range(start_year, end_year+1):
 					value.append(v.Value(y))
-			path = path_parser(b.FullName)
-			path.append(v.name)
-			node = {
-				'name':v.name,
-				'fullname': b.FullName,
-				'path': path,
-				'parent': path[-2] if len(path)>1 else 'null',
-				'value': value
-			}
+				path = path_parser(b.FullName)
+				path.append(v.name)
+				node = {
+					'name':v.name,
+					'branch-name': b.FullName,
+					'path': path,
+					'parent': path[-2] if len(path)>1 else 'null',
+					'value': value
+				}
 			if v.name in input_variable_list:
 				LEAP_input = tree_insert_node(path, node, LEAP_input)
 			else:
@@ -60,7 +60,7 @@ def get_LEAP_Variables():
 		# print(LEAP.ResultValue(path, 2002, 1, 'Linkage', 2002,12, 'Total'))
 	# print(LEAP.Branch("\Demand\Water unrelated\Per capita demand").Variable('Energy Demand Final Units').Value(2002, 'MWH'))
 	print(LEAP_input)
-	with open('LEAP_input.json', 'w') as outfile:
+	with open('LEAP_variables.json', 'w') as outfile:
 		json.dump({'LEAP-input':LEAP_input, 'LEAP-output': LEAP_output}, outfile)
 	win32com.CoUninitialize()
 
@@ -135,11 +135,11 @@ def tree_insert_node(path_key, node, tree):
 		# print(path)
 	return tree
 
-path_key = ['Top Level: A', 'Level 2: A', 'Son of A']
-
-node = {"name": path_key[-1],
-		"parent": path_key[-2],
-		"children": [1,2,3]}
+# path_key = ['Top Level: A', 'Level 2: A', 'Son of A']
+#
+# node = {"name": path_key[-1],
+# 		"parent": path_key[-2],
+# 		"children": [1,2,3]}
 
 # WEAP_tree = []
 # WEAP_tree = tree_insert_node(path_key, node, WEAP_tree)
@@ -147,4 +147,7 @@ node = {"name": path_key[-1],
 # print(tree_find_key(path_key, WEAP_tree))
 
 get_LEAP_Variables()
-
+# LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
+# for v in LEAP.Branch('Key\\Population').Variables:
+# 	print(v.ScaleUnit)
+# LEAP.Branch('Key\\Population').Variables

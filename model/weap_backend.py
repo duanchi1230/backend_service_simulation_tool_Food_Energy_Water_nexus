@@ -8,7 +8,7 @@ from pandas import ExcelFile
 	THIS MODULE IS THE WEAP-BACKEND FOR FEWSIM SYSTEM
 """
 
-def get_WEAP_Outputs():
+def get_WEAP_variables():
 	"""
 	This function extract all results values from WEAP
 	:return: Structured dictionary of WEAP results value
@@ -22,14 +22,6 @@ def get_WEAP_Outputs():
 	WEAP_input = []
 	WEAP_output = []
 	for b in WEAP.Branches:
-		# for v in b.Variables:
-		# 	print(b.FullName)
-		# 	if v.IsResultVariable == True:
-		# 		print(v.name)
-		# 		print(type(WEAP.Branch(b.FullName)))
-		# 		path = b.FullName + ":" +v.name
-		# 		print(WEAP.ResultValue(path, 2001, 1, 'Linkage', 2002,12, 'Total'))
-		# 	i = i+1
 		WEAP.Branch(b.FullName)
 		# print('\n')
 		# print(b.FullName)
@@ -42,16 +34,18 @@ def get_WEAP_Outputs():
 						path = b.FullName + ":" + v.name
 						print(WEAP.ResultValue(path, start_year, 1, 'Linkage', end_year, 12, 'Total'))
 						value.append(WEAP.ResultValue(path, start_year, 1, 'Linkage', end_year, 12, 'Total'))
-				path = path_parser(b.FullName)
-				path.append(v.name)
-				node = {
-					'name': v.name,
-					'fullname': b.FullName,
-					'path': path,
-					'parent': path[-2] if len(path) > 1 else 'null',
-					'value': value
-				}
-				WEAP_output = tree_insert_node(path, node, WEAP_output)
+					unit = WEAP.Branch(b.FullName).Variable(v.name).ScaleUnit
+					path = path_parser(b.FullName)
+					path.append(v.name)
+					node = {
+						'name': v.name,
+						'fullname': b.FullName,
+						'path': path,
+						'parent': path[-2] if len(path) > 1 else 'null',
+						'value': value,
+						'unit': unit
+					}
+					WEAP_output = tree_insert_node(path, node, WEAP_output)
 
 			variable_list = pd.read_excel('WEAP_Input_Variables.xlsx')
 			variable_list = np.array(variable_list['variable_name'])
@@ -61,7 +55,8 @@ def get_WEAP_Outputs():
 				for y in range(start_year, end_year + 1):
 					path = b.FullName + ":" + v.name
 					# print(WEAP.ResultValue(path, y, 1, 'Linkage', y, 12, 'Average'), WEAP.Branch(b.FullName).Variable(v.name).ScaleUnit)
-					value.append(WEAP.ResultValue(path, y, 1, 'Linkage', y, 12, 'Total'))
+					value.append(WEAP.ResultValue(path, y, 1, 'Linkage', y, 12, 'Average'))
+				unit = WEAP.Branch(b.FullName).Variable(v.name).ScaleUnit
 				path = path_parser(b.FullName)
 				path.append(v.name)
 				node = {
@@ -69,11 +64,12 @@ def get_WEAP_Outputs():
 					'fullname': b.FullName,
 					'path': path,
 					'parent': path[-2] if len(path) > 1 else 'null',
-					'value': value
+					'value': value,
+					'unit': unit
 				}
 				WEAP_input = tree_insert_node(path, node, WEAP_input)
 				print(WEAP_input)
-	with open('WEAP_input.json', 'w') as outfile:
+	with open('WEAP_variables.json', 'w') as outfile:
 		json.dump({'WEAP-input':WEAP_input, 'WEAP-output': WEAP_output}, outfile)
 
 	win32com.CoUninitialize()
@@ -148,7 +144,11 @@ def tree_insert_node(path_key, node, tree):
 		# print(path)
 	return tree
 
-get_WEAP_Outputs()
+def get_WEAP_inputs():
+
+	pass
+get_WEAP_variables()
+
 
 # WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 
