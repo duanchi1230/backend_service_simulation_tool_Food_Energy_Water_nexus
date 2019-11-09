@@ -10,7 +10,7 @@
           "children": [
             {
               "name": "Activity Level",
-              "branch-name": "Key\\Monthly PowerGeneration Plant2",
+              "fullname": "Key\\Monthly PowerGeneration Plant2",
               "path": [
                 "Key",
                 "Monthly PowerGeneration Plant2",
@@ -27,7 +27,7 @@
           "children": [
             {
               "name": "Activity Level",
-              "branch-name": "Key\\Population",
+              "fullname": "Key\\Population",
               "path": ["Key", "Population", "Activity Level"],
               "parent": "Population",
               "value": [1000000.0, 1030000.0, 1060900.0, 1092727.0, 1125508.81]
@@ -40,7 +40,7 @@
           "children": [
             {
               "name": "Activity Level",
-              "branch-name": "Key\\CAP",
+              "fullname": "Key\\CAP",
               "path": ["Key", "CAP", "Activity Level"],
               "parent": "CAP",
               "value": [
@@ -59,7 +59,7 @@
           "children": [
             {
               "name": "Activity Level",
-              "branch-name": "Key\\WTP",
+              "fullname": "Key\\WTP",
               "path": ["Key", "WTP", "Activity Level"],
               "parent": "WTP",
               "value": [
@@ -78,7 +78,7 @@
           "children": [
             {
               "name": "Activity Level",
-              "branch-name": "Key\\WWTP",
+              "fullname": "Key\\WWTP",
               "path": ["Key", "WWTP", "Activity Level"],
               "parent": "WWTP",
               "value": [4145040.0, 4269391.2, 4390842.0, 4506584.0, 4622804.0]
@@ -91,7 +91,7 @@
           "children": [
             {
               "name": "Activity Level",
-              "branch-name": "Key\\Refresh",
+              "fullname": "Key\\Refresh",
               "path": ["Key", "Refresh", "Activity Level"],
               "parent": "Refresh",
               "value": [2.0, 4871.0, 4871.0, 4871.0, 4871.0]
@@ -110,7 +110,7 @@
           "children": [
             {
               "name": "Activity Level",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": ["Demand", "Water unrelated", "Activity Level"],
               "parent": "Water unrelated",
               "value": [1000000.0, 1030000.0, 1060900.0, 1092727.0, 1125508.81]
@@ -121,7 +121,7 @@
               "children": [
                 {
                   "name": "Load Shape",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -133,7 +133,7 @@
                 },
                 {
                   "name": "Activity Level",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -145,7 +145,7 @@
                 },
                 {
                   "name": "Final Energy Intensity",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -169,7 +169,7 @@
               "children": [
                 {
                   "name": "Activity Level",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -181,7 +181,7 @@
                 },
                 {
                   "name": "Final Energy Intensity Time Sliced",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -205,14 +205,14 @@
               "children": [
                 {
                   "name": "Activity Level",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": ["Demand", "Water related", "WTP", "Activity Level"],
                   "parent": "WTP",
                   "value": [0.0, 7000000.0, 7000000.0, 7000000.0, 7000000.0]
                 },
                 {
                   "name": "Final Energy Intensity Time Sliced",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -230,14 +230,14 @@
               "children": [
                 {
                   "name": "Activity Level",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": ["Demand", "Water related", "WWTP", "Activity Level"],
                   "parent": "WWTP",
                   "value": [0.0, 200000.0, 200000.0, 200000.0, 200000.0]
                 },
                 {
                   "name": "Final Energy Intensity Time Sliced",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -269,14 +269,14 @@
           "children": [
             {
               "name": "Optimize",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": ["Transformation", "Electricity generation", "Optimize"],
               "parent": "Electricity generation",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Planning Reserve Margin",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -287,7 +287,7 @@
             },
             {
               "name": "Unmet Requirements",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -314,7 +314,7 @@
               "children": [
                 {
                   "name": "Resource Imports",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": [
                     "Resources",
                     "Primary",
@@ -326,7 +326,7 @@
                 },
                 {
                   "name": "Resource Exports",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": [
                     "Resources",
                     "Primary",
@@ -338,7 +338,7 @@
                 },
                 {
                   "name": "Unmet Requirements",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": [
                     "Resources",
                     "Primary",
@@ -350,7 +350,7 @@
                 },
                 {
                   "name": "Additions to Reserves",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": [
                     "Resources",
                     "Primary",
@@ -368,7 +368,7 @@
               "children": [
                 {
                   "name": "Resource Imports",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": [
                     "Resources",
                     "Primary",
@@ -380,7 +380,7 @@
                 },
                 {
                   "name": "Resource Exports",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": [
                     "Resources",
                     "Primary",
@@ -392,7 +392,7 @@
                 },
                 {
                   "name": "Unmet Requirements",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": [
                     "Resources",
                     "Primary",
@@ -404,7 +404,7 @@
                 },
                 {
                   "name": "Additions to Reserves",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": [
                     "Resources",
                     "Primary",
@@ -428,7 +428,7 @@
               "children": [
                 {
                   "name": "Resource Imports",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": [
                     "Resources",
                     "Secondary",
@@ -440,7 +440,7 @@
                 },
                 {
                   "name": "Resource Exports",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": [
                     "Resources",
                     "Secondary",
@@ -452,7 +452,7 @@
                 },
                 {
                   "name": "Unmet Requirements",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": [
                     "Resources",
                     "Secondary",
@@ -476,14 +476,14 @@
       "children": [
         {
           "name": "ScenarioIPCCAssessment",
-          "branch-name": "Simple_coupling",
+          "fullname": "Simple_coupling",
           "path": ["Simple_coupling", "ScenarioIPCCAssessment"],
           "parent": "Simple_coupling",
           "value": [-1.0, -1.0, -1.0, -1.0, -1.0]
         },
         {
           "name": "Twenty Year GWP Direct At Point of Emissions",
-          "branch-name": "Simple_coupling",
+          "fullname": "Simple_coupling",
           "path": [
             "Simple_coupling",
             "Twenty Year GWP Direct At Point of Emissions"
@@ -493,7 +493,7 @@
         },
         {
           "name": "One_Hundred Year GWP Direct At Point of Emissions",
-          "branch-name": "Simple_coupling",
+          "fullname": "Simple_coupling",
           "path": [
             "Simple_coupling",
             "One_Hundred Year GWP Direct At Point of Emissions"
@@ -503,7 +503,7 @@
         },
         {
           "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-          "branch-name": "Simple_coupling",
+          "fullname": "Simple_coupling",
           "path": [
             "Simple_coupling",
             "Five_Hundred Year GWP Direct At Point of Emissions"
@@ -513,7 +513,7 @@
         },
         {
           "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-          "branch-name": "Simple_coupling",
+          "fullname": "Simple_coupling",
           "path": [
             "Simple_coupling",
             "One_Hundred Year GWP Direct and Indirect Allocated to Demands"
@@ -523,7 +523,7 @@
         },
         {
           "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-          "branch-name": "Simple_coupling",
+          "fullname": "Simple_coupling",
           "path": [
             "Simple_coupling",
             "One_Hundred Year GWP Indirect Allocated to Demands"
@@ -533,7 +533,7 @@
         },
         {
           "name": "Pollutant Loadings",
-          "branch-name": "Simple_coupling",
+          "fullname": "Simple_coupling",
           "path": ["Simple_coupling", "Pollutant Loadings"],
           "parent": "Simple_coupling",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -546,7 +546,7 @@
       "children": [
         {
           "name": "Energy Demand Final Units",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": ["Demand", "Energy Demand Final Units"],
           "parent": "Demand",
           "value": [
@@ -559,21 +559,21 @@
         },
         {
           "name": "Useful Energy Demand",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": ["Demand", "Useful Energy Demand"],
           "parent": "Demand",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
         },
         {
           "name": "Demand Coproduction",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": ["Demand", "Demand Coproduction"],
           "parent": "Demand",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
         },
         {
           "name": "Primary Requirements: Allocated to Demands",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": ["Demand", "Primary Requirements: Allocated to Demands"],
           "parent": "Demand",
           "value": [
@@ -586,14 +586,14 @@
         },
         {
           "name": "Twenty Year GWP Direct At Point of Emissions",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": ["Demand", "Twenty Year GWP Direct At Point of Emissions"],
           "parent": "Demand",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
         },
         {
           "name": "One_Hundred Year GWP Direct At Point of Emissions",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": [
             "Demand",
             "One_Hundred Year GWP Direct At Point of Emissions"
@@ -603,7 +603,7 @@
         },
         {
           "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": [
             "Demand",
             "Five_Hundred Year GWP Direct At Point of Emissions"
@@ -613,7 +613,7 @@
         },
         {
           "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": [
             "Demand",
             "One_Hundred Year GWP Direct and Indirect Allocated to Demands"
@@ -623,7 +623,7 @@
         },
         {
           "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": [
             "Demand",
             "One_Hundred Year GWP Indirect Allocated to Demands"
@@ -633,7 +633,7 @@
         },
         {
           "name": "Pollutant Loadings",
-          "branch-name": "Demand",
+          "fullname": "Demand",
           "path": ["Demand", "Pollutant Loadings"],
           "parent": "Demand",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -644,7 +644,7 @@
           "children": [
             {
               "name": "Total Final Energy Consumption",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -661,14 +661,14 @@
             },
             {
               "name": "Total Activity",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": ["Demand", "Water unrelated", "Total Activity"],
               "parent": "Water unrelated",
               "value": [1000000.0, 1030000.0, 1060900.0, 1092727.0, 1125508.81]
             },
             {
               "name": "Energy Demand Final Units",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -685,21 +685,21 @@
             },
             {
               "name": "Useful Energy Demand",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": ["Demand", "Water unrelated", "Useful Energy Demand"],
               "parent": "Water unrelated",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Demand Coproduction",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": ["Demand", "Water unrelated", "Demand Coproduction"],
               "parent": "Water unrelated",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Primary Requirements: Allocated to Demands",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -716,7 +716,7 @@
             },
             {
               "name": "Twenty Year GWP Direct At Point of Emissions",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -727,7 +727,7 @@
             },
             {
               "name": "One_Hundred Year GWP Direct At Point of Emissions",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -738,7 +738,7 @@
             },
             {
               "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -749,7 +749,7 @@
             },
             {
               "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -760,7 +760,7 @@
             },
             {
               "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": [
                 "Demand",
                 "Water unrelated",
@@ -771,7 +771,7 @@
             },
             {
               "name": "Pollutant Loadings",
-              "branch-name": "Demand\\Water unrelated",
+              "fullname": "Demand\\Water unrelated",
               "path": ["Demand", "Water unrelated", "Pollutant Loadings"],
               "parent": "Water unrelated",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -782,7 +782,7 @@
               "children": [
                 {
                   "name": "Total Final Energy Consumption",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -800,7 +800,7 @@
                 },
                 {
                   "name": "Total Activity",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -818,7 +818,7 @@
                 },
                 {
                   "name": "Energy Demand Final Units",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -836,7 +836,7 @@
                 },
                 {
                   "name": "Useful Energy Demand",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -848,7 +848,7 @@
                 },
                 {
                   "name": "Demand Coproduction",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -860,7 +860,7 @@
                 },
                 {
                   "name": "Primary Requirements: Allocated to Demands",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -878,7 +878,7 @@
                 },
                 {
                   "name": "Twenty Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -890,7 +890,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -902,7 +902,7 @@
                 },
                 {
                   "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -914,7 +914,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -926,7 +926,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -938,7 +938,7 @@
                 },
                 {
                   "name": "Pollutant Loadings",
-                  "branch-name": "Demand\\Water unrelated\\Per capita demand",
+                  "fullname": "Demand\\Water unrelated\\Per capita demand",
                   "path": [
                     "Demand",
                     "Water unrelated",
@@ -958,7 +958,7 @@
           "children": [
             {
               "name": "Total Final Energy Consumption",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -975,7 +975,7 @@
             },
             {
               "name": "Energy Demand Final Units",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Energy Demand Final Units"],
               "parent": "Water related",
               "value": [
@@ -988,21 +988,21 @@
             },
             {
               "name": "Useful Energy Demand",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Useful Energy Demand"],
               "parent": "Water related",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Demand Coproduction",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Demand Coproduction"],
               "parent": "Water related",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Primary Requirements: Allocated to Demands",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1019,35 +1019,35 @@
             },
             {
               "name": "Device Stocks",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Device Stocks"],
               "parent": "Water related",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Device Sales",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Device Sales"],
               "parent": "Water related",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Device Retirements",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Device Retirements"],
               "parent": "Water related",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Vehicle mileage",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Vehicle mileage"],
               "parent": "Water related",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Stock Average On-road Fuel Economy",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1058,7 +1058,7 @@
             },
             {
               "name": "New Vehicle Rated Fuel Economy",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1069,7 +1069,7 @@
             },
             {
               "name": "Twenty Year GWP Direct At Point of Emissions",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1080,7 +1080,7 @@
             },
             {
               "name": "One_Hundred Year GWP Direct At Point of Emissions",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1091,7 +1091,7 @@
             },
             {
               "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1102,7 +1102,7 @@
             },
             {
               "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1113,7 +1113,7 @@
             },
             {
               "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": [
                 "Demand",
                 "Water related",
@@ -1124,7 +1124,7 @@
             },
             {
               "name": "Pollutant Loadings",
-              "branch-name": "Demand\\Water related",
+              "fullname": "Demand\\Water related",
               "path": ["Demand", "Water related", "Pollutant Loadings"],
               "parent": "Water related",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -1135,7 +1135,7 @@
               "children": [
                 {
                   "name": "Total Final Energy Consumption",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1153,7 +1153,7 @@
                 },
                 {
                   "name": "Total Activity",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1165,7 +1165,7 @@
                 },
                 {
                   "name": "Energy Demand Final Units",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1183,7 +1183,7 @@
                 },
                 {
                   "name": "Useful Energy Demand",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1195,7 +1195,7 @@
                 },
                 {
                   "name": "Demand Coproduction",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1207,7 +1207,7 @@
                 },
                 {
                   "name": "Primary Requirements: Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1225,7 +1225,7 @@
                 },
                 {
                   "name": "Device Stocks",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1237,7 +1237,7 @@
                 },
                 {
                   "name": "Device Sales",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1249,7 +1249,7 @@
                 },
                 {
                   "name": "Device Retirements",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1261,7 +1261,7 @@
                 },
                 {
                   "name": "Vehicle mileage",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1273,7 +1273,7 @@
                 },
                 {
                   "name": "Stock Average On-road Fuel Economy",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1285,7 +1285,7 @@
                 },
                 {
                   "name": "New Vehicle Rated Fuel Economy",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1297,7 +1297,7 @@
                 },
                 {
                   "name": "Twenty Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1309,7 +1309,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1321,7 +1321,7 @@
                 },
                 {
                   "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1333,7 +1333,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1345,7 +1345,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1357,7 +1357,7 @@
                 },
                 {
                   "name": "Pollutant Loadings",
-                  "branch-name": "Demand\\Water related\\CAP pumping",
+                  "fullname": "Demand\\Water related\\CAP pumping",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1375,7 +1375,7 @@
               "children": [
                 {
                   "name": "Total Final Energy Consumption",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1393,14 +1393,14 @@
                 },
                 {
                   "name": "Total Activity",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": ["Demand", "Water related", "WTP", "Total Activity"],
                   "parent": "WTP",
                   "value": [1.0, 1.0, 1.0, 1.0, 1.0]
                 },
                 {
                   "name": "Energy Demand Final Units",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1418,7 +1418,7 @@
                 },
                 {
                   "name": "Useful Energy Demand",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1430,7 +1430,7 @@
                 },
                 {
                   "name": "Demand Coproduction",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1442,7 +1442,7 @@
                 },
                 {
                   "name": "Primary Requirements: Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1460,21 +1460,21 @@
                 },
                 {
                   "name": "Device Stocks",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": ["Demand", "Water related", "WTP", "Device Stocks"],
                   "parent": "WTP",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Device Sales",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": ["Demand", "Water related", "WTP", "Device Sales"],
                   "parent": "WTP",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Device Retirements",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1486,14 +1486,14 @@
                 },
                 {
                   "name": "Vehicle mileage",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": ["Demand", "Water related", "WTP", "Vehicle mileage"],
                   "parent": "WTP",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Stock Average On-road Fuel Economy",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1505,7 +1505,7 @@
                 },
                 {
                   "name": "New Vehicle Rated Fuel Economy",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1517,7 +1517,7 @@
                 },
                 {
                   "name": "Twenty Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1529,7 +1529,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1541,7 +1541,7 @@
                 },
                 {
                   "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1553,7 +1553,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1565,7 +1565,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1577,7 +1577,7 @@
                 },
                 {
                   "name": "Pollutant Loadings",
-                  "branch-name": "Demand\\Water related\\WTP",
+                  "fullname": "Demand\\Water related\\WTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1595,7 +1595,7 @@
               "children": [
                 {
                   "name": "Total Final Energy Consumption",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1613,14 +1613,14 @@
                 },
                 {
                   "name": "Total Activity",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": ["Demand", "Water related", "WWTP", "Total Activity"],
                   "parent": "WWTP",
                   "value": [1.0, 1.0, 1.0, 1.0, 1.0]
                 },
                 {
                   "name": "Energy Demand Final Units",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1638,7 +1638,7 @@
                 },
                 {
                   "name": "Useful Energy Demand",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1650,7 +1650,7 @@
                 },
                 {
                   "name": "Demand Coproduction",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1662,7 +1662,7 @@
                 },
                 {
                   "name": "Primary Requirements: Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1680,21 +1680,21 @@
                 },
                 {
                   "name": "Device Stocks",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": ["Demand", "Water related", "WWTP", "Device Stocks"],
                   "parent": "WWTP",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Device Sales",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": ["Demand", "Water related", "WWTP", "Device Sales"],
                   "parent": "WWTP",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Device Retirements",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1706,7 +1706,7 @@
                 },
                 {
                   "name": "Vehicle mileage",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1718,7 +1718,7 @@
                 },
                 {
                   "name": "Stock Average On-road Fuel Economy",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1730,7 +1730,7 @@
                 },
                 {
                   "name": "New Vehicle Rated Fuel Economy",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1742,7 +1742,7 @@
                 },
                 {
                   "name": "Twenty Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1754,7 +1754,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1766,7 +1766,7 @@
                 },
                 {
                   "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1778,7 +1778,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1790,7 +1790,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1802,7 +1802,7 @@
                 },
                 {
                   "name": "Pollutant Loadings",
-                  "branch-name": "Demand\\Water related\\WWTP",
+                  "fullname": "Demand\\Water related\\WWTP",
                   "path": [
                     "Demand",
                     "Water related",
@@ -1824,7 +1824,7 @@
       "children": [
         {
           "name": "Twenty Year GWP Direct At Point of Emissions",
-          "branch-name": "Transformation",
+          "fullname": "Transformation",
           "path": [
             "Transformation",
             "Twenty Year GWP Direct At Point of Emissions"
@@ -1834,7 +1834,7 @@
         },
         {
           "name": "One_Hundred Year GWP Direct At Point of Emissions",
-          "branch-name": "Transformation",
+          "fullname": "Transformation",
           "path": [
             "Transformation",
             "One_Hundred Year GWP Direct At Point of Emissions"
@@ -1844,7 +1844,7 @@
         },
         {
           "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-          "branch-name": "Transformation",
+          "fullname": "Transformation",
           "path": [
             "Transformation",
             "Five_Hundred Year GWP Direct At Point of Emissions"
@@ -1854,7 +1854,7 @@
         },
         {
           "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-          "branch-name": "Transformation",
+          "fullname": "Transformation",
           "path": [
             "Transformation",
             "One_Hundred Year GWP Direct and Indirect Allocated to Demands"
@@ -1864,7 +1864,7 @@
         },
         {
           "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-          "branch-name": "Transformation",
+          "fullname": "Transformation",
           "path": [
             "Transformation",
             "One_Hundred Year GWP Indirect Allocated to Demands"
@@ -1874,7 +1874,7 @@
         },
         {
           "name": "Pollutant Loadings",
-          "branch-name": "Transformation",
+          "fullname": "Transformation",
           "path": ["Transformation", "Pollutant Loadings"],
           "parent": "Transformation",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -1885,7 +1885,7 @@
           "children": [
             {
               "name": "Outputs by Output Fuel",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1896,7 +1896,7 @@
             },
             {
               "name": "Outputs by Feedstock Fuel",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1907,21 +1907,21 @@
             },
             {
               "name": "Inputs",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": ["Transformation", "Electricity generation", "Inputs"],
               "parent": "Electricity generation",
               "value": [17269200.0, 948672.0, 948672.0, 948672.0, 948672.0]
             },
             {
               "name": "Capacity",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": ["Transformation", "Electricity generation", "Capacity"],
               "parent": "Electricity generation",
               "value": [1200000.0, 200000.0, 200000.0, 200000.0, 200000.0]
             },
             {
               "name": "Capacity Added",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1932,7 +1932,7 @@
             },
             {
               "name": "Capacity Retired",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1943,7 +1943,7 @@
             },
             {
               "name": "Requirements",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1960,7 +1960,7 @@
             },
             {
               "name": "Module Energy Balance",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1971,7 +1971,7 @@
             },
             {
               "name": "Imports into Module",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1988,7 +1988,7 @@
             },
             {
               "name": "Exports from Module",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -1999,7 +1999,7 @@
             },
             {
               "name": "Reserve Margin",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2016,7 +2016,7 @@
             },
             {
               "name": "Required Reserve Margin",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2027,7 +2027,7 @@
             },
             {
               "name": "Load Factor",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2044,7 +2044,7 @@
             },
             {
               "name": "Peak Power Requirements",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2061,7 +2061,7 @@
             },
             {
               "name": "Average Power Dispatched",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2078,7 +2078,7 @@
             },
             {
               "name": "Average Power Requirements Not Dispatched",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2095,7 +2095,7 @@
             },
             {
               "name": "Twenty Year GWP Direct At Point of Emissions",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2106,7 +2106,7 @@
             },
             {
               "name": "One_Hundred Year GWP Direct At Point of Emissions",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2117,7 +2117,7 @@
             },
             {
               "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2128,7 +2128,7 @@
             },
             {
               "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2139,7 +2139,7 @@
             },
             {
               "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2150,7 +2150,7 @@
             },
             {
               "name": "Pollutant Loadings",
-              "branch-name": "Transformation\\Electricity generation",
+              "fullname": "Transformation\\Electricity generation",
               "path": [
                 "Transformation",
                 "Electricity generation",
@@ -2165,7 +2165,7 @@
               "children": [
                 {
                   "name": "Outputs by Output Fuel",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2177,7 +2177,7 @@
                 },
                 {
                   "name": "Outputs by Feedstock Fuel",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2189,7 +2189,7 @@
                 },
                 {
                   "name": "Inputs",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2201,7 +2201,7 @@
                 },
                 {
                   "name": "Capacity",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2213,7 +2213,7 @@
                 },
                 {
                   "name": "Capacity Added",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2225,7 +2225,7 @@
                 },
                 {
                   "name": "Capacity Retired",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2237,7 +2237,7 @@
                 },
                 {
                   "name": "Twenty Year GWP Direct At Point of Emissions",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2249,7 +2249,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2261,7 +2261,7 @@
                 },
                 {
                   "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2273,7 +2273,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2285,7 +2285,7 @@
                 },
                 {
                   "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2297,7 +2297,7 @@
                 },
                 {
                   "name": "Pollutant Loadings",
-                  "branch-name": "Transformation\\Electricity generation\\Processes",
+                  "fullname": "Transformation\\Electricity generation\\Processes",
                   "path": [
                     "Transformation",
                     "Electricity generation",
@@ -2313,7 +2313,7 @@
                   "children": [
                     {
                       "name": "Dispatch Rule",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2326,7 +2326,7 @@
                     },
                     {
                       "name": "Exogenous Capacity",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2339,7 +2339,7 @@
                     },
                     {
                       "name": "Maximum Availability",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2352,7 +2352,7 @@
                     },
                     {
                       "name": "Capacity Credit",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2365,7 +2365,7 @@
                     },
                     {
                       "name": "Endogenous Capacity",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2378,7 +2378,7 @@
                     },
                     {
                       "name": "Merit Order",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2391,7 +2391,7 @@
                     },
                     {
                       "name": "First Simulation Year",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2404,7 +2404,7 @@
                     },
                     {
                       "name": "Historical Production",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2423,7 +2423,7 @@
                     },
                     {
                       "name": "Process Efficiency",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2436,7 +2436,7 @@
                     },
                     {
                       "name": "Outputs by Output Fuel",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2455,7 +2455,7 @@
                     },
                     {
                       "name": "Outputs by Feedstock Fuel",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2474,7 +2474,7 @@
                     },
                     {
                       "name": "Inputs",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2493,7 +2493,7 @@
                     },
                     {
                       "name": "Capacity",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2512,7 +2512,7 @@
                     },
                     {
                       "name": "Capacity Added",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2525,7 +2525,7 @@
                     },
                     {
                       "name": "Capacity Retired",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2538,7 +2538,7 @@
                     },
                     {
                       "name": "Efficiency",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2551,7 +2551,7 @@
                     },
                     {
                       "name": "Actual Availability",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2570,7 +2570,7 @@
                     },
                     {
                       "name": "Average Power Dispatched",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2589,7 +2589,7 @@
                     },
                     {
                       "name": "Twenty Year GWP Direct At Point of Emissions",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2602,7 +2602,7 @@
                     },
                     {
                       "name": "One_Hundred Year GWP Direct At Point of Emissions",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2615,7 +2615,7 @@
                     },
                     {
                       "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2628,7 +2628,7 @@
                     },
                     {
                       "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2641,7 +2641,7 @@
                     },
                     {
                       "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2654,7 +2654,7 @@
                     },
                     {
                       "name": "Pollutant Loadings",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power1",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power1",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2673,7 +2673,7 @@
                   "children": [
                     {
                       "name": "Dispatch Rule",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2686,7 +2686,7 @@
                     },
                     {
                       "name": "Exogenous Capacity",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2699,7 +2699,7 @@
                     },
                     {
                       "name": "Maximum Availability",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2712,7 +2712,7 @@
                     },
                     {
                       "name": "Capacity Credit",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2725,7 +2725,7 @@
                     },
                     {
                       "name": "Endogenous Capacity",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2738,7 +2738,7 @@
                     },
                     {
                       "name": "Merit Order",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2751,7 +2751,7 @@
                     },
                     {
                       "name": "First Simulation Year",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2764,7 +2764,7 @@
                     },
                     {
                       "name": "Historical Production",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2783,7 +2783,7 @@
                     },
                     {
                       "name": "Process Efficiency",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2796,7 +2796,7 @@
                     },
                     {
                       "name": "Outputs by Output Fuel",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2815,7 +2815,7 @@
                     },
                     {
                       "name": "Outputs by Feedstock Fuel",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2834,7 +2834,7 @@
                     },
                     {
                       "name": "Inputs",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2853,7 +2853,7 @@
                     },
                     {
                       "name": "Capacity",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2872,7 +2872,7 @@
                     },
                     {
                       "name": "Capacity Added",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2885,7 +2885,7 @@
                     },
                     {
                       "name": "Capacity Retired",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2898,7 +2898,7 @@
                     },
                     {
                       "name": "Efficiency",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2911,7 +2911,7 @@
                     },
                     {
                       "name": "Actual Availability",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2930,7 +2930,7 @@
                     },
                     {
                       "name": "Average Power Dispatched",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2949,7 +2949,7 @@
                     },
                     {
                       "name": "Twenty Year GWP Direct At Point of Emissions",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2962,7 +2962,7 @@
                     },
                     {
                       "name": "One_Hundred Year GWP Direct At Point of Emissions",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2975,7 +2975,7 @@
                     },
                     {
                       "name": "Five_Hundred Year GWP Direct At Point of Emissions",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -2988,7 +2988,7 @@
                     },
                     {
                       "name": "One_Hundred Year GWP Direct and Indirect Allocated to Demands",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -3001,7 +3001,7 @@
                     },
                     {
                       "name": "One_Hundred Year GWP Indirect Allocated to Demands",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -3014,7 +3014,7 @@
                     },
                     {
                       "name": "Pollutant Loadings",
-                      "branch-name": "Transformation\\Electricity generation\\Processes\\Power2",
+                      "fullname": "Transformation\\Electricity generation\\Processes\\Power2",
                       "path": [
                         "Transformation",
                         "Electricity generation",
@@ -3039,14 +3039,14 @@
       "children": [
         {
           "name": "Indigenous Production",
-          "branch-name": "Resources",
+          "fullname": "Resources",
           "path": ["Resources", "Indigenous Production"],
           "parent": "Resources",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
         },
         {
           "name": "Primary Requirements",
-          "branch-name": "Resources",
+          "fullname": "Resources",
           "path": ["Resources", "Primary Requirements"],
           "parent": "Resources",
           "value": [
@@ -3059,7 +3059,7 @@
         },
         {
           "name": "Imports",
-          "branch-name": "Resources",
+          "fullname": "Resources",
           "path": ["Resources", "Imports"],
           "parent": "Resources",
           "value": [
@@ -3072,21 +3072,21 @@
         },
         {
           "name": "Exports",
-          "branch-name": "Resources",
+          "fullname": "Resources",
           "path": ["Resources", "Exports"],
           "parent": "Resources",
           "value": [144295.34805480763, 0.0, 0.0, 0.0, 0.0]
         },
         {
           "name": "Reserves",
-          "branch-name": "Resources",
+          "fullname": "Resources",
           "path": ["Resources", "Reserves"],
           "parent": "Resources",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
         },
         {
           "name": "Self-sufficiency",
-          "branch-name": "Resources",
+          "fullname": "Resources",
           "path": ["Resources", "Self-sufficiency"],
           "parent": "Resources",
           "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -3097,42 +3097,42 @@
           "children": [
             {
               "name": "Indigenous Production",
-              "branch-name": "Resources\\Primary",
+              "fullname": "Resources\\Primary",
               "path": ["Resources", "Primary", "Indigenous Production"],
               "parent": "Primary",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Primary Requirements",
-              "branch-name": "Resources\\Primary",
+              "fullname": "Resources\\Primary",
               "path": ["Resources", "Primary", "Primary Requirements"],
               "parent": "Primary",
               "value": [17269200.0, 948672.0, 948672.0, 948672.0, 948672.0]
             },
             {
               "name": "Imports",
-              "branch-name": "Resources\\Primary",
+              "fullname": "Resources\\Primary",
               "path": ["Resources", "Primary", "Imports"],
               "parent": "Primary",
               "value": [17269200.0, 948672.0, 948672.0, 948672.0, 948672.0]
             },
             {
               "name": "Exports",
-              "branch-name": "Resources\\Primary",
+              "fullname": "Resources\\Primary",
               "path": ["Resources", "Primary", "Exports"],
               "parent": "Primary",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Reserves",
-              "branch-name": "Resources\\Primary",
+              "fullname": "Resources\\Primary",
               "path": ["Resources", "Primary", "Reserves"],
               "parent": "Primary",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Self-sufficiency",
-              "branch-name": "Resources\\Primary",
+              "fullname": "Resources\\Primary",
               "path": ["Resources", "Primary", "Self-sufficiency"],
               "parent": "Primary",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -3143,7 +3143,7 @@
               "children": [
                 {
                   "name": "Indigenous Production",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": [
                     "Resources",
                     "Primary",
@@ -3155,7 +3155,7 @@
                 },
                 {
                   "name": "Primary Requirements",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": [
                     "Resources",
                     "Primary",
@@ -3173,7 +3173,7 @@
                 },
                 {
                   "name": "Imports",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": ["Resources", "Primary", "Nuclear", "Imports"],
                   "parent": "Nuclear",
                   "value": [
@@ -3186,21 +3186,21 @@
                 },
                 {
                   "name": "Exports",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": ["Resources", "Primary", "Nuclear", "Exports"],
                   "parent": "Nuclear",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Reserves",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": ["Resources", "Primary", "Nuclear", "Reserves"],
                   "parent": "Nuclear",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Self-sufficiency",
-                  "branch-name": "Resources\\Primary\\Nuclear",
+                  "fullname": "Resources\\Primary\\Nuclear",
                   "path": [
                     "Resources",
                     "Primary",
@@ -3218,7 +3218,7 @@
               "children": [
                 {
                   "name": "Indigenous Production",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": [
                     "Resources",
                     "Primary",
@@ -3230,7 +3230,7 @@
                 },
                 {
                   "name": "Primary Requirements",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": [
                     "Resources",
                     "Primary",
@@ -3242,28 +3242,28 @@
                 },
                 {
                   "name": "Imports",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": ["Resources", "Primary", "Natural Gas", "Imports"],
                   "parent": "Natural Gas",
                   "value": [5760000.0, 474336.0, 474336.0, 474336.0, 474336.0]
                 },
                 {
                   "name": "Exports",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": ["Resources", "Primary", "Natural Gas", "Exports"],
                   "parent": "Natural Gas",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Reserves",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": ["Resources", "Primary", "Natural Gas", "Reserves"],
                   "parent": "Natural Gas",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Self-sufficiency",
-                  "branch-name": "Resources\\Primary\\Natural Gas",
+                  "fullname": "Resources\\Primary\\Natural Gas",
                   "path": [
                     "Resources",
                     "Primary",
@@ -3283,14 +3283,14 @@
           "children": [
             {
               "name": "Indigenous Production",
-              "branch-name": "Resources\\Secondary",
+              "fullname": "Resources\\Secondary",
               "path": ["Resources", "Secondary", "Indigenous Production"],
               "parent": "Secondary",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Primary Requirements",
-              "branch-name": "Resources\\Secondary",
+              "fullname": "Resources\\Secondary",
               "path": ["Resources", "Secondary", "Primary Requirements"],
               "parent": "Secondary",
               "value": [
@@ -3303,7 +3303,7 @@
             },
             {
               "name": "Imports",
-              "branch-name": "Resources\\Secondary",
+              "fullname": "Resources\\Secondary",
               "path": ["Resources", "Secondary", "Imports"],
               "parent": "Secondary",
               "value": [
@@ -3316,21 +3316,21 @@
             },
             {
               "name": "Exports",
-              "branch-name": "Resources\\Secondary",
+              "fullname": "Resources\\Secondary",
               "path": ["Resources", "Secondary", "Exports"],
               "parent": "Secondary",
               "value": [144295.34805480763, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Reserves",
-              "branch-name": "Resources\\Secondary",
+              "fullname": "Resources\\Secondary",
               "path": ["Resources", "Secondary", "Reserves"],
               "parent": "Secondary",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
             },
             {
               "name": "Self-sufficiency",
-              "branch-name": "Resources\\Secondary",
+              "fullname": "Resources\\Secondary",
               "path": ["Resources", "Secondary", "Self-sufficiency"],
               "parent": "Secondary",
               "value": [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -3341,7 +3341,7 @@
               "children": [
                 {
                   "name": "Indigenous Production",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": [
                     "Resources",
                     "Secondary",
@@ -3353,7 +3353,7 @@
                 },
                 {
                   "name": "Primary Requirements",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": [
                     "Resources",
                     "Secondary",
@@ -3371,7 +3371,7 @@
                 },
                 {
                   "name": "Imports",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": ["Resources", "Secondary", "Electricity", "Imports"],
                   "parent": "Electricity",
                   "value": [
@@ -3384,21 +3384,21 @@
                 },
                 {
                   "name": "Exports",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": ["Resources", "Secondary", "Electricity", "Exports"],
                   "parent": "Electricity",
                   "value": [144295.34805480763, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Reserves",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": ["Resources", "Secondary", "Electricity", "Reserves"],
                   "parent": "Electricity",
                   "value": [0.0, 0.0, 0.0, 0.0, 0.0]
                 },
                 {
                   "name": "Self-sufficiency",
-                  "branch-name": "Resources\\Secondary\\Electricity",
+                  "fullname": "Resources\\Secondary\\Electricity",
                   "path": [
                     "Resources",
                     "Secondary",

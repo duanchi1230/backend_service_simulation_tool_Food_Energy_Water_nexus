@@ -4,9 +4,11 @@ import pandas as pd
 import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
+
 """
 	THIS MODULE IS THE WEAP-BACKEND FOR FEWSIM SYSTEM
 """
+
 
 def get_WEAP_variables():
 	"""
@@ -70,9 +72,10 @@ def get_WEAP_variables():
 				WEAP_input = tree_insert_node(path, node, WEAP_input)
 				print(WEAP_input)
 	with open('WEAP_variables.json', 'w') as outfile:
-		json.dump({'WEAP-input':WEAP_input, 'WEAP-output': WEAP_output}, outfile)
+		json.dump({'WEAP-input': WEAP_input, 'WEAP-output': WEAP_output}, outfile)
 
 	win32com.CoUninitialize()
+
 
 def path_parser(path):
 	"""
@@ -93,24 +96,27 @@ def path_parser(path):
 
 
 path = 'Transformation\Electricity generation\Output Fuels\Electricity'
+
+
 # print(path_parser(path))
 
 def tree_find_key(path_key, tree):
 	path = 'tree'
 	for key in path_key:
 		i = 0
-		while i<len(eval(path)):
+		while i < len(eval(path)):
 			try:
 				if eval(path)[i]['name'] == key:
 					if key != path_key[-1]:
-						path = path + '[' + str(i) +']' + "['children']"
+						path = path + '[' + str(i) + ']' + "['children']"
 					else:
 						path = path + '[' + str(i) + ']'
 			except:
 				pass
 			i = i + 1
-		# print(eval(path))
+	# print(eval(path))
 	return eval(path)
+
 
 def tree_insert_node(path_key, node, tree):
 	path = 'tree'
@@ -118,7 +124,7 @@ def tree_insert_node(path_key, node, tree):
 		i = 0
 		key_exist = False
 		# If the key exists in the current level, the search will update the path
-		while i<len(eval(path)):
+		while i < len(eval(path)):
 			try:
 				if eval(path)[i]['name'] == key:
 					key_exist = True
@@ -135,21 +141,57 @@ def tree_insert_node(path_key, node, tree):
 		if key_exist == False:
 			if key != path_key[-1]:
 				intermediate_noden = {"name": key,
-				     "parent": path_key[path_key.index(key) - 1] if key!=path_key[0] else 'null',
-				     "children": []}
+				                      "parent": path_key[path_key.index(key) - 1] if key != path_key[0] else 'null',
+				                      "children": []}
 				eval(path).append(intermediate_noden)
-				path = path + '[' + str(len(eval(path))-1) + ']' + "['children']"
+				path = path + '[' + str(len(eval(path)) - 1) + ']' + "['children']"
 			else:
 				eval(path).append(node)
-		# print(path)
+	# print(path)
 	return tree
 
-def get_WEAP_inputs():
 
-	pass
-get_WEAP_variables()
+def expand_tree(tree, input_list):
+	"""
+	This module decomposes a tree and find all the leaves of the tree.
+	This method is using depth-first search.
+	:param tree:  A tree with nodes and leaves
+	:param input_list: an empty list that is used to hold the tree leaves
+	:return: A list of leaves of the tree
+	"""
+	for v in tree:
+		if 'children' not in v.keys():
+			print(v['fullname'], v['name'], v['value'])
+			input_list.append(v)
+		else:
+			expand_tree(v['children'], input_list)
+	return input_list
 
 
+def get_WEAP_inputs(file_path):
+	"""
+	This module grabs the list of WEAP variables and their paths from the stored local JSON file
+	:param file_path: The path of the local file
+	:return: input_list of all the WEAP inputs
+	"""
+	with open(file_path) as f:
+		variables = json.load(f)
+	# print(variables['WEAP-input'])
+	input_list = []
+	input_list = expand_tree(variables['WEAP-input'], input_list)
+	print(input_list)
+	return input_list
+
+# get_WEAP_inputs('WEAP_variables.json')
+
+
+def recursion_test(a):
+	a = a - 1
+	print(a)
+	if a > 0:
+		recursion_test(a)
+
+# recursion_test(100)
 # WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 
 # print(WEAP.Branch('Demand Sites and Catchments\\Agricultural Catchment\\winter_wheat').Variables('Area Calculated').Value)

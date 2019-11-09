@@ -42,7 +42,7 @@ def get_LEAP_Variables():
 				path.append(v.name)
 				node = {
 					'name':v.name,
-					'branch-name': b.FullName,
+					'fullname': b.FullName,
 					'path': path,
 					'parent': path[-2] if len(path)>1 else 'null',
 					'value': value
@@ -134,7 +134,37 @@ def tree_insert_node(path_key, node, tree):
 				eval(path).append(node)
 		# print(path)
 	return tree
+def expand_tree(tree, input_list):
+	"""
+	This module decomposes a tree and find all the leaves of the tree.
+	This method is using depth-first search.
+	:param tree:  A tree with nodes and leaves
+	:param input_list: an empty list that is used to hold the tree leaves
+	:return: A list of leaves of the tree
+	"""
+	for v in tree:
+		if 'children' not in v.keys():
+			print(v['fullname'], v['name'], v['value'])
+			input_list.append(v)
+		else:
+			expand_tree(v['children'], input_list)
+	return input_list
 
+
+def get_LEAP_inputs(file_path):
+	"""
+	This module grabs the list of LEAP variables and their paths from the stored local JSON file
+	:param file_path: The path of the local file
+	:return: input_list of all the LEAP inputs
+	"""
+	with open(file_path) as f:
+		variables = json.load(f)
+	input_list = []
+	input_list = expand_tree(variables['LEAP-input'], input_list)
+	print(input_list)
+	return input_list
+
+# get_LEAP_inputs('LEAP_variables.json')
 # path_key = ['Top Level: A', 'Level 2: A', 'Son of A']
 #
 # node = {"name": path_key[-1],
@@ -146,7 +176,7 @@ def tree_insert_node(path_key, node, tree):
 # print(WEAP_tree)
 # print(tree_find_key(path_key, WEAP_tree))
 
-get_LEAP_Variables()
+# get_LEAP_Variables()
 # LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 # for v in LEAP.Branch('Key\\Population').Variables:
 # 	print(v.ScaleUnit)
