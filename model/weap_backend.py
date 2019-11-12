@@ -72,7 +72,8 @@ def get_WEAP_variables():
 				WEAP_input = tree_insert_node(path, node, WEAP_input)
 				print(WEAP_input)
 	with open('WEAP_variables.json', 'w') as outfile:
-		json.dump({'WEAP-input': WEAP_input, 'WEAP-output': WEAP_output}, outfile)
+		json.dump([{'name': 'WEAP-input', 'children': WEAP_input},
+		           {'name': 'WEAP-output', 'children': WEAP_output}] , outfile)
 
 	win32com.CoUninitialize()
 
@@ -182,8 +183,13 @@ def get_WEAP_inputs(file_path):
 	print(input_list)
 	return input_list
 
-# get_WEAP_inputs('WEAP_variables.json')
+def get_WEAP_inputs_tree(file_path):
+	with open(file_path) as f:
+		variables = json.load(f)
+	return variables
 
+# get_WEAP_inputs_tree('WEAP_variables.json')
+get_WEAP_variables()
 
 def recursion_test(a):
 	a = a - 1
@@ -195,7 +201,9 @@ def recursion_test(a):
 # WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 
 # print(WEAP.Branch('Demand Sites and Catchments\\Agricultural Catchment\\winter_wheat').Variables('Area Calculated').Value)
-# print(WEAP.ResultValue('\Demand Sites and Catchments\Municipal: Annual Activity Level', 2002, 1, 'Linkage', 2002,12, 'Total'))
+# print(WEAP.ResultValue('\Demand Sites and Catchments\Municipal: Water Demand', 2002, 1, 'Linkage', 2002,12, 'Total'))
+# for v in WEAP.Branch('\Demand Sites and Catchments\Municipal').Variables:
+# 	print(v.name)
 # for v in WEAP.Branch('\Demand Sites and Catchments\Municipal').Variables:
 # 	print(v.name, v.isResultVariable)
 # for v in WEAP.Branch('Demand Sites and Catchments\Mun

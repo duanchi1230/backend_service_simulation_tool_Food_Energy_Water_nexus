@@ -5,6 +5,7 @@ from model import WEAP_Simple_Model as WEAP_model
 import win32com.client
 from model import weap_backend, leap_backend
 from model.database import Scenarios, session
+import json
 class Scenario(Resource):
 
 	def __init__(self):
@@ -100,9 +101,13 @@ class Input_List(Resource):
 	def __init__(self):
 		pass
 
-	def get(self):
-		weap_inputs = weap_backend.get_WEAP_inputs('../model/WEAP_variables.json')
-		leap_inputs = leap_backend.get_LEAP_inputs('../model/LEAP_variables.json')
+	def get(self, format):
+		if format == 'tree':
+			weap_inputs = weap_backend.get_WEAP_inputs('./model/WEAP_variables.json')
+			leap_inputs = leap_backend.get_LEAP_inputs_tree('./model/LEAP_variables.json')
+		if format == 'flat':
+			weap_inputs = weap_backend.get_WEAP_inputs('./model/WEAP_variables.json')
+			leap_inputs = leap_backend.get_LEAP_inputs('./model/LEAP_variables.json')
 		return {
 				'weap-inputs': weap_inputs,
 				'leap-inputs': leap_inputs
