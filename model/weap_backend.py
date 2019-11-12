@@ -72,8 +72,8 @@ def get_WEAP_variables():
 				WEAP_input = tree_insert_node(path, node, WEAP_input)
 				print(WEAP_input)
 	with open('WEAP_variables.json', 'w') as outfile:
-		json.dump([{'name': 'WEAP-input', 'children': WEAP_input},
-		           {'name': 'WEAP-output', 'children': WEAP_output}] , outfile)
+		json.dump([{'name': 'weap-input', 'children': WEAP_input},
+		           {'name': 'weap-output', 'children': WEAP_output}] , outfile)
 
 	win32com.CoUninitialize()
 
@@ -189,7 +189,7 @@ def get_WEAP_inputs_tree(file_path):
 	return variables
 
 # get_WEAP_inputs_tree('WEAP_variables.json')
-get_WEAP_variables()
+# get_WEAP_variables()
 
 def recursion_test(a):
 	a = a - 1

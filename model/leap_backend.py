@@ -61,8 +61,8 @@ def get_LEAP_Variables():
 	# print(LEAP.Branch("\Demand\Water unrelated\Per capita demand").Variable('Energy Demand Final Units').Value(2002, 'MWH'))
 	print(LEAP_input)
 	with open('LEAP_variables.json', 'w') as outfile:
-		json.dump([{'name': 'WEAP-input', 'children': LEAP_input},
-		           {'name': 'WEAP-output', 'children': LEAP_output}], outfile)
+		json.dump([{'name': 'leap-input', 'children': LEAP_input},
+		           {'name': 'leap-output', 'children': LEAP_output}], outfile)
 	win32com.CoUninitialize()
 
 
@@ -170,7 +170,7 @@ def get_LEAP_inputs_tree(file_path):
 		variables = json.load(f)
 	return variables
 
-get_LEAP_Variables()
+# get_LEAP_Variables()
 
 # get_LEAP_inputs('LEAP_variables.json')
 # path_key = ['Top Level: A', 'Level 2: A', 'Son of A']
