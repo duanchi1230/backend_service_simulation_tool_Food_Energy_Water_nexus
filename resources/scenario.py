@@ -103,14 +103,14 @@ class Input_List(Resource):
 
 	def get(self, format):
 		if format == 'tree':
-			weap_inputs = weap_backend.get_WEAP_inputs_tree('./model/WEAP_variables.json')
-			leap_inputs = leap_backend.get_LEAP_inputs_tree('./model/LEAP_variables.json')
+			weap_inputs = weap_backend.get_WEAP_variables_tree('./model/WEAP_variables.json')
+			leap_inputs = leap_backend.get_LEAP_variables_tree('./model/LEAP_variables.json')
 		if format == 'flat':
-			weap_inputs = weap_backend.get_WEAP_inputs('./model/WEAP_variables.json')
-			leap_inputs = leap_backend.get_LEAP_inputs('./model/LEAP_variables.json')
+			weap_inputs = weap_backend.get_WEAP_variables('./model/WEAP_variables.json')
+			leap_inputs = leap_backend.get_LEAP_variables('./model/LEAP_variables.json')
 		return {
-				'weap-inputs': weap_inputs,
-				'leap-inputs': leap_inputs
+				'weap-variables': weap_inputs,
+				'leap-variables': leap_inputs
 		       }, 200
 	def post(self):
 

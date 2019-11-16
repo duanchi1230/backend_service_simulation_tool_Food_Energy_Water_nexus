@@ -10,7 +10,7 @@ from pandas import ExcelFile
 """
 
 
-def get_WEAP_variables():
+def generate_WEAP_variables():
 	"""
 	This function extract all results values from WEAP
 	:return: Structured dictionary of WEAP results value
@@ -169,7 +169,7 @@ def expand_tree(tree, input_list):
 	return input_list
 
 
-def get_WEAP_inputs(file_path):
+def get_WEAP_variables(file_path):
 	"""
 	This module grabs the list of WEAP variables and their paths from the stored local JSON file
 	:param file_path: The path of the local file
@@ -179,11 +179,11 @@ def get_WEAP_inputs(file_path):
 		variables = json.load(f)
 	# print(variables['WEAP-input'])
 	input_list = []
-	input_list = expand_tree(variables['WEAP-input'], input_list)
+	input_list = expand_tree(variables['weap-input'], input_list)
 	print(input_list)
 	return input_list
 
-def get_WEAP_inputs_tree(file_path):
+def get_WEAP_variables_tree(file_path):
 	with open(file_path) as f:
 		variables = json.load(f)
 	return variables
@@ -197,6 +197,7 @@ def recursion_test(a):
 	if a > 0:
 		recursion_test(a)
 
+# generate_WEAP_variables()
 # recursion_test(100)
 # WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 

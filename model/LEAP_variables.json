@@ -1,6 +1,6 @@
 [
   {
-    "name": "WEAP-input",
+    "name": "leap-input",
     "children": [
       {
         "name": "Key",
@@ -499,7 +499,7 @@
     ]
   },
   {
-    "name": "WEAP-output",
+    "name": "leap-output",
     "children": [
       {
         "name": "Simple_coupling",

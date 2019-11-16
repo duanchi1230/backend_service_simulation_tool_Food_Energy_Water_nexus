@@ -9,7 +9,7 @@ import numpy as np
 input_variable = ['Activity Level','Load Shape', 'Final Energy Intensity', 'Final Energy Intensity Time Sliced',
                   'Planning Reserve Margin', 'Optimize', 'Additions to Reserves', 'Resource Imports',
                   'Resource Exports','Unmet Requirements']
-def get_LEAP_Variables():
+def generate_LEAP_variables():
 	"""
 	This function extract all results values from LEAP
 	:return: Structured dictionary of LEAP results value
@@ -152,7 +152,7 @@ def expand_tree(tree, input_list):
 	return input_list
 
 
-def get_LEAP_inputs(file_path):
+def get_LEAP_variables(file_path):
 	"""
 	This module grabs the list of LEAP variables and their paths from the stored local JSON file
 	:param file_path: The path of the local file
@@ -165,12 +165,12 @@ def get_LEAP_inputs(file_path):
 	print(input_list)
 	return input_list
 
-def get_LEAP_inputs_tree(file_path):
+def get_LEAP_variables_tree(file_path):
 	with open(file_path) as f:
 		variables = json.load(f)
 	return variables
 
-# get_LEAP_Variables()
+# generate_LEAP_variables()
 
 # get_LEAP_inputs('LEAP_variables.json')
 # path_key = ['Top Level: A', 'Level 2: A', 'Son of A']
@@ -179,10 +179,7 @@ def get_LEAP_inputs_tree(file_path):
 # 		"parent": path_key[-2],
 # 		"children": [1,2,3]}
 
-# WEAP_tree = []
-# WEAP_tree = tree_insert_node(path_key, node, WEAP_tree)
-# print(WEAP_tree)
-# print(tree_find_key(path_key, WEAP_tree))
+
 
 # get_LEAP_Variables()
 # LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
