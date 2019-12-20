@@ -16,7 +16,10 @@ api.add_resource(Scenario, '/proj/<string:pid>/<string:model>/scenario/<string:s
 api.add_resource(Input_List, '/inputs/<string:format>')
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
+
+    if len(
+
+            sys.argv) < 2:
         port = 5000
     else:
         port = int(sys.argv[1])

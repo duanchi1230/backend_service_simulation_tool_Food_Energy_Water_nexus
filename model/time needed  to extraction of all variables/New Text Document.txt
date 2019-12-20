@@ -1,0 +1,5 @@
+0.6129*(WEAPValue(Supply and Resources\Transmission Links\to Industrial\from CAP Withdrawal:Flow[m^3]) + WEAPValue(Demand Sites and Catchments\Adaman\VegFruit:Flow[m^3]) + WEAPValue(!Invalid_Branch_Reference!))*1028*0.000810714
+0.6129*(WEAPValue(Supply and Resources\Transmission Links\to Industrial\from CAP Withdrawal:Flow[m^3]) + WEAPValue(Demand Sites and Catchments\Adaman\VegFruit:Flow[m^3])+ WEAPValue(!Invalid_Branch_Reference!) )*147*0.000810714
+0.6129*(WEAPValue(Supply and Resources\Transmission Links\to Industrial\from CAP Withdrawal:Flow[m^3]) + WEAPValue(Demand Sites and Catchments\Adaman\VegFruit:Flow[m^3]) + WEAPValue(!Invalid_Branch_Reference!))*143*0.000810714
+0.6129*(WEAPValue(Supply and Resources\Transmission Links\to Industrial\from CAP Withdrawal:Flow[m^3]) + WEAPValue(Demand Sites and Catchments\Adaman\VegFruit:Flow[m^3]) + WEAPValue(!Invalid_Branch_Reference!))*242*0.000810714
+0.3871*(WEAPValue(Supply and Resources\Transmission Links\to Industrial\from CAP Withdrawal:Flow[m^3]) + WEAPValue(Demand Sites and Catchments\Adaman\VegFruit:Flow[m^3]) + WEAPValue(!Invalid_Branch_Reference!))*242*0.000810714

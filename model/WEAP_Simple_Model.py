@@ -8,8 +8,8 @@ def get_WEAP_flow_value():
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
-	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das']
-	WEAP.ActiveArea = area[2]
+	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das', WEAP.ActiveArea]
+	WEAP.ActiveArea = area[3]
 	link = []
 	path = []
 	node = ''
@@ -58,8 +58,8 @@ def get_WEAP_flow_value_by_Scenario():
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
-	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das']
-	WEAP.ActiveArea = area[2]
+	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das', WEAP.ActiveArea]
+	WEAP.ActiveArea = area[3]
 	link = []
 	path = []
 	node = ''
@@ -149,8 +149,6 @@ def get_WEAP_inputs():
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
-	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das']
-	WEAP.ActiveArea = area[2]
 	link = []
 	path = []
 	node = ''
@@ -171,28 +169,7 @@ def get_WEAP_inputs():
 			pass
 			if c.Parent.Name != "Agricultural Catchment":
 				print(c.FullName)
-	# flow = {}
-	# for s in WEAP.Scenarios:
-	# 	output = []
-	# 	if str(s) != 'Current Accounts':
-	# 		for p in path:
-	# 			item = {}
-	# 			value_year = []
-	# 			for year in range(start_year + 1, end_year + 1):
-	# 				value = WEAP.ResultValue('\Supply and Resources\Transmission Links\\' + p['path'] + ':Flow[m^3]',
-	# 				                         year, 1, str(s),
-	# 				                         year, 12, 'Total')
-	# 				value_year.append(value)
-	#
-	# 			item['name'] = p['source'][5:] + ' ' + p['demand']
-	# 			item['site'] = p['demand'][3:]
-	# 			item['source'] = p['source']
-	# 			item['value'] = value_year
-	# 			item['format'] = 'series'
-	# 			output.append(item)
-	# 		flow[str(s)] = output
-	for v in WEAP.Branch('Demand Sites and Catchments\Municipal').Variables:
-		print(v.Expression)
+
 	win32com.CoUninitialize()
 
 # set_mabia_default()

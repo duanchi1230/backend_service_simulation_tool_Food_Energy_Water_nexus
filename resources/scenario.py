@@ -16,10 +16,7 @@ class Scenario(Resource):
 
 		# Chi: implement a function that gets a scenario based on the 'model' and the 'sid'
 		# The returned dict includes all the input and output variables
-		scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
-		path = {'branch': '\Demand Sites\Municipal', 'variable': 'Annual Activity Level'}
 
-		# para = WEAP_Simple_Model.get_WEAP_para_value(path)
 		flow, timeRange = WEAP_model.get_WEAP_flow_value()
 		value = flow[list(flow.keys())[sid]]
 		print(value)
@@ -39,8 +36,6 @@ class Scenario(Resource):
 		WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 		start_year = WEAP.BaseYear
 		end_year = WEAP.EndYear
-		area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das']
-		WEAP.ActiveArea = area[2]
 		WEAP.Calculate()
 		win32com.CoUninitialize()
 		return {"response": "POST method was just called!"}, 201
@@ -57,9 +52,9 @@ class ScenarioList(Resource):
 		scenarios = ['Reference', '5% Population Growth', '10% Population Growth']
 		for i in range(3):
 			# get the object of the scenario here
-			path = {'branch': '\Demand Sites\Municipal', 'variable': 'Annual Activity Level'}
+
 			year = [1986, 2008]
-			# para = WEAP_Data.get_WEAP_para_value(path)
+
 			value = WEAP_model.get_WEAP_flow_value()
 			scenario_summary = {
 				'sid': i,
@@ -103,15 +98,16 @@ class Input_List(Resource):
 
 	def get(self, format):
 		if format == 'tree':
-			weap_inputs = weap_backend.get_WEAP_variables_tree('./model/WEAP_variables.json')
-			leap_inputs = leap_backend.get_LEAP_variables_tree('./model/LEAP_variables.json')
+			weap_variables = weap_backend.get_WEAP_variables_tree('./model/WEAP_variables.json')
+			leap_variables = leap_backend.get_LEAP_variables_tree('./model/LEAP_variables.json')
 		if format == 'flat':
-			weap_inputs = weap_backend.get_WEAP_variables('./model/WEAP_variables.json')
-			leap_inputs = leap_backend.get_LEAP_variables('./model/LEAP_variables.json')
-		return {
-				'weap-variables': weap_inputs,
-				'leap-variables': leap_inputs
-		       }, 200
+			weap_variables = weap_backend.get_WEAP_variables('./model/WEAP_variables.json')
+			leap_variables = leap_backend.get_LEAP_variables('./model/LEAP_variables.json')
+		data =  {"name": "FEW Nexus-Variables",
+		        "children":[weap_variables[0],weap_variables[1], leap_variables[0], leap_variables[1]],
+		       }
+		print(data)
+		return data , 200
 	def post(self):
 
 		return {"response": "POST method was just called!"}, 201

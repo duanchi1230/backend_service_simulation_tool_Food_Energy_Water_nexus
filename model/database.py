@@ -1,3 +1,6 @@
+"""
+# This module is still under development and is used to store the simulation results from WEAP and LEAP.
+# """
 import sqlalchemy as db
 from sqlalchemy import Column, Integer, String, JSON, Float, ARRAY
 from sqlalchemy.ext.declarative import declarative_base

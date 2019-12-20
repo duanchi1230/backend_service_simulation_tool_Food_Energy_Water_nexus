@@ -2,6 +2,7 @@ import win32com.client
 import json
 import pandas as pd
 import numpy as np
+import time
 """
 	THIS MODULE IS THE LEAP-BACKEND FOR FEWSIM SYSTEM
 """
@@ -18,7 +19,7 @@ def generate_LEAP_variables():
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 	start_year = LEAP.BaseYear
 	end_year = LEAP.EndYear
-	LEAP.ActiveArea = 'Internal_Linking_test'
+	# LEAP.ActiveArea = 'Internal_Linking_test'
 	active_scenario = ''
 
 	for s in LEAP.Scenarios:
@@ -88,6 +89,12 @@ path = 'Transformation\Electricity generation\Output Fuels\Electricity'
 # print(path_parser(path))
 
 def tree_find_key(path_key, tree):
+	"""
+	This module is used to query the variable tree.
+	:param path_key: The path for the node to be queried.
+	:param tree: The tree to be query from.
+	:return: The node value.
+	"""
 	path = 'tree'
 	for key in path_key:
 		i = 0
@@ -105,6 +112,13 @@ def tree_find_key(path_key, tree):
 	return eval(path)
 
 def tree_insert_node(path_key, node, tree):
+	"""
+	This module is used to insert a node to the tree.
+	:param path_key: The path of a node to be inserted.
+	:param node: The node to be inserted.
+	:param tree: The tree to which the node is inserted.
+	:return: The tree with new nodes inserted.
+	"""
 	path = 'tree'
 	for key in path_key:
 		i = 0
@@ -145,14 +159,14 @@ def expand_tree(tree, input_list):
 	"""
 	for v in tree:
 		if 'children' not in v.keys():
-			print(v['fullname'], v['name'], v['value'])
+			# print(v['fullname'], v['name'], v['value'])
 			input_list.append(v)
 		else:
 			expand_tree(v['children'], input_list)
 	return input_list
 
 
-def get_LEAP_variables(file_path):
+def get_LEAP_variables_from_file(file_path):
 	"""
 	This module grabs the list of LEAP variables and their paths from the stored local JSON file
 	:param file_path: The path of the local file
@@ -161,8 +175,8 @@ def get_LEAP_variables(file_path):
 	with open(file_path) as f:
 		variables = json.load(f)
 	input_list = []
-	input_list = expand_tree(variables['LEAP-input'], input_list)
-	print(input_list)
+	input_list = expand_tree(variables, input_list)
+	print(len(input_list))
 	return input_list
 
 def get_LEAP_variables_tree(file_path):
@@ -171,8 +185,11 @@ def get_LEAP_variables_tree(file_path):
 	return variables
 
 # generate_LEAP_variables()
-
-# get_LEAP_inputs('LEAP_variables.json')
+# start_time = time.time()
+# generate_LEAP_variables()
+# elapsed_time = time.time() - start_time
+# print('Extraction of all LEAP variables takes: ',elapsed_time, ' s')
+# get_LEAP_variables_from_file('LEAP_variables.json')
 # path_key = ['Top Level: A', 'Level 2: A', 'Son of A']
 #
 # node = {"name": path_key[-1],

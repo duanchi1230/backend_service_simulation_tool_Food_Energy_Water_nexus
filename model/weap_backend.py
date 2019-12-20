@@ -2,6 +2,7 @@ import win32com.client
 import json
 import pandas as pd
 import numpy as np
+import time
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
@@ -15,18 +16,19 @@ def generate_WEAP_variables():
 	This function extract all results values from WEAP
 	:return: Structured dictionary of WEAP results value
 	"""
+
 	win32com.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
-	WEAP.ActiveArea = 'Internal_Linking_test_das'
+	WEAP.ActiveArea = 'Ag_MABIA_v14'
 	WEAP.ActiveScenario = WEAP.Scenarios[1]
 	WEAP_input = []
 	WEAP_output = []
 	for b in WEAP.Branches:
 		WEAP.Branch(b.FullName)
 		# print('\n')
-		# print(b.FullName)
+		print(b.FullName)
 		# print(b.Name)
 		for v in WEAP.Branch(b.FullName).Variables:
 			if v.isResultVariable:
@@ -34,8 +36,8 @@ def generate_WEAP_variables():
 				if v != None:
 					for y in range(start_year, end_year + 1):
 						path = b.FullName + ":" + v.name
-						print(WEAP.ResultValue(path, start_year, 1, 'Linkage', end_year, 12, 'Total'))
-						value.append(WEAP.ResultValue(path, start_year, 1, 'Linkage', end_year, 12, 'Total'))
+						print(WEAP.ResultValue(path, start_year, 1, WEAP.Scenarios[1], end_year, 12, 'Total'))
+						value.append(WEAP.ResultValue(path, start_year, 1, WEAP.Scenarios[1], end_year, 12, 'Total'))
 					unit = WEAP.Branch(b.FullName).Variable(v.name).ScaleUnit
 					path = path_parser(b.FullName)
 					path.append(v.name)
@@ -43,7 +45,7 @@ def generate_WEAP_variables():
 						'name': v.name,
 						'fullname': b.FullName,
 						'path': path,
-						'parent': path[-2] if len(path) > 1 else 'null',
+						'parent': path[                      -2] if len(path) > 1 else 'null',
 						'value': value,
 						'unit': unit
 					}
@@ -57,7 +59,7 @@ def generate_WEAP_variables():
 				for y in range(start_year, end_year + 1):
 					path = b.FullName + ":" + v.name
 					# print(WEAP.ResultValue(path, y, 1, 'Linkage', y, 12, 'Average'), WEAP.Branch(b.FullName).Variable(v.name).ScaleUnit)
-					value.append(WEAP.ResultValue(path, y, 1, 'Linkage', y, 12, 'Average'))
+					value.append(WEAP.ResultValue(path, y, 1, WEAP.Scenarios[1], y, 12, 'Average'))
 				unit = WEAP.Branch(b.FullName).Variable(v.name).ScaleUnit
 				path = path_parser(b.FullName)
 				path.append(v.name)
@@ -102,6 +104,12 @@ path = 'Transformation\Electricity generation\Output Fuels\Electricity'
 # print(path_parser(path))
 
 def tree_find_key(path_key, tree):
+	"""
+		This module is used to query the variable tree.
+		:param path_key: The path for the node to be queried.
+		:param tree: The tree to be query from.
+		:return: The node value.
+	"""
 	path = 'tree'
 	for key in path_key:
 		i = 0
@@ -120,6 +128,13 @@ def tree_find_key(path_key, tree):
 
 
 def tree_insert_node(path_key, node, tree):
+	"""
+		This module is used to insert a node to the tree.
+		:param path_key: The path of a node to be inserted.
+		:param node: The node to be inserted.
+		:param tree: The tree to which the node is inserted.
+		:return: The tree with new nodes inserted.
+	"""
 	path = 'tree'
 	for key in path_key:
 		i = 0
@@ -162,14 +177,14 @@ def expand_tree(tree, input_list):
 	"""
 	for v in tree:
 		if 'children' not in v.keys():
-			print(v['fullname'], v['name'], v['value'])
+			# print(v['fullname'], v['name'], v['value'])
 			input_list.append(v)
 		else:
 			expand_tree(v['children'], input_list)
 	return input_list
 
 
-def get_WEAP_variables(file_path):
+def get_WEAP_variables_from_file(file_path):
 	"""
 	This module grabs the list of WEAP variables and their paths from the stored local JSON file
 	:param file_path: The path of the local file
@@ -177,10 +192,10 @@ def get_WEAP_variables(file_path):
 	"""
 	with open(file_path) as f:
 		variables = json.load(f)
-	# print(variables['WEAP-input'])
 	input_list = []
-	input_list = expand_tree(variables['weap-input'], input_list)
-	print(input_list)
+	print(variables[0].keys())
+	input_list = expand_tree(variables, input_list)
+	print(len(input_list))
 	return input_list
 
 def get_WEAP_variables_tree(file_path):
@@ -189,18 +204,13 @@ def get_WEAP_variables_tree(file_path):
 	return variables
 
 # get_WEAP_inputs_tree('WEAP_variables.json')
-# get_WEAP_variables()
+# get_WEAP_variables_from_file('WEAP_variables.json')
 
-def recursion_test(a):
-	a = a - 1
-	print(a)
-	if a > 0:
-		recursion_test(a)
-
+# start_time = time.time()
 # generate_WEAP_variables()
-# recursion_test(100)
+# elapsed_time = time.time() - start_time
+# print('Extraction of all WEAP variables takes: ',elapsed_time, ' s')
 # WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
-
 # print(WEAP.Branch('Demand Sites and Catchments\\Agricultural Catchment\\winter_wheat').Variables('Area Calculated').Value)
 # print(WEAP.ResultValue('\Demand Sites and Catchments\Municipal: Water Demand', 2002, 1, 'Linkage', 2002,12, 'Total'))
 # for v in WEAP.Branch('\Demand Sites and Catchments\Municipal').Variables:
