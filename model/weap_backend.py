@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 import time
+import pythoncom
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
@@ -17,7 +18,7 @@ def generate_WEAP_variables():
 	:return: Structured dictionary of WEAP results value
 	"""
 
-	win32com.CoInitialize()
+	pythoncom.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
@@ -25,6 +26,8 @@ def generate_WEAP_variables():
 	WEAP.ActiveScenario = WEAP.Scenarios[1]
 	WEAP_input = []
 	WEAP_output = []
+	mabia_catchment = pd.read_excel('Mabia_Catchments.xlsx', index_col=0)
+	print(bool(np.intersect1d(["Tonopah"], np.array(mabia_catchment['variables']))))
 	for b in WEAP.Branches:
 		WEAP.Branch(b.FullName)
 		# print('\n')
@@ -33,11 +36,13 @@ def generate_WEAP_variables():
 		for v in WEAP.Branch(b.FullName).Variables:
 			if v.isResultVariable:
 				value = []
+				year = []
 				if v != None:
 					for y in range(start_year, end_year + 1):
 						path = b.FullName + ":" + v.name
 						print(WEAP.ResultValue(path, start_year, 1, WEAP.Scenarios[1], end_year, 12, 'Total'))
 						value.append(WEAP.ResultValue(path, start_year, 1, WEAP.Scenarios[1], end_year, 12, 'Total'))
+						year.append(y)
 					unit = WEAP.Branch(b.FullName).Variable(v.name).ScaleUnit
 					path = path_parser(b.FullName)
 					path.append(v.name)
@@ -45,11 +50,17 @@ def generate_WEAP_variables():
 						'name': v.name,
 						'fullname': b.FullName,
 						'path': path,
-						'parent': path[                      -2] if len(path) > 1 else 'null',
-						'value': value,
-						'unit': unit
+						'parent': path[-2] if len(path) > 1 else 'null',
+						'unit': unit,
+						'year': year,
+						'value': value
 					}
-					WEAP_output = tree_insert_node(path, node, WEAP_output)
+					if len(np.intersect1d(path, np.array(mabia_catchment['variables'])))>0:
+						node['model'] = 'mabia'
+					else:
+						node['model'] = 'weap'
+					type_of_variable = 'output'
+					WEAP_output = tree_insert_node(path, node, type_of_variable, WEAP_output)
 
 			variable_list = pd.read_excel('WEAP_Input_Variables.xlsx')
 			variable_list = np.array(variable_list['variable_name'])
@@ -68,16 +79,22 @@ def generate_WEAP_variables():
 					'fullname': b.FullName,
 					'path': path,
 					'parent': path[-2] if len(path) > 1 else 'null',
+					'model': 'weap',
 					'value': value,
 					'unit': unit
 				}
-				WEAP_input = tree_insert_node(path, node, WEAP_input)
+				if len(np.intersect1d(path, np.array(mabia_catchment['variables'])))>0:
+					node['model'] = 'mabia'
+				else:
+					node['model'] = 'weap'
+				type_of_variable = 'input',
+				WEAP_input = tree_insert_node(path, node, type_of_variable, WEAP_input)
 				print(WEAP_input)
 	with open('WEAP_variables.json', 'w') as outfile:
 		json.dump([{'name': 'weap-input', 'children': WEAP_input},
 		           {'name': 'weap-output', 'children': WEAP_output}] , outfile)
 
-	win32com.CoUninitialize()
+	pythoncom.CoUninitialize()
 
 
 def path_parser(path):
@@ -127,7 +144,7 @@ def tree_find_key(path_key, tree):
 	return eval(path)
 
 
-def tree_insert_node(path_key, node, tree):
+def tree_insert_node(path_key, node, type_of_variable, tree):
 	"""
 		This module is used to insert a node to the tree.
 		:param path_key: The path of a node to be inserted.
@@ -136,6 +153,11 @@ def tree_insert_node(path_key, node, tree):
 		:return: The tree with new nodes inserted.
 	"""
 	path = 'tree'
+	mabia_catchment = pd.read_excel('Mabia_Catchments.xlsx', index_col=0)
+	if len(np.intersect1d([node['name']], np.array(mabia_catchment['variables'])))>0:
+		model = 'mabia'
+	else:
+		model = 'weap'
 	for key in path_key:
 		i = 0
 		key_exist = False
@@ -158,6 +180,8 @@ def tree_insert_node(path_key, node, tree):
 			if key != path_key[-1]:
 				intermediate_noden = {"name": key,
 				                      "parent": path_key[path_key.index(key) - 1] if key != path_key[0] else 'null',
+				                      "model": model,
+				                      "type": type_of_variable,
 				                      "children": []}
 				eval(path).append(intermediate_noden)
 				path = path + '[' + str(len(eval(path)) - 1) + ']' + "['children']"
@@ -192,24 +216,38 @@ def get_WEAP_variables_from_file(file_path):
 	"""
 	with open(file_path) as f:
 		variables = json.load(f)
-	input_list = []
+	variables_list = []
 	print(variables[0].keys())
-	input_list = expand_tree(variables, input_list)
-	print(len(input_list))
-	return input_list
+	variables_list = expand_tree(variables, variables_list)
+	print(variables_list[0])
+	return variables_list
 
 def get_WEAP_variables_tree(file_path):
 	with open(file_path) as f:
 		variables = json.load(f)
 	return variables
 
-# get_WEAP_inputs_tree('WEAP_variables.json')
-# get_WEAP_variables_from_file('WEAP_variables.json')
+def list_variables(variables):
+	input_list = pd.read_excel('WEAP_Input_Variables.xlsx')
+	input_list = np.array(input_list['variable_name'])
+	list = []
+	for v in variables:
+		if v['name'] in input_list:
+			list.append([v['fullname'], v['name'], 'input'])
+		else:
+			list.append([v['fullname'], v['name'], 'output'])
+	df = pd.DataFrame(list, columns=['branch', 'variable-name', 'type'])
+	df.to_csv('W_variables.csv')
+	print(df)
 
-# start_time = time.time()
-# generate_WEAP_variables()
-# elapsed_time = time.time() - start_time
-# print('Extraction of all WEAP variables takes: ',elapsed_time, ' s')
+# get_WEAP_inputs_tree('WEAP_variables.json')
+# variables = get_WEAP_variables_from_file('WEAP_variables.json')
+# list_variables(variables)
+
+start_time = time.time()
+generate_WEAP_variables()
+elapsed_time = time.time() - start_time
+print('Extraction of all WEAP variables takes: ',elapsed_time, ' s')
 # WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 # print(WEAP.Branch('Demand Sites and Catchments\\Agricultural Catchment\\winter_wheat').Variables('Area Calculated').Value)
 # print(WEAP.ResultValue('\Demand Sites and Catchments\Municipal: Water Demand', 2002, 1, 'Linkage', 2002,12, 'Total'))

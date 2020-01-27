@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 import time
+import pythoncom
 """
 	THIS MODULE IS THE LEAP-BACKEND FOR FEWSIM SYSTEM
 """
@@ -15,7 +16,7 @@ def generate_LEAP_variables():
 	This function extract all results values from LEAP
 	:return: Structured dictionary of LEAP results value
 	"""
-	win32com.CoInitialize()
+	pythoncom.CoInitialize()
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 	start_year = LEAP.BaseYear
 	end_year = LEAP.EndYear
@@ -37,21 +38,27 @@ def generate_LEAP_variables():
 		for v in LEAP.Branch(b.FullName).Variables:
 			value = []
 			if v != None:
+				year = []
 				for y in range(start_year, end_year+1):
 					value.append(v.Value(y))
+					year.append(y)
 				path = path_parser(b.FullName)
 				path.append(v.name)
 				node = {
 					'name':v.name,
 					'fullname': b.FullName,
+					'model': 'leap',
 					'path': path,
 					'parent': path[-2] if len(path)>1 else 'null',
+					'year': year,
 					'value': value
 				}
 			if v.name in input_variable_list:
-				LEAP_input = tree_insert_node(path, node, LEAP_input)
+				type_of_variable = 'input'
+				LEAP_input = tree_insert_node(path, node, type_of_variable, LEAP_input)
 			else:
-				LEAP_output = tree_insert_node(path, node, LEAP_output)
+				type_of_variable = 'output'
+				LEAP_output = tree_insert_node(path, node, type_of_variable, LEAP_output)
 			print(node)
 			# LEAP_input = tree_insert_node(path_parser(v.FullName), node, LEAP_input)
 		# if v.IsResultVariable == True:
@@ -64,7 +71,7 @@ def generate_LEAP_variables():
 	with open('LEAP_variables.json', 'w') as outfile:
 		json.dump([{'name': 'leap-input', 'children': LEAP_input},
 		           {'name': 'leap-output', 'children': LEAP_output}], outfile)
-	win32com.CoUninitialize()
+	pythoncom.CoUninitialize()
 
 
 def path_parser(path):
@@ -111,7 +118,7 @@ def tree_find_key(path_key, tree):
 		# print(eval(path))
 	return eval(path)
 
-def tree_insert_node(path_key, node, tree):
+def tree_insert_node(path_key, node, type_of_variable, tree):
 	"""
 	This module is used to insert a node to the tree.
 	:param path_key: The path of a node to be inserted.
@@ -120,6 +127,7 @@ def tree_insert_node(path_key, node, tree):
 	:return: The tree with new nodes inserted.
 	"""
 	path = 'tree'
+	node['type'] = type_of_variable
 	for key in path_key:
 		i = 0
 		key_exist = False
@@ -142,6 +150,8 @@ def tree_insert_node(path_key, node, tree):
 			if key != path_key[-1]:
 				intermediate_noden = {"name": key,
 				     "parent": path_key[path_key.index(key) - 1] if key!=path_key[0] else 'null',
+				     "model": "leap",
+				     "type": type_of_variable,
 				     "children": []}
 				eval(path).append(intermediate_noden)
 				path = path + '[' + str(len(eval(path))-1) + ']' + "['children']"
@@ -176,7 +186,7 @@ def get_LEAP_variables_from_file(file_path):
 		variables = json.load(f)
 	input_list = []
 	input_list = expand_tree(variables, input_list)
-	print(len(input_list))
+	print(input_list[0])
 	return input_list
 
 def get_LEAP_variables_tree(file_path):
@@ -184,7 +194,24 @@ def get_LEAP_variables_tree(file_path):
 		variables = json.load(f)
 	return variables
 
-# generate_LEAP_variables()
+def list_variables(variables):
+	input_list = pd.read_excel('LEAP_Input_Variables.xlsx')
+	input_list = np.array(input_list['variable_name'])
+	list = []
+	for v in variables:
+		if v['name'] in input_list:
+			list.append([v['fullname'], v['name'], 'input'])
+		else:
+			list.append([v['fullname'], v['name'], 'output'])
+	df = pd.DataFrame(list, columns=['branch', 'variable-name', 'type'])
+	df.to_csv('L_variables.csv')
+	print(df)
+
+
+# variables = get_LEAP_variables_from_file('LEAP_variables.json')
+# list_variables(variables)
+
+
 # start_time = time.time()
 # generate_LEAP_variables()
 # elapsed_time = time.time() - start_time

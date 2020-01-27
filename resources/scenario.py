@@ -101,8 +101,8 @@ class Input_List(Resource):
 			weap_variables = weap_backend.get_WEAP_variables_tree('./model/WEAP_variables.json')
 			leap_variables = leap_backend.get_LEAP_variables_tree('./model/LEAP_variables.json')
 		if format == 'flat':
-			weap_variables = weap_backend.get_WEAP_variables('./model/WEAP_variables.json')
-			leap_variables = leap_backend.get_LEAP_variables('./model/LEAP_variables.json')
+			weap_variables = weap_backend.get_WEAP_variables_from_file('./model/WEAP_variables.json')
+			leap_variables = leap_backend.get_LEAP_variables_from_file('./model/LEAP_variables.json')
 		data =  {"name": "FEW Nexus-Variables",
 		        "children":[weap_variables[0],weap_variables[1], leap_variables[0], leap_variables[1]],
 		       }

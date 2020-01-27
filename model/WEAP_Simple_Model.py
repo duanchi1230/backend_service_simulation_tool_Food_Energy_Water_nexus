@@ -1,9 +1,9 @@
 import win32com.client
 from mabia_model.script_m import MaxU
-
+import pythoncom
 def get_WEAP_flow_value():
 	### Initialize win32com object###
-	win32com.CoInitialize()
+	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
@@ -48,12 +48,12 @@ def get_WEAP_flow_value():
 			flow[str(s)] = output
 	timeRange = [start_year + 1, end_year]
 	### Uninitialize the win32com object ###
-	win32com.CoUninitialize()
+	pythoncom.CoUninitialize()
 	return flow, timeRange
 
 def get_WEAP_flow_value_by_Scenario():
 	### Initialize win32com object###
-	win32com.CoInitialize()
+	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
@@ -99,12 +99,12 @@ def get_WEAP_flow_value_by_Scenario():
 			flow[str(s)] = output
 	timeRange = [start_year + 1, end_year]
 	### Uninitialize the win32com object ###
-	win32com.CoUninitialize()
+	pythoncom.CoUninitialize()
 	return flow, timeRange
 
 def set_mabia_input():
 	### Initialize win32com object###
-	win32com.CoInitialize()
+	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	### Import the MABIA outputs ###
@@ -118,11 +118,11 @@ def set_mabia_input():
 		WEAP.BranchVariable("\Demand Sites and Catchments\Agricultural Catchment\\" + crop[i] +": Area").Expression = pct_Area[i]
 	WEAP.BranchVariable("\Demand Sites and Catchments\Agricultural Catchment\\: Area").Expression =totArea
 	### Uninitialize the win32com object ###
-	win32com.CoUninitialize()
+	pythoncom.CoUninitialize()
 
 ### This function works to set the MABIA parameters to default ###
 def set_mabia_default():
-	win32com.CoInitialize()
+	pythoncom.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	default_percentage = {
 		"alfalfa": 50.423,
@@ -140,11 +140,11 @@ def set_mabia_default():
 	for s in default_percentage:
 		WEAP.BranchVariable("\Demand Sites and Catchments\Agricultural Catchment\\" + s +": Area").Expression = default_percentage[s]
 	WEAP.BranchVariable("\Demand Sites and Catchments\Agricultural Catchment\\: Area").Expression =default_total_area
-	win32com.CoUninitialize()
+	pythoncom.CoUninitialize()
 
 def get_WEAP_inputs():
 	### Initialize win32com object###
-	win32com.CoInitialize()
+	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
@@ -170,7 +170,8 @@ def get_WEAP_inputs():
 			if c.Parent.Name != "Agricultural Catchment":
 				print(c.FullName)
 
-	win32com.CoUninitialize()
+	pythoncom.CoUninitialize()
 
+# WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 # set_mabia_default()
-get_WEAP_inputs()
+# get_WEAP_inputs()
