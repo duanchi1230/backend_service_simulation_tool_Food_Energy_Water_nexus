@@ -244,10 +244,10 @@ def list_variables(variables):
 # variables = get_WEAP_variables_from_file('WEAP_variables.json')
 # list_variables(variables)
 
-start_time = time.time()
-generate_WEAP_variables()
-elapsed_time = time.time() - start_time
-print('Extraction of all WEAP variables takes: ',elapsed_time, ' s')
+# start_time = time.time()
+# generate_WEAP_variables()
+# elapsed_time = time.time() - start_time
+# print('Extraction of all WEAP variables takes: ',elapsed_time, ' s')
 # WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 # print(WEAP.Branch('Demand Sites and Catchments\\Agricultural Catchment\\winter_wheat').Variables('Area Calculated').Value)
 # print(WEAP.ResultValue('\Demand Sites and Catchments\Municipal: Water Demand', 2002, 1, 'Linkage', 2002,12, 'Total'))
