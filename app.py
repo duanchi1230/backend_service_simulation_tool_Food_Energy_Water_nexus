@@ -4,7 +4,7 @@ from flask_restful import Resource, Api, abort
 import sys, json
 
 from resources.project import Project, ProjectList
-from resources.scenario import Scenario, ScenarioList, Input_List
+from resources.scenario import Scenario, ScenarioList, Input_List, Run_Sceanrios
 
 app = Flask(__name__)
 api = Api(app)
@@ -14,6 +14,7 @@ api.add_resource(Project, '/proj/<string:pid>')
 api.add_resource(ScenarioList, '/proj/<string:pid>/<string:model>/scenario')
 api.add_resource(Scenario, '/proj/<string:pid>/<string:model>/scenario/<string:sid>')
 api.add_resource(Input_List, '/inputs/<string:format>')
+api.add_resource(Run_Sceanrios, '/run/<string:scenario>')
 
 if __name__ == '__main__':
 
@@ -23,6 +24,8 @@ if __name__ == '__main__':
         port = int(sys.argv[1])
 
     app.run(host='0.0.0.0', port=port)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

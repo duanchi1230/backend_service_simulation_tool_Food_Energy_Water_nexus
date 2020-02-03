@@ -3,7 +3,7 @@ from flask_restful import Resource, Api, abort
 # from model import WEAP_Data as WEAP_model
 from model import WEAP_Simple_Model as WEAP_model
 import win32com.client
-from model import weap_backend, leap_backend
+from model import weap_backend, leap_backend, run_scenarios
 from model.database import Scenarios, session
 import json
 class Scenario(Resource):
@@ -113,3 +113,16 @@ class Input_List(Resource):
 	def post(self):
 
 		return {"response": "POST method was just called!"}, 201
+class Run_Sceanrios(Resource):
+	def __init__(self):
+		pass
+	def get(self,scenario):
+		pass
+
+	def post(self, scenario):
+		print(scenario)
+		scenarios = request.get_json(self)
+		weap_flow, leap_data = run_scenarios.run_all_secanrios(scenarios)
+		print(scenarios)
+
+		return {'weap-flow': weap_flow, 'leap-data': leap_data}
