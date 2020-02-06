@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 import time
 import pythoncom
-from model import WEAP_Simple_Model as WEAP_model
-
+from model import WEAP_Visualization_Model as WEAP_model
+from model import LEAP_Visualization_Model as LEAP_model
 def save_all_parameters():
 	pythoncom.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
@@ -52,19 +52,30 @@ def run_all_secanrios(scenarios):
 	weap_flow =[]
 	leap_data = []
 	# WEAP.Calculate()
-	flow, timeRange = WEAP_model.get_WEAP_flow_value()
+	flow, timeRange_WEAP = WEAP_model.get_WEAP_flow_value()
 	value = flow[list(flow.keys())[0]]
 	weap_flow.append({
 		'sid': 0,
 		'name': 'Base',
 		'runStatus': 'finished',
-		'timeRange': timeRange,
-		'numTimeSteps': timeRange[1] - timeRange[0],
+		'timeRange': timeRange_WEAP,
+		'numTimeSteps': timeRange_WEAP[1] - timeRange_WEAP[0],
 		'var': {'input': 'base_parameters',
 		        'output': value}
 	})
 
 	# LEAP.Calculate()
+	data, timeRange_LEAP = LEAP_model.get_LEAP_value()
+	leap_data.append({
+		'sid': 0,
+		'name': 'Base',
+		'runStatus': 'finished',
+		'timeRange': timeRange_LEAP,
+		'numTimeSteps': timeRange_LEAP[1] - timeRange_LEAP[0],
+		'var': {'input': 'base_parameters',
+		        'output': data}
+	})
+
 	for scenario in scenarios:
 		default_variable = []
 		for variable in scenario['policy']:
@@ -85,19 +96,30 @@ def run_all_secanrios(scenarios):
 				LEAP.Branch(variable['branch']).Variable(variable['name']).Expression = variable['expression']
 		default_scenarios.append(default_variable)
 		WEAP.Calculate()
-		flow, timeRange = WEAP_model.get_WEAP_flow_value()
+		flow, timeRange_WEAP = WEAP_model.get_WEAP_flow_value()
 		value = flow[list(flow.keys())[0]]
 		weap_flow.append({
 			'sid': 0,
 			'name': scenario['name'],
 			'runStatus': 'finished',
-			'timeRange': timeRange,
-			'numTimeSteps': timeRange[1] - timeRange[0],
+			'timeRange': timeRange_WEAP,
+			'numTimeSteps': timeRange_WEAP[1] - timeRange_WEAP[0],
 			'var': {'input': scenario,
 			        'output': value}
 		})
 
-		LEAP.Calculate()
+		data, timeRange_LEAP = LEAP_model.get_LEAP_value()
+		leap_data.append({
+			'sid': 0,
+			'name': scenario['name'],
+			'runStatus': 'finished',
+			'timeRange': timeRange_LEAP,
+			'numTimeSteps': timeRange_LEAP[1] - timeRange_LEAP[0],
+			'var': {'input': scenario,
+			        'output': value}
+		})
+
+		# LEAP.Calculate()
 
 	pythoncom.CoUninitialize()
 	return weap_flow, leap_data
