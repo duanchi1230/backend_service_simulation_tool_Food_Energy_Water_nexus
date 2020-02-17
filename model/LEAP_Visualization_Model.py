@@ -15,7 +15,7 @@ def LEAP_visualization_variables():
 	                            'Imports into Module', 'Capacity', 'Capacity Added',
 	                            'Capacity Retired', 'Reserve Margin', 'Load Factor',
 	                            'Peak Power Requirements', 'Actual Availability',
-	                            'Average Power Dispatched', 'Average Power Requirements Not Dispatched', 'Module Energy Balance',]
+	                            'Average Power Dispatched', 'Average Power Requirements Not Dispatched', 'Module Energy Balance']
 	Resource_Variables = ['Reserves', 'Primary Requirements', 'Primary Supply', 'Indigenous Production', 'Imports', 'Exports']
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 	LEAP.ActiveArea = 'Ag_MABIA_v14'
