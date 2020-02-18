@@ -70,7 +70,7 @@ def LEAP_visualization_variables():
 
 def get_LEAP_value():
 	pythoncom.CoInitialize()
-	with open('D:\Project\Food_Energy_Water\\fewsim-backend\model\LEAP_visualization_variables.json', 'r') as file:
+	with open('.\model\LEAP_visualization_variables.json', 'r') as file:
 		variables = json.load(file)
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
 	LEAP.ActiveArea = 'Ag_MABIA_v14'
@@ -94,7 +94,7 @@ def get_LEAP_value():
 	# 				value_year.append(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
 	# 			data[i][j].append({'branch': v['branch'], 'variable': v['variable'], 'value': value_year})
 	timeRange = [start_year + 1, end_year]
-	with open('D:\Project\Food_Energy_Water\\fewsim-backend\model\LEAP_TEST_CACHE.json', 'r') as file:
+	with open('.\model\LEAP_TEST_CACHE.json', 'r') as file:
 		data = json.load(file)
 	print(data)
 	return data, timeRange
