@@ -22,7 +22,7 @@ def generate_WEAP_variables():
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
-	WEAP.ActiveArea = 'Ag_MABIA_v14'
+	# WEAP.ActiveArea = 'Ag_MABIA_v14'
 	WEAP.ActiveScenario = WEAP.Scenarios[1]
 	WEAP_input = []
 	WEAP_output = []

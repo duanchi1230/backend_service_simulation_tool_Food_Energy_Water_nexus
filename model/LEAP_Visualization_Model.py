@@ -18,7 +18,7 @@ def LEAP_visualization_variables():
 	                            'Average Power Dispatched', 'Average Power Requirements Not Dispatched', 'Module Energy Balance']
 	Resource_Variables = ['Reserves', 'Primary Requirements', 'Primary Supply', 'Indigenous Production', 'Imports', 'Exports']
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
-	LEAP.ActiveArea = 'Ag_MABIA_v14'
+	# LEAP.ActiveArea = 'Ag_MABIA_v14'
 	# active_scenario = ''
 
 	for s in LEAP.Scenarios:
@@ -73,30 +73,31 @@ def get_LEAP_value():
 	with open('.\model\LEAP_visualization_variables.json', 'r') as file:
 		variables = json.load(file)
 	LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')
-	LEAP.ActiveArea = 'Ag_MABIA_v14'
+	# LEAP.ActiveArea = 'Ag_MABIA_v14'
 	start_year = LEAP.BaseYear
 	end_year = LEAP.EndYear
 	for s in LEAP.Scenarios:
 		if s != 'Current Account':
 			active_scenario = s
 	LEAP.ActiveScenario = active_scenario
-
+	print('LEAP_Visualization_Model: 83 ', variables)
 	data = {}
-	# for i in variables.keys():
-	# 	data[i] = {}
-	# 	for j in variables[i].keys():
-	# 		data[i][j] = []
-	# 		for v in variables[i][j]:
-	# 			value_year = []
-	# 			for y in range(start_year + 1, end_year + 1):
-	# 				# print(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
-	# 				# print(v['branch'], v['variable'])
-	# 				value_year.append(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
-	# 			data[i][j].append({'branch': v['branch'], 'variable': v['variable'], 'value': value_year})
+	for i in variables.keys():
+		data[i] = {}
+		for j in variables[i].keys():
+			data[i][j] = []
+			for v in variables[i][j]:
+				value_year = []
+				for y in range(start_year + 1, end_year + 1):
+					# print(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
+					print(v['branch'], v['variable'])
+					value_year.append(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
+				data[i][j].append({'branch': v['branch'], 'variable': v['variable'], 'value': value_year})
 	timeRange = [start_year + 1, end_year]
-	with open('.\model\LEAP_TEST_CACHE.json', 'r') as file:
-		data = json.load(file)
-	print(data)
+	# with open('.\model\LEAP_TEST_CACHE.json', 'r') as file:
+	# 	data = json.load(file)
+	# print(data)
+	pythoncom.CoUninitialize()
 	return data, timeRange
 
 # get_LEAP_value()

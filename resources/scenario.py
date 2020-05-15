@@ -6,6 +6,8 @@ import win32com.client
 from model import weap_backend, leap_backend, run_scenarios
 from model.database import Scenarios, session
 import json
+import os
+import pandas as pd
 class Scenario(Resource):
 
 	def __init__(self):
@@ -115,12 +117,47 @@ class Input_List(Resource):
 class Run_Sceanrios(Resource):
 	def __init__(self):
 		pass
+	
 	def get(self,scenario):
-		pass
+		with open('run_results.json', 'r') as outfile:
+			result = json.load(outfile)
+			print("+++++++++++++++", result)
+		return result
 
 	def post(self, scenario):
 		# print(scenario)
 		scenarios = request.get_json(self)
 		weap_flow, leap_data = run_scenarios.run_all_secanrios(scenarios)
+		# print(weap_flow, leap_data)
+		return {'weap-flow': weap_flow, 'leap-data': leap_data}, 201
 
-		return {'weap-flow': weap_flow, 'leap-data': leap_data}
+class Get_Run_Log(Resource):
+	def __init__(self):
+		pass
+	def get(self):
+		run_log_file = pd.read_csv('log.csv')
+		log = []
+		# print(run_log_file)
+		for row in run_log_file.iterrows():
+			print({'time': str(row[1]['time']), 'message': str(row[1]['message'])})
+			log.append({'time': str(row[1]['time']), 'message': str(row[1]['message'])})
+		return log, 200
+		
+	def post(self, scenario):
+		pass
+
+
+class Load_Existing_Scenarios(Resource):
+	def __init__(self):
+		pass
+	
+	def get(self):
+		with open('.\\scenarios\\existing_scenarios.json', 'r') as file:
+			scenarios = json.load(file)
+		return scenarios, 200
+	
+	def post(self, scenario):
+		scenarios = request.get_json(self)
+		with open('.\\scenarios\\existing_scenarios.json', 'r') as file:
+			json.dump(scenarios, file)
+		return "Scenarios have been saved!", 201

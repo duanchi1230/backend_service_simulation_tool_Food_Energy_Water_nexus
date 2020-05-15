@@ -41,6 +41,8 @@ def get_WEAP_flow_value():
 
 				item['name'] = p['source'][5:] + ' ' +p['demand']
 				item['site'] = p['demand'][3:]
+				item['branch'] = '\Supply and Resources\Transmission Links'+ p['path']
+				item['variable'] = 'Flow'
 				item['source'] = p['source']
 				item['value'] = value_year
 				item['format'] = 'series'
