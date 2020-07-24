@@ -1,0 +1,150 @@
+WEAP,LEAP
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Conveyance/Mark Wilmer
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Conveyance/Bouse Hills
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Conveyance/Little Harquahala
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Conveyance/Hassayampa
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Conveyance/Waddell
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Treatment and distribution/White Tanks WTP
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Treatment and distribution/Phoenix Lake Pleasant WTP
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Treatment and distribution/Glendale Pyramid WTP
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Treatment and distribution/Phoenix Union Hills WTP
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Treatment and distribution/Scottsdale WTP
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Treatment and distribution/Mesa WTP
+from CAP Withdrawal to Municipal,Demand/Industrial/Water infrastrucutre/Municipal/CAP/Treatment and distribution/Chandler Gilbert Santan Visa WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Peoria Greenway WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Glendale Cholla WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Phoenix Deer Valley WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Glendale Oasis WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Phoenix 24th St WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Scottsdale Chaparral WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Tempe Martinez WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/South Tempe WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Phoenix Mesa Val Vista WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Gilbert WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Chandler WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/SRP/Treatment and distribution/Verde WTP
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/Groundwater/Pumping
+from SRP Withdrawal to Municipal ,Demand/Industrial/Water infrastrucutre/Municipal/Groundwater/Treatment and distribution
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/CAP/Conveyance/Mark Wilmer
+from CAP Withdrawal to New_Magma,~/Mark Wilmer
+from CAP Withdrawal to Queen_Creek,~/Mark Wilmer
+from CAP Withdrawal to Roosevelt_ID,~/Mark Wilmer
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Mark Wilmer
+from CAP Withdrawal to Saint_Joins,~/Mark Wilmer
+from CAP Withdrawal to to Salt_River_Valley,~/Mark Wilmer
+from CAP Withdrawal to to Tonopah,~/Mark Wilmer
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/CAP/Conveyance/Bouse Hills
+from CAP Withdrawal to New_Magma,~/Bouse Hills
+from CAP Withdrawal to Queen_Creek,~/Bouse Hills
+from CAP Withdrawal to Roosevelt_ID,~/Bouse Hills
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Bouse Hills
+from CAP Withdrawal to Saint_Joins,~/Bouse Hills
+from CAP Withdrawal to to Salt_River_Valley,~/Bouse Hills
+from CAP Withdrawal to to Tonopah,~/Bouse Hills
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/CAP/Conveyance/Little Harquahala
+from CAP Withdrawal to New_Magma,~/Little Harquahala
+from CAP Withdrawal to Queen_Creek,~/Little Harquahala
+from CAP Withdrawal to Roosevelt_ID,~/Little Harquahala
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Little Harquahala
+from CAP Withdrawal to Saint_Joins,~/Little Harquahala
+from CAP Withdrawal to to Salt_River_Valley,~/Little Harquahala
+from CAP Withdrawal to to Tonopah,~/Little Harquahala
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/CAP/Conveyance/Hassayampa
+from CAP Withdrawal to New_Magma,~/Hassayampa
+from CAP Withdrawal to Queen_Creek,~/Hassayampa
+from CAP Withdrawal to Roosevelt_ID,~/Hassayampa
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Hassayampa
+from CAP Withdrawal to Saint_Joins,~/Hassayampa
+from CAP Withdrawal to to Salt_River_Valley,~/Hassayampa
+from CAP Withdrawal to to Tonopah,~/Hassayampa
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/CAP/Conveyance/Waddell
+from CAP Withdrawal to New_Magma,~/Waddell
+from CAP Withdrawal to Queen_Creek,~/Waddell
+from CAP Withdrawal to Roosevelt_ID,~/Waddell
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Waddell
+from CAP Withdrawal to Saint_Joins,~/Waddell
+from CAP Withdrawal to to Salt_River_Valley,~/Waddell
+from CAP Withdrawal to to Tonopah,~/Waddell
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/CAP/Pumping in irrigation districts/Pumping in irrigation districts
+from CAP Withdrawal to New_Magma,~/Pumping in irrigation districts
+from CAP Withdrawal to Queen_Creek,~/Pumping in irrigation districts
+from CAP Withdrawal to Roosevelt_ID,~/Pumping in irrigation districts
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Pumping in irrigation districts
+from CAP Withdrawal to Saint_Joins,~/Pumping in irrigation districts
+from CAP Withdrawal to to Salt_River_Valley,~/Pumping in irrigation districts
+from CAP Withdrawal to to Tonopah,~/Pumping in irrigation districts
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/SRP/Pumping in irrigation districts
+from CAP Withdrawal to Adaman,~/Pumping in irrigation districts
+from CAP Withdrawal to Arlington,~/Pumping in irrigation districts
+from CAP Withdrawal to Buckeye,~/Pumping in irrigation districts
+from CAP Withdrawal to Peninsula,~/Pumping in irrigation districts
+from CAP Withdrawal to New_Magma,~/Pumping in irrigation districts
+from CAP Withdrawal to Queen_Creek,~/Pumping in irrigation districts
+from CAP Withdrawal to Roosevelt_ID,~/Pumping in irrigation districts
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Pumping in irrigation districts
+from CAP Withdrawal to Saint_Joins,~/Pumping in irrigation districts
+from CAP Withdrawal to to Salt_River_Valley,~/Pumping in irrigation districts
+from CAP Withdrawal to Maricopa_Water_District,Demand/Industrial/Water infrastrucutre/Agricultural/Groundwater/Pumping 
+from CAP Withdrawal to Adaman,~/Pumping
+from CAP Withdrawal to Arlington,~/Pumping
+from CAP Withdrawal to Buckeye,~/Pumping
+from CAP Withdrawal to Peninsula,~/Pumping
+from CAP Withdrawal to New_Magma,~/Pumping
+from CAP Withdrawal to Queen_Creek,~/Pumping
+from CAP Withdrawal to Roosevelt_ID,~/Pumping
+from CAP Withdrawal to Roosevelt_Water_Consertation,~/Pumping
+from CAP Withdrawal to Saint_Joins,~/Pumping
+from CAP Withdrawal to to Salt_River_Valley,~/Pumping
+from CAP Withdrawal to to Tonopah,~/Pumping
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Conveyance/Mark Wilmer
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Conveyance/Bouse Hills
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Conveyance/Little Harquahala
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Conveyance/Hassayampa
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Conveyance/Waddell
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Treatment and distribution/White Tanks WTP
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Treatment and distribution/Phoenix Lake Pleasant WTP
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Treatment and distribution/Glendale Pyramid WTP
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Treatment and distribution/Phoenix Union Hills WTP
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Treatment and distribution/Scottsdale WTP
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Treatment and distribution/Mesa WTP
+from CAP Withdrawal to Indian,Demand/Industrial/Water infrastrucutre/Indian/CAP/Treatment and distribution/Chandler Gilbert Santan Visa WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Peoria Greenway WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Glendale Cholla WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Phoenix Deer Valley WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Glendale Oasis WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Phoenix 24th St WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Scottsdale Chaparral WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Tempe Martinez WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/South Tempe WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Phoenix Mesa Val Vista WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Gilbert WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Chandler WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/SRP/Treatment and distribution/Verde WTP
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/Groundwater/Pumping
+from SRP Withdrawal to Indian ,Demand/Industrial/Water infrastrucutre/Indian/Groundwater/Treatment and distribution
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Conveyance/Mark Wilmer
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Conveyance/Bouse Hills
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Conveyance/Little Harquahala
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Conveyance/Hassayampa
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Conveyance/Waddell
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Treatment and distribution/White Tanks WTP
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Treatment and distribution/Phoenix Lake Pleasant WTP
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Treatment and distribution/Glendale Pyramid WTP
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Treatment and distribution/Phoenix Union Hills WTP
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Treatment and distribution/Scottsdale WTP
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Treatment and distribution/Mesa WTP
+from CAP Withdrawal to Industrial,Demand/Industrial/Water infrastrucutre/Industrial/CAP/Treatment and distribution/Chandler Gilbert Santan Visa WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Peoria Greenway WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Glendale Cholla WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Phoenix Deer Valley WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Glendale Oasis WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Phoenix 24th St WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Scottsdale Chaparral WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Tempe Martinez WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/South Tempe WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Phoenix Mesa Val Vista WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Gilbert WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Chandler WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/SRP/Treatment and distribution/Verde WTP
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/Groundwater/Pumping
+from SRP Withdrawal to Industrial ,Demand/Industrial/Water infrastrucutre/Industrial/Groundwater/Treatment and distribution

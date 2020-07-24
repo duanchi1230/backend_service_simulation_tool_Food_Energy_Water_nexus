@@ -43,7 +43,7 @@ def save_all_parameters():
 	print(leap_default_paramters)
 
 
-def run_all_secanrios(scenarios):
+def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 	pythoncom.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	# WEAP.ActiveArea = 'Ag_MABIA_v14'
@@ -58,9 +58,9 @@ def run_all_secanrios(scenarios):
 	now = datetime.now()
 	dt_string = now.strftime('%d/%m/%Y %H:%M:%S')
 	message = 'Simulation is initializaing!'
-	log_file = pd.DataFrame([[dt_string, message]],columns=['time', 'message'])
+	log_file = pd.DataFrame([[dt_string, message]], columns=['time', 'message'])
 	log_file.to_csv('log.csv')
-	run_log_file = open('run_log_file.txt', 'w')
+	# run_log_file = open('run_log_file.txt', 'w')
 	################################################################################################################
 	# WEAP.Calculate()
 	# log_file = append_log(log_file, 'WEAP completed running Scenario Base')
@@ -98,6 +98,15 @@ def run_all_secanrios(scenarios):
 	# ################################################################################################################
 	# print('created scenarios--->', scenarios)
 	# ################################################################################################################
+	##################################################################################################################
+	# process sustainability variables
+	for i in range(len(sustainability_variables)):
+		sustainability_variables[i]["node"]["value"] = []
+	
+	for i in range(len(loaded_group_index)):
+		for j in range(len(loaded_group_index[i]["variable"])):
+			loaded_group_index[i]["variable"][j]["node"]["value"] = []
+	###################################################################################################################
 	for scenario in scenarios:
 		WEAP.View = 'Data'
 		LEAP.ActiveView = 'Analysis'
@@ -119,7 +128,7 @@ def run_all_secanrios(scenarios):
 			print('saving weap default--->', variable['fullname'], '--->', variable['name'], '--->', default)
 		for variable in scenario['leap']:
 			expression = str(LEAP.Branch(variable['fullname']).Variable(variable['name']).Expression) + '*' + str(
-					variable['percentage_of_default'])+'%'
+				variable['percentage_of_default']) + '%'
 			default = LEAP.Branch(variable['fullname']).Variable(variable['name']).Expression
 			default_variable_leap.append({'branch': variable['fullname'], 'name': variable['name'],
 			                              'expression': default,
@@ -129,7 +138,7 @@ def run_all_secanrios(scenarios):
 				LEAP.Branch(variable['fullname']).Variable(variable['name']).Expression = expression
 			print('setting leap variable--->', variable['fullname'], '--->', variable['name'], '--->', expression)
 			print('saving leap default--->', variable['fullname'], '--->', variable['name'], '--->', default)
-			
+		
 		# for variable in scenario['mabia']:
 		#
 		# 	default_variable_mabia.append({'branch': variable['branch'], 'name': variable['name'],
@@ -142,11 +151,11 @@ def run_all_secanrios(scenarios):
 		
 		################################################################################################################
 		log_file = append_log(log_file, 'WEAP started running Scenario ' + scenario['name'])
-		WEAP.Calculate()
+		# WEAP.Calculate()
 		log_file = append_log(log_file, 'WEAP completed running Scenario ' + scenario['name'])
 		################################################################################################################
 		log_file = append_log(log_file, 'LEAP started running Scenario ' + scenario['name'])
-		LEAP.Calculate()
+		# LEAP.Calculate()
 		log_file = append_log(log_file, 'LEAP completed running Scenario ' + scenario['name'])
 		################################################################################################################
 		log_file = append_log(log_file, 'WEAP started extracting Scenario results from ' + scenario['name'])
@@ -163,7 +172,7 @@ def run_all_secanrios(scenarios):
 		})
 		log_file = append_log(log_file, 'WEAP completed extracting Scenario results from ' + scenario['name'])
 		################################################################################################################
-		log_file = append_log(log_file, 'LEAP completed extracting Scenario results from ' + scenario['name'])
+		log_file = append_log(log_file, 'LEAP started extracting Scenario results from ' + scenario['name'])
 		leap_result, timeRange_LEAP = LEAP_model.get_LEAP_value()
 		leap_data.append({
 			'sid': 0,
@@ -177,25 +186,140 @@ def run_all_secanrios(scenarios):
 		log_file = append_log(log_file, 'LEAP completed extracting Scenario results from ' + scenario['name'])
 		print('run_scenarios: 150')
 		################################################################################################################
+		# extract (customized) sustainability variables
+		LEAP.ActiveView = 'Results'
+		WEAP.View = 'Results'
+		for i in range(len(sustainability_variables)):
+			if sustainability_variables[i]["node"]["model"] == "weap":
+				s_weap_variable = []
+				for year in range(timeRange_WEAP[0], timeRange_WEAP[1] + 1):
+					s_weap_variable.append(WEAP.ResultValue(sustainability_variables[i]["variable"], year, 1, "Reference",
+						                            year, 12, 'Total'))
+				sustainability_variables[i]["node"]["value"].append({"name": scenario["name"], "calculated":s_weap_variable} )
+			if sustainability_variables[i]["node"]["model"] == "leap":
+				for s in LEAP.Scenarios:
+					if s != 'Current Account':
+						active_scenario = s
+				LEAP.ActiveScenario = active_scenario
+				s_leap_variable = []
+				print(sustainability_variables[i]["node"]["name"])
+				for year in range(timeRange_LEAP[0], timeRange_LEAP[1] + 1):
+					s_leap_variable.append(LEAP.Branch(sustainability_variables[i]["node"]["fullname"]).Variable(sustainability_variables[i]["node"]["name"]).Value(year))
+				sustainability_variables[i]["node"]["value"].append({"name": scenario["name"], "calculated":s_leap_variable})
+			if sustainability_variables[i]["node"]["model"] == "mabia":
+				s_mabia_variable = []
+				for year in range(timeRange_WEAP[0], timeRange_WEAP[1] + 1):
+					s_mabia_variable.append(WEAP.ResultValue(sustainability_variables[i]["variable"], year, 1, "Reference", year, 12, 'Total'))
+				sustainability_variables[i]["node"]["value"].append(
+					{"name": scenario["name"], "calculated":s_mabia_variable})
+		################################################################################################################
+		# extract loaded (saved) sustainability variables
+		LEAP.ActiveView = 'Results'
+		WEAP.View = 'Results'
+		for i in range(len(loaded_group_index)):
+			for j in range(len(loaded_group_index[i]["variable"])):
+				if loaded_group_index[i]["variable"][j]["node"]["model"] == "weap":
+					s_weap_variable = []
+					for year in range(timeRange_WEAP[0], timeRange_WEAP[1] + 1):
+						s_weap_variable.append(
+							WEAP.ResultValue(loaded_group_index[i]["variable"][j]["variable"], year, 1, "Reference",
+							                 year, 12, 'Total'))
+					loaded_group_index[i]["variable"][j]["node"]["value"].append(
+						{"name": scenario["name"], "calculated": s_weap_variable})
+				if loaded_group_index[i]["variable"][j]["node"]["model"] == "leap":
+					for s in LEAP.Scenarios:
+						if s != 'Current Account':
+							active_scenario = s
+					LEAP.ActiveScenario = active_scenario
+					s_leap_variable = []
+					# print(sustainability_variables[i]["node"]["name"])
+					for year in range(timeRange_LEAP[0], timeRange_LEAP[1] + 1):
+						s_leap_variable.append(
+							LEAP.Branch(loaded_group_index[i]["variable"][j]["node"]["fullname"]).Variable(
+								loaded_group_index[i]["variable"][j]["node"]["name"]).Value(year))
+					loaded_group_index[i]["variable"][j]["node"]["value"].append(
+						{"name": scenario["name"], "calculated": s_leap_variable})
+				if loaded_group_index[i]["variable"][j]["node"]["model"] == "mabia":
+					s_mabia_variable = []
+					for year in range(timeRange_WEAP[0], timeRange_WEAP[1] + 1):
+						s_mabia_variable.append(
+							WEAP.ResultValue(loaded_group_index[i]["variable"][j]["variable"], year, 1, "Reference", year,
+							                 12, 'Total'))
+					loaded_group_index[i]["variable"][j]["node"]["value"].append(
+						{"name": scenario["name"], "calculated": s_mabia_variable})
+		################################################################################################################
 		WEAP.View = 'Data'
 		for default_variable in default_variable_weap:
 			for s in WEAP.Scenarios:
 				WEAP.ActiveScenario = s
-				WEAP.Branch(default_variable['branch']).Variable(default_variable['name']).Expression = default_variable['expression']
+				WEAP.Branch(default_variable['branch']).Variable(default_variable['name']).Expression = \
+				default_variable['expression']
 			print('setting weap default--->', default_variable['branch'], '--->', default_variable['name'], '--->',
-		      default_variable['expression'])
+			      default_variable['expression'])
 		LEAP.ActiveView = 'Analysis'
 		for default_variable_l in default_variable_leap:
 			for s in LEAP.Scenarios:
 				LEAP.ActiveScenario = s
-				LEAP.Branch(default_variable_l['branch']).Variable(default_variable_l['name']).Expression = default_variable_l['expression']
+				LEAP.Branch(default_variable_l['branch']).Variable(default_variable_l['name']).Expression = \
+				default_variable_l['expression']
 			print('setting leap default--->', default_variable_l['branch'], '--->', default_variable_l['name'], '--->',
-		      default_variable_l['expression'])
+			      default_variable_l['expression'])
 	log_file = append_log(log_file, 'Completed')
+	###################################################################################################################
+	# calculate weap_flow response level in percentage
+	max_w = {}
+	w = {}
+	for f in weap_flow:
+		for v in f["var"]["output"]:
+			print(v)
+			w[v["name"]] = []
+		for v in f["var"]["output"]:
+			w[v["name"]].append(v["value"])
+			max_w[v["name"]] = np.amax(w[v["name"]], axis=0)
+	print(max_w)
+	for i in range(len(weap_flow)):
+		for j in range(len(weap_flow[i]["var"]["output"])):
+			weap_flow[i]["var"]["output"][j]["percentage"] = list(np.around((np.array(
+				weap_flow[i]["var"]["output"][j]["value"]) - np.array(weap_flow[0]["var"]["output"][j]["value"])) / (
+						                                                                max_w[weap_flow[i]["var"][
+							                                                                "output"][j][
+							                                                                "name"]] + 0.000001),
+			                                                                decimals=3))
+	print(weap_flow)
+	###################################################################################################################
+	# calculate leap_data response level in percentage
+	max_l = {}
+	l = {}
+	for type in leap_data[0]["var"]["output"].keys():
+		l[type] = {}
+		max_l[type] = {}
+		for variable in leap_data[0]["var"]["output"][type].keys():
+			l[type][variable] = {}
+			max_l[type][variable] = {}
+			for branch in leap_data[0]["var"]["output"][type][variable]:
+				l[type][variable][branch["branch"]] = []
+	for d in leap_data:
+		for type in d["var"]["output"].keys():
+			for variable in d["var"]["output"][type].keys():
+				for branch in d["var"]["output"][type][variable]:
+					l[type][variable][branch["branch"]].append(branch["value"])
+					max_l[type][variable][branch["branch"]] = np.amax(l[type][variable][branch["branch"]], axis=0)
+	for i in range(len(leap_data)):
+		for type in leap_data[i]["var"]["output"].keys():
+			for variable in leap_data[i]["var"]["output"][type].keys():
+				for j in range(len(leap_data[i]["var"]["output"][type][variable])):
+					l_i = leap_data[i]["var"]["output"][type][variable][j]["value"]
+					l_0 = leap_data[0]["var"]["output"][type][variable][j]["value"]
+					max_l_i = max_l[type][variable][leap_data[i]["var"]["output"][type][variable][j]["branch"]]
+					leap_data[i]["var"]["output"][type][variable][j]["percentage"] = list(
+						np.around((np.array(l_i) - np.array(l_0)) / (np.array(max_l_i) + 0.000001), decimals=3))
+	
 	pythoncom.CoUninitialize()
+
 	with open('run_results.json', 'w') as outfile:
-		json.dump({'weap-flow': weap_flow, 'leap-data': leap_data}, outfile)
-	return weap_flow, leap_data
+		json.dump({'weap-flow': weap_flow, 'leap-data': leap_data,  "sustainability_variables": sustainability_variables, "loaded_group_index": loaded_group_index}, outfile)
+	return weap_flow, leap_data, sustainability_variables, loaded_group_index
+
 
 def append_log(log_file, message):
 	now = datetime.now()

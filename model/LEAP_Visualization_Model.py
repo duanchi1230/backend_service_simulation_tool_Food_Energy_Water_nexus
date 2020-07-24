@@ -82,21 +82,21 @@ def get_LEAP_value():
 	LEAP.ActiveScenario = active_scenario
 	print('LEAP_Visualization_Model: 83 ', variables)
 	data = {}
-	for i in variables.keys():
-		data[i] = {}
-		for j in variables[i].keys():
-			data[i][j] = []
-			for v in variables[i][j]:
-				value_year = []
-				for y in range(start_year + 1, end_year + 1):
-					# print(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
-					print(v['branch'], v['variable'])
-					value_year.append(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
-				data[i][j].append({'branch': v['branch'], 'variable': v['variable'], 'value': value_year})
+	# for i in variables.keys():
+	# 	data[i] = {}
+	# 	for j in variables[i].keys():
+	# 		data[i][j] = []
+	# 		for v in variables[i][j]:
+	# 			value_year = []
+	# 			for y in range(start_year + 1, end_year + 1):
+	# 				# print(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
+	# 				print(v['branch'], v['variable'])
+	# 				value_year.append(LEAP.Branch(v['branch']).Variable(v['variable']).Value(y))
+	# 			data[i][j].append({'branch': v['branch'], 'variable': v['variable'], 'value': value_year})
 	timeRange = [start_year + 1, end_year]
-	# with open('.\model\LEAP_TEST_CACHE.json', 'r') as file:
-	# 	data = json.load(file)
-	# print(data)
+	with open('.\model\LEAP_TEST_CACHE.json', 'r') as file:
+		data = json.load(file)
+	print(data)
 	pythoncom.CoUninitialize()
 	return data, timeRange
 

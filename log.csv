@@ -1,19 +1,2 @@
 ,time,message
-0,12/05/2020 17:03:03,Simulation is initializaing!
-1,12/05/2020 17:03:07,WEAP started running Scenario scenario1
-2,12/05/2020 17:03:30,WEAP completed running Scenario scenario1
-3,12/05/2020 17:03:30,LEAP started running Scenario scenario1
-4,12/05/2020 17:05:03,LEAP completed running Scenario scenario1
-5,12/05/2020 17:05:03,WEAP started extracting Scenario results from scenario1
-6,12/05/2020 17:05:05,WEAP completed extracting Scenario results from scenario1
-7,12/05/2020 17:05:05,LEAP completed extracting Scenario results from scenario1
-8,12/05/2020 17:06:30,LEAP completed extracting Scenario results from scenario1
-9,12/05/2020 17:06:35,WEAP started running Scenario Base
-10,12/05/2020 17:06:57,WEAP completed running Scenario Base
-11,12/05/2020 17:06:57,LEAP started running Scenario Base
-12,12/05/2020 17:08:33,LEAP completed running Scenario Base
-13,12/05/2020 17:08:33,WEAP started extracting Scenario results from Base
-14,12/05/2020 17:08:35,WEAP completed extracting Scenario results from Base
-15,12/05/2020 17:08:35,LEAP completed extracting Scenario results from Base
-16,12/05/2020 17:10:00,LEAP completed extracting Scenario results from Base
-17,12/05/2020 17:10:02,Completed
+0,18/07/2020 02:40:00,Started
