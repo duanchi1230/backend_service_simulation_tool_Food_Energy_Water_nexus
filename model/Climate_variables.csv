@@ -1,0 +1,4 @@
+,CMIP,name,type
+0,CMIP6,CanESM5,ssp585
+1,CMIP6,CanESM5,ssp245
+2,CMIP6,CanESM5,Hist

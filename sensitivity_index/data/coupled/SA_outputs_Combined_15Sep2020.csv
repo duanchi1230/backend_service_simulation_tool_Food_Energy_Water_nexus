@@ -1,0 +1,88 @@
+branchesToSave,variablesToSave,VarNumber,type
+Demand Sites and Catchments\Indian,Unmet Demand,1,WEAP
+Demand Sites and Catchments\Municipal,Unmet Demand,2,WEAP
+Demand Sites and Catchments\Power Plant,Unmet Demand,3,WEAP
+Demand Sites and Catchments\Industrial,Unmet Demand,4,WEAP
+Demand Sites and Catchments\Roosevelt_ID,Unmet Demand,5,MPM
+Demand Sites and Catchments\GW_SRP,Unmet Demand,6,WEAP
+Demand Sites and Catchments\Riparian,Unmet Demand,7,WEAP
+Supply and Resources\Transmission Links\to Indian\from SRP Withdrawal,Total Node Outflow,8,WEAP
+Supply and Resources\Transmission Links\to Municipal\from SRP Withdrawal,Total Node Outflow,9,WEAP
+Supply and Resources\Transmission Links\to Industrial\from SRP Withdrawal,Total Node Outflow,10,WEAP
+Supply and Resources\Transmission Links\to Roosevelt_ID\from SRP Withdrawal,Total Node Inflow,11,MPM
+Supply and Resources\Transmission Links\to Indian\from CAP Withdrawal,Total Node Outflow,12,WEAP
+Supply and Resources\Transmission Links\to Municipal\from CAP Withdrawal,Total Node Outflow,13,WEAP
+Supply and Resources\Transmission Links\to Power Plant\from CAP Withdrawal,Total Node Outflow,14,WEAP
+Supply and Resources\Transmission Links\to Industrial\from CAP Withdrawal,Total Node Outflow,15,WEAP
+Supply and Resources\Transmission Links\to Roosevelt_ID\from CAP Withdrawal,Total Node Inflow,16,MPM
+Supply and Resources\Transmission Links\to Riparian\from Groundwater,Total Node Outflow,17,WEAP
+Supply and Resources\Transmission Links\to Indian\from Groundwater,Total Node Outflow,18,WEAP
+Supply and Resources\Transmission Links\to GW_SRP\from Groundwater,Total Node Outflow,19,WEAP
+Supply and Resources\Transmission Links\to Municipal\from Groundwater,Total Node Outflow,20,WEAP
+Supply and Resources\Transmission Links\to Power Plant\from Groundwater,Total Node Outflow,21,WEAP
+Supply and Resources\Transmission Links\to Industrial\from Groundwater,Total Node Outflow,22,WEAP
+Supply and Resources\Transmission Links\to Roosevelt_ID\from Groundwater,Total Node Inflow,23,MPM
+Supply and Resources\Transmission Links\to Indian\from GW_Backup,Total Node Outflow,24,WEAP
+Supply and Resources\Transmission Links\to Municipal\from GW_Backup,Total Node Outflow,25,WEAP
+Supply and Resources\Transmission Links\to Power Plant\from GW_Backup,Total Node Outflow,26,WEAP
+Supply and Resources\Transmission Links\to Industrial\from GW_Backup,Total Node Outflow,27,WEAP
+Supply and Resources\Transmission Links\to Indian\from WWTP_2,Total Node Outflow,28,WEAP
+Supply and Resources\Transmission Links\to Municipal\from WWTP_2,Total Node Outflow,29,WEAP
+Supply and Resources\Transmission Links\to Power Plant\from WWTP_2,Total Node Outflow,30,WEAP
+Supply and Resources\Transmission Links\to Industrial\from WWTP_2,Total Node Outflow,31,WEAP
+Supply and Resources\Transmission Links\to Roosevelt_ID\from WWTP_2,Total Node Inflow,32,MPM
+Demand Sites and Catchments\Roosevelt_ID\Alfalfa_hay,Annual Crop Production,33,MPM
+Demand Sites and Catchments\Roosevelt_ID\Corn_grain,Annual Crop Production,34,MPM
+Demand Sites and Catchments\Roosevelt_ID\Sorghum_grain,Annual Crop Production,35,MPM
+Demand Sites and Catchments\Roosevelt_ID\Barley,Annual Crop Production,36,MPM
+Demand Sites and Catchments\Roosevelt_ID\Alfalfa_haylage,Annual Crop Production,37,MPM
+Demand Sites and Catchments\Roosevelt_ID\Sorghum_silage,Annual Crop Production,38,MPM
+Demand Sites and Catchments\Roosevelt_ID\Corn_silage,Annual Crop Production,39,MPM
+Demand\Residential\Residential customers\Uses unrelated to water,Energy Demand Final Units,40,LEAP
+Demand\Residential\Residential customers\Water heating,Energy Demand Final Units,41,LEAP
+Demand\Commercial\Commercial customers\Uses unrelated to water,Energy Demand Final Units,42,LEAP
+Demand\Commercial\Commercial customers\Water heating,Energy Demand Final Units,43,LEAP
+Demand\Industrial\Industrial water unrelated,Energy Demand Final Units,44,LEAP
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance,Energy Demand Final Units,45,LEAP
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution,Energy Demand Final Units,46,LEAP
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution,Energy Demand Final Units,47,LEAP
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Pumping,Energy Demand Final Units,48,LEAP
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Treatment and distribution,Energy Demand Final Units,49,LEAP
+Demand\Industrial\Water infrastructure\Agricultural\CAP\Conveyance,Energy Demand Final Units,50,LEAP
+Demand\Industrial\Water infrastructure\Agricultural\CAP\Pumping in irrigation districts,Energy Demand Final Units,51,LEAP
+Demand\Industrial\Water infrastructure\Agricultural\SRP\Pumping in irrigation districts,Energy Demand Final Units,52,LEAP
+Demand\Industrial\Water infrastructure\Agricultural\Groundwater,Energy Demand Final Units,53,LEAP
+Demand\Industrial\Water infrastructure\Agricultural\Groundwater\Pumping,Energy Demand Final Units,54,LEAP
+Demand\Industrial\Water infrastructure\Indian\CAP\Conveyance,Energy Demand Final Units,55,LEAP
+Demand\Industrial\Water infrastructure\Indian\CAP\Treatment and distribution,Energy Demand Final Units,56,LEAP
+Demand\Industrial\Water infrastructure\Indian\SRP\Treatment and distribution,Energy Demand Final Units,57,LEAP
+Demand\Industrial\Water infrastructure\Indian\Groundwater\Pumping,Energy Demand Final Units,58,LEAP
+Demand\Industrial\Water infrastructure\Indian\Groundwater\Treatment and distribution,Energy Demand Final Units,59,LEAP
+Demand\Industrial\Water infrastructure\Industrial\CAP\Conveyance,Energy Demand Final Units,60,LEAP
+Demand\Industrial\Water infrastructure\Industrial\CAP\Treatment and distribution,Energy Demand Final Units,61,LEAP
+Demand\Industrial\Water infrastructure\Industrial\SRP\Treatment and distribution,Energy Demand Final Units,62,LEAP
+Demand\Industrial\Water infrastructure\Industrial\Groundwater\Pumping,Energy Demand Final Units,63,LEAP
+Demand\Industrial\Water infrastructure\Industrial\Groundwater\Treatment and distribution,Energy Demand Final Units,64,LEAP
+Demand\Industrial\Water infrastructure\WWTP\Wastewater treatment and pumping\WWTP,Energy Demand Final Units,65,LEAP
+Demand\Industrial\Water infrastructure\WWTP\Reclaimed water treatment and pumping\WRF,Energy Demand Final Units,66,LEAP
+Transformation\Electricity generation\Processes\Springerville Generating Station Unit 4,Outputs by Output Fuel,67,LEAP
+Transformation\Electricity generation\Processes\Agua Fria Generating Station,Outputs by Output Fuel,68,LEAP
+Transformation\Electricity generation\Processes\Kyrene Generating Station,Outputs by Output Fuel,69,LEAP
+Transformation\Electricity generation\Processes\Santan,Outputs by Output Fuel,70,LEAP
+Transformation\Electricity generation\Processes\Ocotillo,Outputs by Output Fuel,71,LEAP
+Transformation\Electricity generation\Processes\West Phoenix,Outputs by Output Fuel,72,LEAP
+Transformation\Electricity generation\Processes\Gila River,Outputs by Output Fuel,73,LEAP
+Transformation\Electricity generation\Processes\Redhawk,Outputs by Output Fuel,74,LEAP
+Transformation\Electricity generation\Processes\Arlington Valley,Outputs by Output Fuel,75,LEAP
+Transformation\Electricity generation\Processes\Palo Verde Generating Station,Outputs by Output Fuel,76,LEAP
+Transformation\Electricity generation\Processes\Solar,Outputs by Output Fuel,77,LEAP
+Transformation\Electricity generation\Processes\Wind,Outputs by Output Fuel,78,LEAP
+Resources\Primary\Hydro,Imports,79,LEAP
+Resources\Primary\Coal Sub bituminous,Imports,80,LEAP
+Resources\Primary\Nuclear,Imports,81,LEAP
+Resources\Primary\Solar,Imports,82,LEAP
+Resources\Primary\Wind,Imports,83,LEAP
+Resources\Primary\Coal Unspecified,Imports,84,LEAP
+Resources\Primary\Coal Bituminous,Imports,85,LEAP
+Resources\Primary\Natural Gas,Imports,86,LEAP
+Resources\Secondary\Electricity,Imports,87,LEAP

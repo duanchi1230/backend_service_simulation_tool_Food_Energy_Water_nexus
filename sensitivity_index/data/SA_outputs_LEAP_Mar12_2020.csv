@@ -1,0 +1,167 @@
+branchToSave,variable,VarNumber
+Demand,Energy Demand Final Units,1
+Demand\Residential,Energy Demand Final Units,2
+Demand\Residential\Residential customers\Uses unrelated to water,Energy Demand Final Units,3
+Demand\Residential\Residential customers\Water heating,Energy Demand Final Units,4
+Demand\Commercial,Energy Demand Final Units,5
+Demand\Commercial\Commercial customers\Uses unrelated to water,Energy Demand Final Units,6
+Demand\Commercial\Commercial customers\Water heating,Energy Demand Final Units,7
+Demand\Industrial,Energy Demand Final Units,8
+Demand\Industrial\Industrial water unrelated,Energy Demand Final Units,9
+Demand\Industrial\Water infrastructure,Energy Demand Final Units,10
+Demand\Industrial\Water infrastructure\Municipal,Energy Demand Final Units,11
+Demand\Industrial\Water infrastructure\Municipal\CAP,Energy Demand Final Units,12
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance,Energy Demand Final Units,13
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution,Energy Demand Final Units,14
+Demand\Industrial\Water infrastructure\Municipal\SRP,Energy Demand Final Units,15
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution,Energy Demand Final Units,16
+Demand\Industrial\Water infrastructure\Municipal\Groundwater,Energy Demand Final Units,17
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Pumping,Energy Demand Final Units,18
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Treatment and distribution,Energy Demand Final Units,19
+Demand\Industrial\Water infrastructure\Agricultural,Energy Demand Final Units,20
+Demand\Industrial\Water infrastructure\Agricultural\CAP,Energy Demand Final Units,21
+Demand\Industrial\Water infrastructure\Agricultural\CAP\Conveyance,Energy Demand Final Units,22
+Demand\Industrial\Water infrastructure\Agricultural\CAP\Pumping in irrigation districts,Energy Demand Final Units,23
+Demand\Industrial\Water infrastructure\Agricultural\SRP,Energy Demand Final Units,24
+Demand\Industrial\Water infrastructure\Agricultural\SRP\Pumping in irrigation districts,Energy Demand Final Units,25
+Demand\Industrial\Water infrastructure\Agricultural\Groundwater,Energy Demand Final Units,26
+Demand\Industrial\Water infrastructure\Agricultural\Groundwater\Pumping,Energy Demand Final Units,27
+Demand\Industrial\Water infrastructure\Indian,Energy Demand Final Units,28
+Demand\Industrial\Water infrastructure\Indian\CAP,Energy Demand Final Units,29
+Demand\Industrial\Water infrastructure\Indian\CAP\Conveyance,Energy Demand Final Units,30
+Demand\Industrial\Water infrastructure\Indian\CAP\Treatment and distribution,Energy Demand Final Units,31
+Demand\Industrial\Water infrastructure\Indian\SRP,Energy Demand Final Units,32
+Demand\Industrial\Water infrastructure\Indian\SRP\Treatment and distribution,Energy Demand Final Units,33
+Demand\Industrial\Water infrastructure\Indian\Groundwater,Energy Demand Final Units,34
+Demand\Industrial\Water infrastructure\Indian\Groundwater\Pumping,Energy Demand Final Units,35
+Demand\Industrial\Water infrastructure\Indian\Groundwater\Treatment and distribution,Energy Demand Final Units,36
+Demand\Industrial\Water infrastructure\Industrial,Energy Demand Final Units,37
+Demand\Industrial\Water infrastructure\Industrial\CAP,Energy Demand Final Units,38
+Demand\Industrial\Water infrastructure\Industrial\CAP\Conveyance,Energy Demand Final Units,39
+Demand\Industrial\Water infrastructure\Industrial\CAP\Treatment and distribution,Energy Demand Final Units,40
+Demand\Industrial\Water infrastructure\Industrial\SRP,Energy Demand Final Units,41
+Demand\Industrial\Water infrastructure\Industrial\SRP\Treatment and distribution,Energy Demand Final Units,42
+Demand\Industrial\Water infrastructure\Industrial\Groundwater,Energy Demand Final Units,43
+Demand\Industrial\Water infrastructure\Industrial\Groundwater\Pumping,Energy Demand Final Units,44
+Demand\Industrial\Water infrastructure\Industrial\Groundwater\Treatment and distribution,Energy Demand Final Units,45
+Demand\Industrial\Water infrastructure\WWTP,Energy Demand Final Units,46
+Demand\Industrial\Water infrastructure\WWTP\Wastewater treatment and pumping\WWTP,Energy Demand Final Units,47
+Demand\Industrial\Water infrastructure\WWTP\Reclaimed water treatment and pumping\WRF,Energy Demand Final Units,48
+Transformation\Electricity generation\Processes\Horse Mesa Dam,Outputs by Output Fuel,49
+Transformation\Electricity generation\Processes\Horse Mesa Dam,Actual Availability,50
+Transformation\Electricity generation\Processes\Horse Mesa Dam,Average Power Dispatched,51
+Transformation\Electricity generation\Processes\Horse Mesa Dam,One_Hundred Year GWP Direct At Point of Emissions,52
+Transformation\Electricity generation\Processes\Desert Basin Generating Station,Outputs by Output Fuel,53
+Transformation\Electricity generation\Processes\Desert Basin Generating Station,Actual Availability,54
+Transformation\Electricity generation\Processes\Desert Basin Generating Station,Average Power Dispatched,55
+Transformation\Electricity generation\Processes\Desert Basin Generating Station,One_Hundred Year GWP Direct At Point of Emissions,56
+Transformation\Electricity generation\Processes\Saguaro Unit 3,Outputs by Output Fuel,57
+Transformation\Electricity generation\Processes\Saguaro Unit 3,Actual Availability,58
+Transformation\Electricity generation\Processes\Saguaro Unit 3,Average Power Dispatched,59
+Transformation\Electricity generation\Processes\Saguaro Unit 3,One_Hundred Year GWP Direct At Point of Emissions,60
+Transformation\Electricity generation\Processes\Sundance,Outputs by Output Fuel,61
+Transformation\Electricity generation\Processes\Sundance,Actual Availability,62
+Transformation\Electricity generation\Processes\Sundance,Average Power Dispatched,63
+Transformation\Electricity generation\Processes\Sundance,One_Hundred Year GWP Direct At Point of Emissions,64
+Transformation\Electricity generation\Processes\Yucca Units 5 and 6,Outputs by Output Fuel,65
+Transformation\Electricity generation\Processes\Yucca Units 5 and 6,Actual Availability,66
+Transformation\Electricity generation\Processes\Yucca Units 5 and 6,Average Power Dispatched,67
+Transformation\Electricity generation\Processes\Yucca Units 5 and 6,One_Hundred Year GWP Direct At Point of Emissions,68
+Transformation\Electricity generation\Processes\Saguaro Units 1 and 2,Outputs by Output Fuel,69
+Transformation\Electricity generation\Processes\Saguaro Units 1 and 2,Actual Availability,70
+Transformation\Electricity generation\Processes\Saguaro Units 1 and 2,Average Power Dispatched,71
+Transformation\Electricity generation\Processes\Saguaro Units 1 and 2,One_Hundred Year GWP Direct At Point of Emissions,72
+Transformation\Electricity generation\Processes\Yucca Units 1 2 and 3,Outputs by Output Fuel,73
+Transformation\Electricity generation\Processes\Yucca Units 1 2 and 3,Actual Availability,74
+Transformation\Electricity generation\Processes\Yucca Units 1 2 and 3,Average Power Dispatched,75
+Transformation\Electricity generation\Processes\Yucca Units 1 2 and 3,One_Hundred Year GWP Direct At Point of Emissions,76
+Transformation\Electricity generation\Processes\Coronado Generating Station,Outputs by Output Fuel,77
+Transformation\Electricity generation\Processes\Coronado Generating Station,Actual Availability,78
+Transformation\Electricity generation\Processes\Coronado Generating Station,Average Power Dispatched,79
+Transformation\Electricity generation\Processes\Coronado Generating Station,One_Hundred Year GWP Direct At Point of Emissions,80
+Transformation\Electricity generation\Processes\Navajo Generating Station,Outputs by Output Fuel,81
+Transformation\Electricity generation\Processes\Navajo Generating Station,Actual Availability,82
+Transformation\Electricity generation\Processes\Navajo Generating Station,Average Power Dispatched,83
+Transformation\Electricity generation\Processes\Navajo Generating Station,One_Hundred Year GWP Direct At Point of Emissions,84
+Transformation\Electricity generation\Processes\Craig Generating Station Units 1 and 2,Outputs by Output Fuel,85
+Transformation\Electricity generation\Processes\Craig Generating Station Units 1 and 2,Actual Availability,86
+Transformation\Electricity generation\Processes\Craig Generating Station Units 1 and 2,Average Power Dispatched,87
+Transformation\Electricity generation\Processes\Craig Generating Station Units 1 and 2,One_Hundred Year GWP Direct At Point of Emissions,88
+Transformation\Electricity generation\Processes\Four Corners PowerPlant,Outputs by Output Fuel,89
+Transformation\Electricity generation\Processes\Four Corners PowerPlant,Actual Availability,90
+Transformation\Electricity generation\Processes\Four Corners PowerPlant,Average Power Dispatched,91
+Transformation\Electricity generation\Processes\Four Corners PowerPlant,One_Hundred Year GWP Direct At Point of Emissions,92
+Transformation\Electricity generation\Processes\Hayden Generating Station Unit 2,Outputs by Output Fuel,93
+Transformation\Electricity generation\Processes\Hayden Generating Station Unit 2,Actual Availability,94
+Transformation\Electricity generation\Processes\Hayden Generating Station Unit 2,Average Power Dispatched,95
+Transformation\Electricity generation\Processes\Hayden Generating Station Unit 2,One_Hundred Year GWP Direct At Point of Emissions,96
+Transformation\Electricity generation\Processes\Springerville Generating Station Unit 4,Outputs by Output Fuel,97
+Transformation\Electricity generation\Processes\Springerville Generating Station Unit 4,Actual Availability,98
+Transformation\Electricity generation\Processes\Springerville Generating Station Unit 4,Average Power Dispatched,99
+Transformation\Electricity generation\Processes\Springerville Generating Station Unit 4,One_Hundred Year GWP Direct At Point of Emissions,100
+Transformation\Electricity generation\Processes\Cholla,Outputs by Output Fuel,101
+Transformation\Electricity generation\Processes\Cholla,Actual Availability,102
+Transformation\Electricity generation\Processes\Cholla,Average Power Dispatched,103
+Transformation\Electricity generation\Processes\Cholla,One_Hundred Year GWP Direct At Point of Emissions,104
+Transformation\Electricity generation\Processes\Agua Fria Generating Station,Outputs by Output Fuel,105
+Transformation\Electricity generation\Processes\Agua Fria Generating Station,Actual Availability,106
+Transformation\Electricity generation\Processes\Agua Fria Generating Station,Average Power Dispatched,107
+Transformation\Electricity generation\Processes\Agua Fria Generating Station,One_Hundred Year GWP Direct At Point of Emissions,108
+Transformation\Electricity generation\Processes\Kyrene Generating Station,Outputs by Output Fuel,109
+Transformation\Electricity generation\Processes\Kyrene Generating Station,Actual Availability,110
+Transformation\Electricity generation\Processes\Kyrene Generating Station,Average Power Dispatched,111
+Transformation\Electricity generation\Processes\Kyrene Generating Station,One_Hundred Year GWP Direct At Point of Emissions,112
+Transformation\Electricity generation\Processes\Santan,Outputs by Output Fuel,113
+Transformation\Electricity generation\Processes\Santan,Actual Availability,114
+Transformation\Electricity generation\Processes\Santan,Average Power Dispatched,115
+Transformation\Electricity generation\Processes\Santan,One_Hundred Year GWP Direct At Point of Emissions,116
+Transformation\Electricity generation\Processes\Ocotillo,Outputs by Output Fuel,117
+Transformation\Electricity generation\Processes\Ocotillo,Actual Availability,118
+Transformation\Electricity generation\Processes\Ocotillo,Average Power Dispatched,119
+Transformation\Electricity generation\Processes\Ocotillo,One_Hundred Year GWP Direct At Point of Emissions,120
+Transformation\Electricity generation\Processes\West Phoenix,Outputs by Output Fuel,121
+Transformation\Electricity generation\Processes\West Phoenix,Actual Availability,122
+Transformation\Electricity generation\Processes\West Phoenix,Average Power Dispatched,123
+Transformation\Electricity generation\Processes\West Phoenix,One_Hundred Year GWP Direct At Point of Emissions,124
+Transformation\Electricity generation\Processes\Gila River,Outputs by Output Fuel,125
+Transformation\Electricity generation\Processes\Gila River,Actual Availability,126
+Transformation\Electricity generation\Processes\Gila River,Average Power Dispatched,127
+Transformation\Electricity generation\Processes\Gila River,One_Hundred Year GWP Direct At Point of Emissions,128
+Transformation\Electricity generation\Processes\Redhawk,Outputs by Output Fuel,129
+Transformation\Electricity generation\Processes\Redhawk,Actual Availability,130
+Transformation\Electricity generation\Processes\Redhawk,Average Power Dispatched,131
+Transformation\Electricity generation\Processes\Redhawk,One_Hundred Year GWP Direct At Point of Emissions,132
+Transformation\Electricity generation\Processes\Arlington Valley,Outputs by Output Fuel,133
+Transformation\Electricity generation\Processes\Arlington Valley,Actual Availability,134
+Transformation\Electricity generation\Processes\Arlington Valley,Average Power Dispatched,135
+Transformation\Electricity generation\Processes\Arlington Valley,One_Hundred Year GWP Direct At Point of Emissions,136
+Transformation\Electricity generation\Processes\Palo Verde Generating Station,Outputs by Output Fuel,137
+Transformation\Electricity generation\Processes\Palo Verde Generating Station,Actual Availability,138
+Transformation\Electricity generation\Processes\Palo Verde Generating Station,Average Power Dispatched,139
+Transformation\Electricity generation\Processes\Palo Verde Generating Station,One_Hundred Year GWP Direct At Point of Emissions,140
+Transformation\Electricity generation\Processes\Coolidge Generating Station,Outputs by Output Fuel,141
+Transformation\Electricity generation\Processes\Coolidge Generating Station,Actual Availability,142
+Transformation\Electricity generation\Processes\Coolidge Generating Station,Average Power Dispatched,143
+Transformation\Electricity generation\Processes\Coolidge Generating Station,One_Hundred Year GWP Direct At Point of Emissions,144
+Transformation\Electricity generation\Processes\Mesquite Generating Station Block 1,Outputs by Output Fuel,145
+Transformation\Electricity generation\Processes\Mesquite Generating Station Block 1,Actual Availability,146
+Transformation\Electricity generation\Processes\Mesquite Generating Station Block 1,Average Power Dispatched,147
+Transformation\Electricity generation\Processes\Mesquite Generating Station Block 1,One_Hundred Year GWP Direct At Point of Emissions,148
+Transformation\Electricity generation\Processes\Solar,Outputs by Output Fuel,149
+Transformation\Electricity generation\Processes\Solar,Actual Availability,150
+Transformation\Electricity generation\Processes\Solar,Average Power Dispatched,151
+Transformation\Electricity generation\Processes\Solar,One_Hundred Year GWP Direct At Point of Emissions,152
+Transformation\Electricity generation\Processes\Wind,Outputs by Output Fuel,153
+Transformation\Electricity generation\Processes\Wind,Actual Availability,154
+Transformation\Electricity generation\Processes\Wind,Average Power Dispatched,155
+Transformation\Electricity generation\Processes\Wind,One_Hundred Year GWP Direct At Point of Emissions,156
+Resources\Primary,Imports,157
+Resources\Primary\Hydro,Imports,158
+Resources\Primary\Coal Sub bituminous,Imports,159
+Resources\Primary\Nuclear,Imports,160
+Resources\Primary\Solar,Imports,161
+Resources\Primary\Wind,Imports,162
+Resources\Primary\Coal Unspecified,Imports,163
+Resources\Primary\Coal Bituminous,Imports,164
+Resources\Primary\Natural Gas,Imports,165
+Resources\Secondary\Electricity,Imports,166

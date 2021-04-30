@@ -1,0 +1,170 @@
+,demand_site,crop,proportion,crop_type,default_expression,time_series
+0,Adaman,Alfalfa_hay,0.004126419,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Alfalfa.xlsx, A3:B12))*0.760",0
+1,Adaman,Alfalfa_haylage,0.00130308,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Alfalfa.xlsx, A3:B12))*0.24",0
+2,Adaman,Corn_silage,0.008710084,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Corn.xlsx, A3:B12))*0.9553",0
+3,Adaman,Corn_grain,0.000407559,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Corn.xlsx, A3:B12))*0.0447",0
+4,Adaman,Barley,0.012316313,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Barley.xlsx, A3:B12))",0
+5,Adaman,Cotton,0.005062978,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Cotton.xlsx, A3:B12))",0
+6,Adaman,Durum_Wheat,0.010104468,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Durum Wheat.xlsx, A3:B12))",0
+7,Adaman,Potatoes,0.149598981,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Potatoes.xlsx, A3:B12))",0
+8,Adaman,Sorghum_grain,0.000673301,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Sorghum.xlsx, A3:B12))*0.1898",0
+9,Adaman,Sugarbeets,0.000673301,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Sugarbeets.xlsx, A3:B12))",0
+10,Adaman,Winter_Wheat,0.000673301,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Winter Wheat.xlsx, A3:B12))",0
+11,Adaman,Other_Hay,0.000673301,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Other Hay.xlsx, A3:B12))",0
+12,Adaman,Sorghum_silage,0.000673301,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_Sorghum.xlsx, A3:B12))*0.8102",0
+13,Adaman,VegFruit,0.000673301,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\adaman_VegFruit.xlsx, A3:B12))",0
+14,Arlington,Alfalfa_hay,0.03520373,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Alfalfa.xlsx, A3:B12))*0.760",0
+15,Arlington,Alfalfa_haylage,0.011116967,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Alfalfa.xlsx, A3:B12))*0.24",0
+16,Arlington,Corn_silage,0.004921069,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Corn.xlsx, A3:B12))*0.9553",0
+17,Arlington,Corn_grain,0.000230265,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Corn.xlsx, A3:B12))*0.0447",0
+18,Arlington,Barley,0.033386798,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Barley.xlsx, A3:B12))",0
+19,Arlington,Cotton,0.011632729,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Cotton.xlsx, A3:B12))",0
+20,Arlington,Durum_Wheat,0.025167648,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Durum Wheat.xlsx, A3:B12))",0
+21,Arlington,Potatoes,0.00016178,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Potatoes.xlsx, A3:B12))",0
+22,Arlington,Sorghum_grain,0.015546499,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Sorghum.xlsx, A3:B12))*0.1898",0
+23,Arlington,Sugarbeets,0.015546499,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Sugarbeets.xlsx, A3:B12))",0
+24,Arlington,Winter_Wheat,0.015546499,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Winter Wheat.xlsx, A3:B12))",0
+25,Arlington,Other_Hay,0.015546499,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Other Hay.xlsx, A3:B12))",0
+26,Arlington,Sorghum_silage,0.015546499,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_Sorghum.xlsx, A3:B12))*0.8102",0
+27,Arlington,VegFruit,0.015546499,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\arlingto_VegFruit.xlsx, A3:B12))",0
+28,Buckeye,Alfalfa_hay,0.149789842,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Alfalfa.xlsx, A3:B12))*0.760",0
+29,Buckeye,Alfalfa_haylage,0.047302055,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Alfalfa.xlsx, A3:B12))*0.24",0
+30,Buckeye,Corn_silage,0.059701241,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Corn.xlsx, A3:B12))*0.9553",0
+31,Buckeye,Corn_grain,0.002793516,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Corn.xlsx, A3:B12))*0.0447",0
+32,Buckeye,Barley,0.194686944,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Barley.xlsx, A3:B12))",0
+33,Buckeye,Cotton,0.06031276,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Cotton.xlsx, A3:B12))",0
+34,Buckeye,Durum_Wheat,0.065110131,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Durum Wheat.xlsx, A3:B12))",0
+35,Buckeye,Potatoes,0.002200417,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Potatoes.xlsx, A3:B12))",0
+36,Buckeye,Sorghum_grain,0.034914847,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Sorghum.xlsx, A3:B12))*0.1898",0
+37,Buckeye,Sugarbeets,0.034914847,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Sugarbeets.xlsx, A3:B12))",0
+38,Buckeye,Winter_Wheat,0.034914847,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Winter Wheat.xlsx, A3:B12))",0
+39,Buckeye,Other_Hay,0.034914847,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Other Hay.xlsx, A3:B12))",0
+40,Buckeye,Sorghum_silage,0.034914847,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_Sorghum.xlsx, A3:B12))*0.8102",0
+41,Buckeye,VegFruit,0.034914847,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\buckeye_VegFruit.xlsx, A3:B12))",0
+42,Maricopa_Water_District,Alfalfa_hay,0.027439232,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Alfalfa.xlsx, A3:B12))*0.760",0
+43,Maricopa_Water_District,Alfalfa_haylage,0.008665021,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Alfalfa.xlsx, A3:B12))*0.24",0
+44,Maricopa_Water_District,Corn_silage,0.112853844,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Corn.xlsx, A3:B12))*0.9553",0
+45,Maricopa_Water_District,Corn_grain,0.00528061,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Corn.xlsx, A3:B12))*0.0447",0
+46,Maricopa_Water_District,Barley,0.0907923,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Barley.xlsx, A3:B12))",0
+47,Maricopa_Water_District,Cotton,0.016777922,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Cotton.xlsx, A3:B12))",0
+48,Maricopa_Water_District,Durum_Wheat,0.114963355,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Durum Wheat.xlsx, A3:B12))",0
+49,Maricopa_Water_District,Potatoes,0.466481615,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Potatoes.xlsx, A3:B12))",0
+50,Maricopa_Water_District,Sorghum_grain,0.014632967,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Sorghum.xlsx, A3:B12))*0.1898",0
+51,Maricopa_Water_District,Sugarbeets,0.014632967,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Sugarbeets.xlsx, A3:B12))",0
+52,Maricopa_Water_District,Winter_Wheat,0.014632967,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Winter Wheat.xlsx, A3:B12))",0
+53,Maricopa_Water_District,Other_Hay,0.014632967,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Other Hay.xlsx, A3:B12))",0
+54,Maricopa_Water_District,Sorghum_silage,0.014632967,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_Sorghum.xlsx, A3:B12))*0.8102",0
+55,Maricopa_Water_District,VegFruit,0.014632967,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\maricowd_VegFruit.xlsx, A3:B12))",0
+56,New_Magma,Alfalfa_hay,0.133597193,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Alfalfa.xlsx, A3:B12))*0.816",0
+57,New_Magma,Alfalfa_haylage,0.030124857,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Alfalfa.xlsx, A3:B12))*0.184",0
+58,New_Magma,Corn_silage,0.098134109,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Corn.xlsx, A3:B12))*0.9125",0
+59,New_Magma,Corn_grain,0.00941012,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Corn.xlsx, A3:B12))*0.0875",0
+60,New_Magma,Barley,0.138047135,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Barley.xlsx, A3:B12))",0
+61,New_Magma,Upland_Cotton,0.230225537,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Cotton.xlsx, A3:B12))*0.9678",0
+62,New_Magma,Pima_Cotton,0.007659911,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Cotton.xlsx, A3:B12))*0.0322",0
+63,New_Magma,Durum_Wheat,0.150665108,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Durum Wheat.xlsx, A3:B12))",0
+64,New_Magma,Potatoes,0.035091221,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Potatoes.xlsx, A3:B12))",0
+65,New_Magma,Sorghum_grain,0.02400349,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Sorghum.xlsx, A3:B12))*0.5291",0
+66,New_Magma,Sugarbeets,0.02400349,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Sugarbeets.xlsx, A3:B12))",0
+67,New_Magma,Winter_Wheat,0.02400349,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Winter Wheat.xlsx, A3:B12))",0
+68,New_Magma,Other_Hay,0.02400349,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Other Hay.xlsx, A3:B12))",0
+69,New_Magma,Sorghum_silage,0.02400349,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_Sorghum.xlsx, A3:B12))*0.4709",0
+70,New_Magma,VegFruit,0.02400349,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\newmagma_VegFruit.xlsx, A3:B12))",0
+71,Peninsula,Alfalfa_hay,0.004371236,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Alfalfa.xlsx, A3:B12))*0.760",0
+72,Peninsula,Alfalfa_haylage,0.00138039,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Alfalfa.xlsx, A3:B12))*0.24",0
+73,Peninsula,Corn_silage,0.002422716,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Corn.xlsx, A3:B12))*0.9553",0
+74,Peninsula,Corn_grain,0.000221907,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Corn.xlsx, A3:B12))*0.0447",0
+75,Peninsula,Barley,0.003064668,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Barley.xlsx, A3:B12))",0
+76,Peninsula,Cotton,0.00135168,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Cotton.xlsx, A3:B12))",0
+77,Peninsula,Durum_Wheat,0.00034573,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Durum Wheat.xlsx, A3:B12))",0
+78,Peninsula,Potatoes,9.28E-05,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Potatoes.xlsx, A3:B12))",0
+79,Peninsula,Sorghum_grain,0.000709678,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Sorghum.xlsx, A3:B12))*0.1898",0
+80,Peninsula,Sugarbeets,0.000709678,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Sugarbeets.xlsx, A3:B12))",0
+81,Peninsula,Winter_Wheat,0.000709678,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Winter Wheat.xlsx, A3:B12))",0
+82,Peninsula,Other_Hay,0.000709678,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Other Hay.xlsx, A3:B12))",0
+83,Peninsula,Sorghum_silage,0.000709678,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_Sorghum.xlsx, A3:B12))*0.8102",0
+84,Peninsula,VegFruit,0.000709678,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\peninsul_VegFruit.xlsx, A3:B12))",0
+85,Queen_Creek,Alfalfa_hay,0.038820558,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Alfalfa.xlsx, A3:B12))*0.760",0
+86,Queen_Creek,Alfalfa_haylage,0.012259124,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Alfalfa.xlsx, A3:B12))*0.24",0
+87,Queen_Creek,Corn_silage,0.1145052,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Corn.xlsx, A3:B12))*0.9553",0
+88,Queen_Creek,Corn_grain,0.00535788,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Corn.xlsx, A3:B12))*0.0447",0
+89,Queen_Creek,Barley,0.090322684,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Barley.xlsx, A3:B12))",0
+90,Queen_Creek,Cotton,0.102271089,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Cotton.xlsx, A3:B12))",0
+91,Queen_Creek,Durum_Wheat,0.046618328,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Durum Wheat.xlsx, A3:B12))",0
+92,Queen_Creek,Potatoes,0.318852853,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Potatoes.xlsx, A3:B12))",0
+93,Queen_Creek,Sorghum_grain,0.001824824,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Sorghum.xlsx, A3:B12))*0.1898",0
+94,Queen_Creek,Sugarbeets,0.001824824,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Sugarbeets.xlsx, A3:B12))",0
+95,Queen_Creek,Winter_Wheat,0.001824824,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Winter Wheat.xlsx, A3:B12))",0
+96,Queen_Creek,Other_Hay,0.001824824,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Other Hay.xlsx, A3:B12))",0
+97,Queen_Creek,Sorghum_silage,0.001824824,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_Sorghum.xlsx, A3:B12))*0.8102",0
+98,Queen_Creek,VegFruit,0.001824824,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\queencre_VegFruit.xlsx, A3:B12))",0
+99,Roosevelt_ID,Alfalfa_hay,0.143477634,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Alfalfa.xlsx, A3:B12))*0.760",0
+100,Roosevelt_ID,Alfalfa_haylage,0.045308727,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Alfalfa.xlsx, A3:B12))*0.24",0
+101,Roosevelt_ID,Corn_silage,0.161371467,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Corn.xlsx, A3:B12))*0.9553",0
+102,Roosevelt_ID,Corn_grain,0.007550826,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Corn.xlsx, A3:B12))*0.0447",0
+103,Roosevelt_ID,Barley,0.263011479,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Barley.xlsx, A3:B12))",0
+104,Roosevelt_ID,Cotton,0.354766947,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Cotton.xlsx, A3:B12))",0
+105,Roosevelt_ID,Durum_Wheat,0.481411519,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Durum Wheat.xlsx, A3:B12))",0
+106,Roosevelt_ID,Potatoes,0.011398176,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Potatoes.xlsx, A3:B12))",0
+107,Roosevelt_ID,Sorghum_grain,0.03217756,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Sorghum.xlsx, A3:B12))*0.1898",0
+108,Roosevelt_ID,Sugarbeets,0.03217756,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Sugarbeets.xlsx, A3:B12))",0
+109,Roosevelt_ID,Winter_Wheat,0.03217756,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Winter Wheat.xlsx, A3:B12))",0
+110,Roosevelt_ID,Other_Hay,0.03217756,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Other Hay.xlsx, A3:B12))",0
+111,Roosevelt_ID,Sorghum_silage,0.03217756,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_Sorghum.xlsx, A3:B12))*0.8102",0
+112,Roosevelt_ID,VegFruit,0.03217756,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_id_VegFruit.xlsx, A3:B12))",0
+113,Roosevelt_Water_Consertation,Alfalfa_hay,0.06844917,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Alfalfa.xlsx, A3:B12))*0.760",0
+114,Roosevelt_Water_Consertation,Alfalfa_haylage,0.021615527,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Alfalfa.xlsx, A3:B12))*0.24",0
+115,Roosevelt_Water_Consertation,Corn_silage,0.157787139,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Corn.xlsx, A3:B12))*0.9553",0
+116,Roosevelt_Water_Consertation,Corn_grain,0.00738311,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Corn.xlsx, A3:B12))*0.0447",0
+117,Roosevelt_Water_Consertation,Barley,0.012455827,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Barley.xlsx, A3:B12))",0
+118,Roosevelt_Water_Consertation,Cotton,0.014345945,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Cotton.xlsx, A3:B12))",0
+119,Roosevelt_Water_Consertation,Durum_Wheat,0.006261932,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Durum Wheat.xlsx, A3:B12))",0
+120,Roosevelt_Water_Consertation,Potatoes,0.003903029,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Potatoes.xlsx, A3:B12))",0
+121,Roosevelt_Water_Consertation,Sorghum_grain,0.00863918,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Sorghum.xlsx, A3:B12))*0.1898",0
+122,Roosevelt_Water_Consertation,Sugarbeets,0.00863918,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Sugarbeets.xlsx, A3:B12))",0
+123,Roosevelt_Water_Consertation,Winter_Wheat,0.00863918,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Winter Wheat.xlsx, A3:B12))",0
+124,Roosevelt_Water_Consertation,Other_Hay,0.00863918,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Other Hay.xlsx, A3:B12))",0
+125,Roosevelt_Water_Consertation,Sorghum_silage,0.00863918,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_Sorghum.xlsx, A3:B12))*0.8102",0
+126,Roosevelt_Water_Consertation,VegFruit,0.00863918,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\roo_wc_VegFruit.xlsx, A3:B12))",0
+127,Salt_River_Valley,Alfalfa_hay,0.134920057,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Alfalfa.xlsx, A3:B12))*0.760",0
+128,Salt_River_Valley,Alfalfa_haylage,0.042606334,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Alfalfa.xlsx, A3:B12))*0.24",0
+129,Salt_River_Valley,Corn_silage,0.148016295,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Corn.xlsx, A3:B12))*0.9553",0
+130,Salt_River_Valley,Corn_grain,0.006925917,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Corn.xlsx, A3:B12))*0.0447",0
+131,Salt_River_Valley,Barley,0.128342841,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Barley.xlsx, A3:B12))",0
+132,Salt_River_Valley,Cotton,0.152748575,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Cotton.xlsx, A3:B12))",0
+133,Salt_River_Valley,Durum_Wheat,0.079894402,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Durum Wheat.xlsx, A3:B12))",0
+134,Salt_River_Valley,Potatoes,0.011169885,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Potatoes.xlsx, A3:B12))",0
+135,Salt_River_Valley,Sorghum_grain,0.02550361,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Sorghum.xlsx, A3:B12))*0.1898",0
+136,Salt_River_Valley,Sugarbeets,0.02550361,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Sugarbeets.xlsx, A3:B12))",0
+137,Salt_River_Valley,Winter_Wheat,0.02550361,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Winter Wheat.xlsx, A3:B12))",0
+138,Salt_River_Valley,Other_Hay,0.02550361,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Other Hay.xlsx, A3:B12))",0
+139,Salt_River_Valley,Sorghum_silage,0.02550361,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_Sorghum.xlsx, A3:B12))*0.8102",0
+140,Salt_River_Valley,VegFruit,0.02550361,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\salt_rv_VegFruit.xlsx, A3:B12))",0
+141,Saint_Joins,Alfalfa_hay,0.010176968,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Alfalfa.xlsx, A3:B12))*0.760",0
+142,Saint_Joins,Alfalfa_haylage,0.003213779,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Alfalfa.xlsx, A3:B12))*0.24",0
+143,Saint_Joins,Corn_silage,0.006481922,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Corn.xlsx, A3:B12))*0.9553",0
+144,Saint_Joins,Corn_grain,0.000303299,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Corn.xlsx, A3:B12))*0.0447",0
+145,Saint_Joins,Barley,0.00633432,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Barley.xlsx, A3:B12))",0
+146,Saint_Joins,Cotton,0.00531288,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Cotton.xlsx, A3:B12))",0
+147,Saint_Joins,Durum_Wheat,0.003213538,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Durum Wheat.xlsx, A3:B12))",0
+148,Saint_Joins,Potatoes,0.000136919,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Potatoes.xlsx, A3:B12))",0
+149,Saint_Joins,Sorghum_grain,0.002564733,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Sorghum.xlsx, A3:B12))*0.1898",0
+150,Saint_Joins,Sugarbeets,0.002564733,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Sugarbeets.xlsx, A3:B12))",0
+151,Saint_Joins,Winter_Wheat,0.002564733,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Winter Wheat.xlsx, A3:B12))",0
+152,Saint_Joins,Other_Hay,0.002564733,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Other Hay.xlsx, A3:B12))",0
+153,Saint_Joins,Sorghum_silage,0.002564733,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_Sorghum.xlsx, A3:B12))*0.8102",0
+154,Saint_Joins,VegFruit,0.002564733,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\st_joins_VegFruit.xlsx, A3:B12))",0
+155,Tonopah,Alfalfa_hay,0.018796396,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Alfalfa.xlsx, A3:B12))*0.760",0
+156,Tonopah,Alfalfa_haylage,0.005935704,Alfalfa,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Alfalfa.xlsx, A3:B12))*0.24",0
+157,Tonopah,Corn_silage,0.075792022,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Corn.xlsx, A3:B12))*0.9553",0
+158,Tonopah,Corn_grain,0.003546429,Corn,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Corn.xlsx, A3:B12))*0.0447",0
+159,Tonopah,Barley,0.027238692,Barley,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Barley.xlsx, A3:B12))",0
+160,Tonopah,Cotton,0.037531047,Cotton,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Cotton.xlsx, A3:B12))",0
+161,Tonopah,Durum_Wheat,0.01624384,Durum,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Durum Wheat.xlsx, A3:B12))",0
+162,Tonopah,Potatoes,0.000912367,Vegetables(potatoes),"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Potatoes.xlsx, A3:B12))",0
+163,Tonopah,Sorghum_grain,0.005475977,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Sorghum.xlsx, A3:B12))*0.1898",0
+164,Tonopah,Sugarbeets,0.005475977,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Sugarbeets.xlsx, A3:B12))",0
+165,Tonopah,Winter_Wheat,0.005475977,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Winter Wheat.xlsx, A3:B12))",0
+166,Tonopah,Other_Hay,0.005475977,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Other Hay.xlsx, A3:B12))",0
+167,Tonopah,Sorghum_silage,0.005475977,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_Sorghum.xlsx, A3:B12))*0.8102",0
+168,Tonopah,VegFruit,0.005475977,Remaining,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Percentage\tonopah_VegFruit.xlsx, A3:B12))",0

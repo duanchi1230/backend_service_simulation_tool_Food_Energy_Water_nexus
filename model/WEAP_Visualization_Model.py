@@ -9,7 +9,7 @@ def get_WEAP_flow_value():
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
 	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das', WEAP.ActiveArea]
-	WEAP.ActiveArea = area[3]
+	# WEAP.ActiveArea = area[3]
 	link = []
 	path = []
 	node = ''
@@ -61,7 +61,7 @@ def get_WEAP_flow_value_by_Scenario():
 	start_year = WEAP.BaseYear
 	end_year = WEAP.EndYear
 	area = ['Internal_linking_test', 'WEAP_Test_Area', 'Internal_Linking_test_das', WEAP.ActiveArea]
-	WEAP.ActiveArea = area[3]
+	# WEAP.ActiveArea = area[3]
 	link = []
 	path = []
 	node = ''

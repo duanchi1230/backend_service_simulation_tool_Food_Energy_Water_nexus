@@ -1,0 +1,34 @@
+branchToChange,variableToChange,LowValue,HighValue,VarNumber,type,isVariable
+MPM\yield,yield,85,115,0,MPM,No
+MPM\price,price,70,130,1,MPM,No
+Demand Sites and Catchments\Municipal\\,Annual Water Use Rate,0,1,2,WEAP,Yes
+Demand Sites and Catchments\Municipal\\,Annual Activity Level,0,1,3,WEAP,Yes
+Demand Sites and Catchments\Roosevelt_ID\\,Surface Layer Thickness,0.05,0.15,4,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Maximum Infiltration Rate,240,480,5,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Maximum Percolation Rate,3657.6,7315.2,6,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Initial Bucket 1 Depletion,0,7.93,7,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Initial Bucket 2 Depletion,0,150.67,8,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Total Soil Thickness,1,3,9,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Effective Precipitation,10,100,10,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Fraction Wetted,0.3,0.8,11,WEAP,No
+Demand Sites and Catchments\Roosevelt_ID\\,Irrigation Efficiency,50,90,12,WEAP,No
+Supply and Resources\Groundwater\GW_Backup\\,Initial Storage,15198,18574,13,WEAP,No
+Supply and Resources\Groundwater\Groundwater\\,Initial Storage,15198,18574,14,WEAP,No
+Supply and Resources\Groundwater\GW_Backup\\,Maximum Withdrawal,598.5,731.5,15,WEAP,No
+Supply and Resources\Groundwater\Groundwater\\,Maximum Withdrawal,598.5,731.5,16,WEAP,No
+Key Assumptions\Population,Activity Level,0,1,17,LEAP,Yes
+Demand\Residential\Residential customers,Final Energy Intensity,4761,5289,18,LEAP,No
+Demand\Commercial\Commercial customers,Final Energy Intensity,4225.2,4735,19,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Mark Wilmer,Final Energy Intensity Time Sliced,0.793333333,1.110666667,20,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Hassayampa,Final Energy Intensity Time Sliced,0.186666667,0.261333333,21,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Waddell,Final Energy Intensity Time Sliced,0.186666667,0.261333333,22,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\White Tanks WTP,Final Energy Intensity Time Sliced,0.414782609,0.561176471,23,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Phoenix Lake Pleasant WTP,Final Energy Intensity Time Sliced,0.400869565,0.542352941,24,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Phoenix Union Hills WTP,Final Energy Intensity Time Sliced,0.395652174,0.535294118,25,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Glendale Oasis WTP,Final Energy Intensity Time Sliced,0.41826087,0.565882353,26,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Pumping,Final Energy Intensity Time Sliced,0.200869565,0.468253968,27,LEAP,No
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Treatment and distribution,Final Energy Intensity Time Sliced,0.092173913,0.124705882,28,LEAP,No
+Demand\Industrial\Water infrastructure\Agricultural\CAP\Pumping in irrigation districts\Pumping in irrigation districts,Final Energy Intensity Time Sliced,0.087826087,0.118823529,29,LEAP,No
+Demand\Industrial\Water infrastructure\Agricultural\Groundwater\Pumping,Final Energy Intensity Time Sliced,0.245217391,0.546031746,30,LEAP,No
+Demand\Industrial\Water infrastructure\WWTP\Wastewater treatment and pumping\WWTP,Final Energy Intensity Time Sliced,0.599130435,0.810588235,31,LEAP,No
+Demand\Industrial\Water infrastructure\WWTP\Reclaimed water treatment and pumping\WRF\,Final Energy Intensity Time Sliced,0.705217391,0.954117647,32,LEAP,No

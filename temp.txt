@@ -1,0 +1,1 @@
+Hi All, I've integrated the sensitivity graph in the FEWSim interface. I put the graph in the Scenario Creation Panel (I think the sensitivity index is to give users the information about the impact level of variables in the scenarios when users create them). Next, I will move to enable the FEWSim to be able to save and load simulation results.

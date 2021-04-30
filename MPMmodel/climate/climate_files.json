@@ -1,0 +1,226 @@
+{
+  "CMIP5": {
+    "RCP 45": [
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/ACCESS1_0_PR_MRC.csv",
+        "file_name": "ACCESS1_0_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/ACCESS1_3_PR_MRC.csv",
+        "file_name": "ACCESS1_3_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/CanESM2_PR_MRC.csv",
+        "file_name": "CanESM2_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/CNRM_CM5_PR.csv",
+        "file_name": "CNRM_CM5_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/GFDL_CM3_PR_MRC.csv",
+        "file_name": "GFDL_CM3_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/GFDL_ESM2G_PR_MRC.csv",
+        "file_name": "GFDL_ESM2G_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/GFDL_ESM2M_PR_MRC.csv",
+        "file_name": "GFDL_ESM2M_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/HadGEM2_CC_PR_MRC.csv",
+        "file_name": "HadGEM2_CC_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/HadGEM2_ES_PR_MRC.csv",
+        "file_name": "HadGEM2_ES_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/IPSL_CM5A_LR_PR_MRC.csv",
+        "file_name": "IPSL_CM5A_LR_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/IPSL_CM5A_MR_PR_MRC.csv",
+        "file_name": "IPSL_CM5A_MR_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/IPSL_CM5B_LR_PR_MRC.csv",
+        "file_name": "IPSL_CM5B_LR_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/MIROC5_PR_MRC.csv",
+        "file_name": "MIROC5_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/MIROC_ESM_CHE_PR_MRC.csv",
+        "file_name": "MIROC_ESM_CHE_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/MIROC_ESM_PR_MRC.csv",
+        "file_name": "MIROC_ESM_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 45/MRI_CGCM3_PR_MRC.csv",
+        "file_name": "MRI_CGCM3_PR_MRC.csv"
+      }
+    ],
+    "RCP 85": [
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/ACCESS1_0_RCP85_PR_MRC.csv",
+        "file_name": "ACCESS1_0_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/ACCESS1_3_RCP85_PR_MRC.csv",
+        "file_name": "ACCESS1_3_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/CanESM2_RCP85_PR_MRC.csv",
+        "file_name": "CanESM2_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/CNRM_CM5_RP85_PR_MRC.csv",
+        "file_name": "CNRM_CM5_RP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/CSIRO_Mk3_6_0_RCP85_PR_MRC.csv",
+        "file_name": "CSIRO_Mk3_6_0_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/GFDL_CM3_RCP85_PR_MRC.csv",
+        "file_name": "GFDL_CM3_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/GFDL_ESM2G_RCP85_PR_MRC.csv",
+        "file_name": "GFDL_ESM2G_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/GFDL_ESM2M_RCP85_PR_MRC.csv",
+        "file_name": "GFDL_ESM2M_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/HadGEM2_CC_RCP85_PR_MRC.csv",
+        "file_name": "HadGEM2_CC_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/HadGEM2_ES_RCP85_PR_MRC.csv",
+        "file_name": "HadGEM2_ES_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/IPSL_CM5A_LR_RCP85_PR.csv",
+        "file_name": "IPSL_CM5A_LR_RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/IPSL_CM5A_MR_RCP85_PR_MRC.csv",
+        "file_name": "IPSL_CM5A_MR_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/IPSL_CM5B_LR_RCP85_PR_MRC.csv",
+        "file_name": "IPSL_CM5B_LR_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/MIROC5_RCP85_PR_MRC.csv",
+        "file_name": "MIROC5_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/MIROC_ESM_CHEM_RCP85_PR_MRC.csv",
+        "file_name": "MIROC_ESM_CHEM_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/MIROC_ESM_RCP85_PR_MRC.csv",
+        "file_name": "MIROC_ESM_RCP85_PR_MRC.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 5 models/RCP 85/MRI_CGCM3_PR_MRC.csv",
+        "file_name": "MRI_CGCM3_PR_MRC.csv"
+      }
+    ]
+  },
+  "CMIP6": {
+    "RCP 45": [
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/AnnualAccess_CM2_PR.csv",
+        "file_name": "AnnualAccess_CM2_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/CanESM5_PR.csv",
+        "file_name": "CanESM5_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/EC_Earth3_PR.csv",
+        "file_name": "EC_Earth3_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/GFDL_CM4_PR.csv",
+        "file_name": "GFDL_CM4_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/INM_CM4_8_RCP45_PR.csv",
+        "file_name": "INM_CM4_8_RCP45_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/INM_CM5_0_PR.csv",
+        "file_name": "INM_CM5_0_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/IPSL_CM6A_LR_PR.csv",
+        "file_name": "IPSL_CM6A_LR_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/MPI_ESM1_2_HR_PR.csv",
+        "file_name": "MPI_ESM1_2_HR_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/MPI_ESM1_2_LR_PR.csv",
+        "file_name": "MPI_ESM1_2_LR_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 45/MRI_ESM2_0_PR1.csv",
+        "file_name": "MRI_ESM2_0_PR1.csv"
+      }
+    ],
+    "RCP 85": [
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/ACCESS_CM2_RCP85_PR.csv",
+        "file_name": "ACCESS_CM2_RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/CanESM5 _RCP85_PR.csv",
+        "file_name": "CanESM5 _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/EC_Earth3 _RCP85_PR.csv",
+        "file_name": "EC_Earth3 _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/GFDL_CM4  _RCP85_PR.csv",
+        "file_name": "GFDL_CM4  _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/INM_CM4_8 _RCP85_PR.csv",
+        "file_name": "INM_CM4_8 _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/INM_CM5_0  _RCP85_PR.csv",
+        "file_name": "INM_CM5_0  _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/IPSL_CM6A_LR   _RCP85_PR.csv",
+        "file_name": "IPSL_CM6A_LR   _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/MPI_ESM1_2_HR    _RCP85_PR.csv",
+        "file_name": "MPI_ESM1_2_HR    _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/MPI_ESM1_2_LR    _RCP85_PR.csv",
+        "file_name": "MPI_ESM1_2_LR    _RCP85_PR.csv"
+      },
+      {
+        "path": "D:\\Project\\Food_Energy_Water\\fewsim-backend/MPMmodel//climate/CMIP 6 models/RCP 85/MRI_ESM2_0_RCP85_PR.csv",
+        "file_name": "MRI_ESM2_0_RCP85_PR.csv"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+branchToChange,variableToChange,LowValue,HighValue,Step,Flag,VarNumber,numberOfSteps
+Key\Industrial Electric Rate,Activity Level,5.686,7.598,0.478,1,1,5
+Demand\Residential\Residential customers,Final Energy Intensity,4761,5289,132,1,2,5
+Demand\Commercial\Commercial customers,Final Energy Intensity,4225.2,4735,127.45,1,3,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Mark Wilmer,Final Energy Intensity Time Sliced,0.793333333,1.110666667,0.079333334,1,4,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Bouse Hills,Final Energy Intensity Time Sliced,0.113333333,0.158666667,0.011333334,1,5,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Little Harquahala,Final Energy Intensity Time Sliced,0.11047619,0.154666667,0.011047619,1,6,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Hassayampa,Final Energy Intensity Time Sliced,0.186666667,0.261333333,0.018666667,1,7,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Conveyance\Waddell,Final Energy Intensity Time Sliced,0.186666667,0.261333333,0.018666667,1,8,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\White Tanks WTP,Final Energy Intensity Time Sliced,0.414782609,0.561176471,0.036598466,1,9,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Phoenix Lake Pleasant WTP,Final Energy Intensity Time Sliced,0.400869565,0.542352941,0.035370844,1,10,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Glendale Pyramid WTP,Final Energy Intensity Time Sliced,0.406956522,0.550588235,0.035907928,1,11,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Phoenix Union Hills WTP,Final Energy Intensity Time Sliced,0.395652174,0.535294118,0.034910486,1,12,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Scottsdale WTP,Final Energy Intensity Time Sliced,0.402608696,0.544705882,0.035524297,1,13,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Mesa WTP,Final Energy Intensity Time Sliced,0.40173913,0.543529412,0.035447571,1,14,5
+Demand\Industrial\Water infrastructure\Municipal\CAP\Treatment and distribution\Chandler Gilbert Santan Vista WTP,Final Energy Intensity Time Sliced,0.410434783,0.555294118,0.036214834,1,15,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Peoria Greenway WTP,Final Energy Intensity Time Sliced,0.415652174,0.562352941,0.036675192,1,16,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Glendale Cholla WTP,Final Energy Intensity Time Sliced,0.410434783,0.555294118,0.036214834,1,17,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Phoenix Deer Valley WTP,Final Energy Intensity Time Sliced,0.400869565,0.542352941,0.035370844,1,18,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Glendale Oasis WTP,Final Energy Intensity Time Sliced,0.41826087,0.565882353,0.036905371,1,19,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Phoenix 24th St WTP,Final Energy Intensity Time Sliced,0.39826087,0.538823529,0.035140665,1,20,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Scottsdale Chaparral WTP,Final Energy Intensity Time Sliced,0.410434783,0.555294118,0.036214834,1,21,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Tempe Martinez WTP,Final Energy Intensity Time Sliced,0.406956522,0.550588235,0.035907928,1,22,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\South Tempe WTP,Final Energy Intensity Time Sliced,0.406956522,0.550588235,0.035907928,1,23,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Phoenix Mesa Val Vista WTP,Final Energy Intensity Time Sliced,0.394782609,0.534117647,0.03483376,1,24,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Gilbert WTP,Final Energy Intensity Time Sliced,0.407826087,0.551764706,0.035984655,1,25,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Chandler WTP,Final Energy Intensity Time Sliced,0.405217391,0.548235294,0.035754476,1,26,5
+Demand\Industrial\Water infrastructure\Municipal\SRP\Treatment and distribution\Verde WTP,Final Energy Intensity Time Sliced,0.406956522,0.550588235,0.035907928,1,27,5
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Pumping,Final Energy Intensity Time Sliced,0.200869565,0.468253968,0.066846101,1,28,5
+Demand\Industrial\Water infrastructure\Municipal\Groundwater\Treatment and distribution,Final Energy Intensity Time Sliced,0.092173913,0.124705882,0.008132992,1,29,5
+Demand\Industrial\Water infrastructure\Agricultural\CAP\Pumping in irrigation districts\Pumping in irrigation districts,Final Energy Intensity Time Sliced,0.087826087,0.118823529,0.007749361,1,30,5
+Demand\Industrial\Water infrastructure\Agricultural\Groundwater\Pumping,Final Energy Intensity Time Sliced,0.245217391,0.546031746,0.075203589,1,31,5
+Demand\Industrial\Water infrastructure\WWTP\Wastewater treatment and pumping\WWTP,Final Energy Intensity Time Sliced,0.599130435,0.810588235,0.05286445,1,32,5
+Demand\Industrial\Water infrastructure\WWTP\Reclaimed water treatment and pumping\WRF,Final Energy Intensity Time Sliced,0.705217391,0.954117647,0.062225064,1,33,5

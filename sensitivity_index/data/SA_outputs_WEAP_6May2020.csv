@@ -1,0 +1,40 @@
+branchesToSave,variablesToSave,Index
+Demand Sites and Catchments\Indian,Unmet Demand,1
+Demand Sites and Catchments\Municipal,Unmet Demand,2
+Demand Sites and Catchments\Power Plant,Unmet Demand,3
+Demand Sites and Catchments\Industrial,Unmet Demand,4
+Demand Sites and Catchments\Roosevelt_ID,Unmet Demand,5
+Demand Sites and Catchments\GW_SRP,Unmet Demand,6
+Demand Sites and Catchments\Riparian,Unmet Demand,7
+Supply and Resources\Transmission Links\to Indian\from SRP Withdrawal,Total Node Outflow,8
+Supply and Resources\Transmission Links\to Municipal\from SRP Withdrawal,Total Node Outflow,9
+Supply and Resources\Transmission Links\to Industrial\from SRP Withdrawal,Total Node Outflow,10
+Supply and Resources\Transmission Links\to Roosevelt_ID\from SRP Withdrawal,Total Node Inflow,11
+Supply and Resources\Transmission Links\to Indian\from CAP Withdrawal,Total Node Outflow,12
+Supply and Resources\Transmission Links\to Municipal\from CAP Withdrawal,Total Node Outflow,13
+Supply and Resources\Transmission Links\to Power Plant\from CAP Withdrawal,Total Node Outflow,14
+Supply and Resources\Transmission Links\to Industrial\from CAP Withdrawal,Total Node Outflow,15
+Supply and Resources\Transmission Links\to Roosevelt_ID\from CAP Withdrawal,Total Node Inflow,16
+Supply and Resources\Transmission Links\to Riparian\from Groundwater,Total Node Outflow,17
+Supply and Resources\Transmission Links\to Indian\from Groundwater,Total Node Outflow,18
+Supply and Resources\Transmission Links\to GW_SRP\from Groundwater,Total Node Outflow,19
+Supply and Resources\Transmission Links\to Municipal\from Groundwater,Total Node Outflow,20
+Supply and Resources\Transmission Links\to Power Plant\from Groundwater,Total Node Outflow,21
+Supply and Resources\Transmission Links\to Industrial\from Groundwater,Total Node Outflow,22
+Supply and Resources\Transmission Links\to Roosevelt_ID\from Groundwater,Total Node Inflow,23
+Supply and Resources\Transmission Links\to Indian\from GW_Backup,Total Node Outflow,24
+Supply and Resources\Transmission Links\to Municipal\from GW_Backup,Total Node Outflow,25
+Supply and Resources\Transmission Links\to Power Plant\from GW_Backup,Total Node Outflow,26
+Supply and Resources\Transmission Links\to Industrial\from GW_Backup,Total Node Outflow,27
+Supply and Resources\Transmission Links\to Indian\from WWTP_2,Total Node Outflow,28
+Supply and Resources\Transmission Links\to Municipal\from WWTP_2,Total Node Outflow,29
+Supply and Resources\Transmission Links\to Power Plant\from WWTP_2,Total Node Outflow,30
+Supply and Resources\Transmission Links\to Industrial\from WWTP_2,Total Node Outflow,31
+Supply and Resources\Transmission Links\to Roosevelt_ID\from WWTP_2,Total Node Inflow,32
+Demand Sites and Catchments\Roosevelt_ID\Alfalfa_hay,Annual Crop Production,33
+Demand Sites and Catchments\Roosevelt_ID\Corn_grain,Annual Crop Production,34
+Demand Sites and Catchments\Roosevelt_ID\Sorghum_grain,Annual Crop Production,35
+Demand Sites and Catchments\Roosevelt_ID\Barley,Annual Crop Production,36
+Demand Sites and Catchments\Roosevelt_ID\Alfalfa_haylage,Annual Crop Production,37
+Demand Sites and Catchments\Roosevelt_ID\Sorghum_silage,Annual Crop Production,38
+Demand Sites and Catchments\Roosevelt_ID\Corn_silage,Annual Crop Production,39

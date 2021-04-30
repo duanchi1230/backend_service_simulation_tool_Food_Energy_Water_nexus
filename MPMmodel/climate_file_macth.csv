@@ -1,0 +1,4 @@
+,climate_scenario,type,mpm_file,mpm_path
+0,CanESM5,ssp245,RCP 45/CanESM5_PR,D:\\Project\\Food_Energy_Water\fewsim-backend\\MPMmodel\\climate\\CMIP 6 models\\RCP 45\\CanESM5_PR.csv
+1,CanESM5,ssp585,RCP 85/CanESM5_PR,D:\\Project\\Food_Energy_Water\fewsim-backend\\MPMmodel\\climate\\CMIP 6 models\\RCP 85\\CanESM5 _RCP85_PR.csv
+2,CanESM5,Hist,outPuts,D:\Project\Food_Energy_Water\fewsim-backend\MPMmodel\\outPuts.csv

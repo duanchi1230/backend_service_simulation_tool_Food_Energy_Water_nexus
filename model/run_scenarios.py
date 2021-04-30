@@ -7,7 +7,9 @@ from datetime import datetime
 import pythoncom
 from model import WEAP_Visualization_Model as WEAP_model
 from model import LEAP_Visualization_Model as LEAP_model
-
+from model import Food_Visualization_Model as food_model
+import MPMmodel.transform_to_inputs as MPM_inputs
+from climate_data.climate_data_fn import Climate_Data
 
 def save_all_parameters():
 	pythoncom.CoInitialize()
@@ -54,6 +56,11 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 	default_scenarios = []
 	weap_flow = []
 	leap_data = []
+	food_data = []
+	start_year = WEAP.BaseYear
+	end_year = WEAP.EndYear
+	MPM = MPM_inputs.MPM()
+	MPM.set_MPM_MABIA(WEAP)
 	################################################################################################################
 	now = datetime.now()
 	dt_string = now.strftime('%d/%m/%Y %H:%M:%S')
@@ -138,7 +145,19 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 				LEAP.Branch(variable['fullname']).Variable(variable['name']).Expression = expression
 			print('setting leap variable--->', variable['fullname'], '--->', variable['name'], '--->', expression)
 			print('saving leap default--->', variable['fullname'], '--->', variable['name'], '--->', default)
-		
+		for variable in scenario['climate']:
+			climate_scenario_name = variable.split("_")[0]
+			climate_scenatio_type = variable.split("_")[1]
+			cimate_file_handler = Climate_Data()
+			cimate_file_handler.set_climate_MABIA(scenario_name=climate_scenario_name, scenatio_type=climate_scenatio_type)
+
+			# handle the mpm files associated with climate scenario
+			climate_path = pd.read_csv("D:\\Project\\Food_Energy_Water\\fewsim-backend\\MPMmodel\\climate_file_macth.csv", index_col=0)
+			if climate_scenatio_type != "Hist":
+				climate_input = climate_path.loc[(climate_path["type"] == climate_scenatio_type) & (climate_path["climate_scenario"] == climate_scenario_name)]["mpm_path"].iloc[0]
+				MPM.set_MPM_climate(WEAP, climate_input=climate_input)
+			if climate_scenatio_type != "Hist":
+				MPM.set_MPM_default(WEAP)
 		# for variable in scenario['mabia']:
 		#
 		# 	default_variable_mabia.append({'branch': variable['branch'], 'name': variable['name'],
@@ -147,15 +166,16 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 		# 	                               'percentage_of_default': variable['percentage_of_default'],
 		# 	                               'model': 'mabia'})
 		#
-		# 	LEAP.Branch(variable['branch']).Variable(variable['name']).Expression = variable['expression']
-		
+		# 	WEAP.Branch(variable['branch']).Variable(variable['name']).Expression = variable['expression']
+
+
 		################################################################################################################
 		log_file = append_log(log_file, 'WEAP started running Scenario ' + scenario['name'])
-		# WEAP.Calculate()
+		WEAP.Calculate()
 		log_file = append_log(log_file, 'WEAP completed running Scenario ' + scenario['name'])
 		################################################################################################################
 		log_file = append_log(log_file, 'LEAP started running Scenario ' + scenario['name'])
-		# LEAP.Calculate()
+		LEAP.Calculate()
 		log_file = append_log(log_file, 'LEAP completed running Scenario ' + scenario['name'])
 		################################################################################################################
 		log_file = append_log(log_file, 'WEAP started extracting Scenario results from ' + scenario['name'])
@@ -186,6 +206,19 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 		log_file = append_log(log_file, 'LEAP completed extracting Scenario results from ' + scenario['name'])
 		print('run_scenarios: 150')
 		################################################################################################################
+		log_file = append_log(log_file, 'Extracting food variables in  ' + scenario['name'])
+		food_result = food_model.get_food_variables()
+		food_data.append({
+			'sid': 0,
+			'name': scenario['name'],
+			'runStatus': 'finished',
+			'timeRange': timeRange_LEAP,
+			'numTimeSteps': timeRange_LEAP[1] - timeRange_LEAP[0],
+			'var': {'input': scenario,
+			        'output': food_result}
+		})
+		log_file = append_log(log_file, 'Completed extracting food variables from Scenario ' + scenario['name'])
+		################################################################################################################
 		# extract (customized) sustainability variables
 		LEAP.ActiveView = 'Results'
 		WEAP.View = 'Results'
@@ -212,6 +245,17 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 					s_mabia_variable.append(WEAP.ResultValue(sustainability_variables[i]["variable"], year, 1, "Reference", year, 12, 'Total'))
 				sustainability_variables[i]["node"]["value"].append(
 					{"name": scenario["name"], "calculated":s_mabia_variable})
+
+			if sustainability_variables[i]["node"]["model"] == "mpm":
+				total_Croprea = 439100836.4
+				root_path = "D:\Project\Food_Energy_Water\\fewsim-backend"
+				mpm_outputs = pd.read_csv(root_path + "\MPMmodel\outPuts.csv", index_col=0)
+				crops = {'cotton': "0", 'alfalfa': "1", 'corn': "2", 'barley': "3", 'durum': "4", 'veg': "5", 'remaining': "6"}
+				col = crops[sustainability_variables[i]["node"]["name"]]
+				mpm_result = (
+						mpm_outputs.loc[start_year + 1:end_year, col].to_numpy() * total_Croprea).tolist()
+				sustainability_variables[i]["node"]["value"].append(
+					{"name": scenario["name"], "calculated": mpm_result})
 		################################################################################################################
 		# extract loaded (saved) sustainability variables
 		LEAP.ActiveView = 'Results'
@@ -247,7 +291,20 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 							                 12, 'Total'))
 					loaded_group_index[i]["variable"][j]["node"]["value"].append(
 						{"name": scenario["name"], "calculated": s_mabia_variable})
+
+				if loaded_group_index[i]["variable"][j]["node"]["model"] == "mpm":
+					total_Croprea = 439100836.4
+					root_path = "D:\Project\Food_Energy_Water\\fewsim-backend"
+					mpm_outputs = pd.read_csv(root_path + "\MPMmodel\outPuts.csv", index_col=0)
+					crops = {'cotton':"0", 'alfalfa':"1", 'corn':"2", 'barley':"3", 'durum':"4", 'veg':"5", 'remaining':"6"}
+					col = crops[loaded_group_index[i]["variable"][j]["node"]["name"]]
+					mpm_result = (
+								mpm_outputs.loc[start_year + 1:end_year, col].to_numpy() * total_Croprea).tolist()
+					loaded_group_index[i]["variable"][j]["node"]["value"].append(
+						{"name": scenario["name"], "calculated": mpm_result})
 		################################################################################################################
+		# set variables back to default
+		# set WEAP back to default
 		WEAP.View = 'Data'
 		for default_variable in default_variable_weap:
 			for s in WEAP.Scenarios:
@@ -256,6 +313,7 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 				default_variable['expression']
 			print('setting weap default--->', default_variable['branch'], '--->', default_variable['name'], '--->',
 			      default_variable['expression'])
+		# set LEAP back to default
 		LEAP.ActiveView = 'Analysis'
 		for default_variable_l in default_variable_leap:
 			for s in LEAP.Scenarios:
@@ -264,6 +322,10 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 				default_variable_l['expression']
 			print('setting leap default--->', default_variable_l['branch'], '--->', default_variable_l['name'], '--->',
 			      default_variable_l['expression'])
+		# set climate files and mpm files back to default
+		if len(scenario['climate'])>0:
+			cimate_file_handler.set_climate_default()
+			MPM.set_MPM_default(WEAP)
 	log_file = append_log(log_file, 'Completed')
 	###################################################################################################################
 	# calculate weap_flow response level in percentage
@@ -313,12 +375,12 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 					max_l_i = max_l[type][variable][leap_data[i]["var"]["output"][type][variable][j]["branch"]]
 					leap_data[i]["var"]["output"][type][variable][j]["percentage"] = list(
 						np.around((np.array(l_i) - np.array(l_0)) / (np.array(max_l_i) + 0.000001), decimals=3))
-	
+
 	pythoncom.CoUninitialize()
 
 	with open('run_results.json', 'w') as outfile:
-		json.dump({'weap-flow': weap_flow, 'leap-data': leap_data,  "sustainability_variables": sustainability_variables, "loaded_group_index": loaded_group_index}, outfile)
-	return weap_flow, leap_data, sustainability_variables, loaded_group_index
+		json.dump({'weap-flow': weap_flow, 'leap-data': leap_data,  "food-data":food_data, "sustainability_variables": sustainability_variables, "loaded_group_index": loaded_group_index}, outfile)
+	return weap_flow, leap_data, food_data, sustainability_variables, loaded_group_index
 
 
 def append_log(log_file, message):
@@ -337,3 +399,5 @@ def append_log(log_file, message):
 # log_file = pd.concat([log_file, pd.DataFrame([[1, 'qweqe']],columns=['time', 'message'])], ignore_index=True)
 # for row in log_file.iterrows():
 # 	print(row[1]['time'], row[1]['message'])
+# climate_path = pd.read_csv("D:\\Project\\Food_Energy_Water\\fewsim-backend\\MPMmodel\\climate_file_macth.csv", index_col=0)
+# print(climate_path.loc[(climate_path["type"] == "ssp585") & (climate_path["climate_scenario"] == "CanESM5")]["mpm_path"].iloc[0])

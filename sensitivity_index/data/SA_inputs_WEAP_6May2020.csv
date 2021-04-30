@@ -1,0 +1,21 @@
+branchToChange,variableToChange,LowValue,HighValue,Step,Flag,VarNumber
+Demand Sites and Catchments\Roosevelt_ID,Surface Layer Thickness,0.05,0.15,0.02,1,0
+Demand Sites and Catchments\Roosevelt_ID,Soil Water Capacity,1,36,1,1,1
+Supply and Resources\Groundwater\GW_Backup,Initial Storage,15198,18574,675.2,1,2
+Demand Sites and Catchments\Roosevelt_ID,Initial Bucket 1 Depletion,0,7.93,1.586,1,3
+Demand Sites and Catchments\Roosevelt_ID,Initial Bucket 2 Depletion,0,150.67,30.134,1,4
+Demand Sites and Catchments\Roosevelt_ID,Total Soil Thickness,1,3,0.4,1,5
+Demand Sites and Catchments\Roosevelt_ID,Effective Precipitation,10,100,18,1,6
+Demand Sites and Catchments\Roosevelt_ID,Fraction Wetted,0.3,0.8,0.1,1,7
+Demand Sites and Catchments\Roosevelt_ID,Irrigation Efficiency,50,90,8,1,8
+Supply and Resources\Groundwater\GW_Backup,Maximum Withdrawal,598.5,731.5,26.6,1,9
+Supply and Resources\Groundwater\Groundwater,Maximum Withdrawal,598.5,731.5,26.6,1,10
+Demand Sites and Catchments\Roosevelt_ID\Alfalfa_hay,Potential Yield,2858,5268,482,1,11
+Demand Sites and Catchments\Roosevelt_ID\Corn_grain,Potential Yield,1683,11780,2019.4,1,12
+Demand Sites and Catchments\Roosevelt_ID\Sorghum_grain,Potential Yield,3515,5881,473.2,1,13
+Demand Sites and Catchments\Roosevelt_ID\Barley,Potential Yield,3717,7516,759.8,1,14
+Demand Sites and Catchments\Roosevelt_ID\Alfalfa_haylage,Potential Yield,2298,2939,128.2,1,15
+Demand Sites and Catchments\Roosevelt_ID\Sorghum_silage,Potential Yield,40864,55197,2866.6,1,16
+Demand Sites and Catchments\Roosevelt_ID\Corn_silage,Potential Yield,56803,60837,806.8,1,17
+Demand Sites and Catchments\Roosevelt_ID,Maximum Infiltration Rate,240,480,48,1,18
+Demand Sites and Catchments\Roosevelt_ID,Maximum Percolation Rate,3657.6,7315.2,731.52,1,19

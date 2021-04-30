@@ -1,0 +1,13 @@
+,Unnamed: 0,demand_site,branch,variable,default_expression,averageArea
+0,0,Maricopa_Water_District,Demand Sites and Catchments\Maricopa_Water_District\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\maricowd.xlsx, A2:B2))",439100836.4
+1,1,Roosevelt_ID,Demand Sites and Catchments\Roosevelt_ID\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\roo_id.xlsx, A2:B2))",439100836.4
+2,2,Buckeye,Demand Sites and Catchments\Buckeye\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\buckeye.xlsx, A2:B2))",439100836.4
+3,3,Tonopah,Demand Sites and Catchments\Tonopah\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\tonopah.xlsx, A2:B2))",439100836.4
+4,4,Salt_River_Valley,Demand Sites and Catchments\Salt_River_Valley\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\salt_rv.xlsx, A2:B2))",439100836.4
+5,5,Saint_Joins,Demand Sites and Catchments\Saint_Joins\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\st_joins.xlsx, A2:B2))",439100836.4
+6,6,Roosevelt_Water_Consertation,Demand Sites and Catchments\Roosevelt_Water_Consertation\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\roo_wc.xlsx, A2:B2))",439100836.4
+7,7,Queen_Creek,Demand Sites and Catchments\Queen_Creek\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\queencre.xlsx, A2:B2))",439100836.4
+8,8,Peninsula,Demand Sites and Catchments\Peninsula\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\peninsul.xlsx, A2:B2))",439100836.4
+9,9,New_Magma,Demand Sites and Catchments\New_Magma\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\newmagma.xlsx, A3:B12))",439100836.4
+10,10,Arlington,Demand Sites and Catchments\Arlington\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\arlingto.xlsx, A3:B12))",439100836.4
+11,11,Adaman,Demand Sites and Catchments\Adaman\\,Area,"Interp( XLRange(D:\Project\Food_Energy_Water\Data_Used_WEAP\data\AREA_TIME_SERIES_STEP2\Area\adaman.xlsx, A2:B2))",439100836.4
