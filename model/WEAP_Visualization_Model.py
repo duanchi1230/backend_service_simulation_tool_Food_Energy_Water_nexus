@@ -1,7 +1,16 @@
+"""
+For simulation results extraction
+This module is the WEAP Visualization backend for results extraction
+Only WEAP flow variables are extracted
+"""
 import win32com.client
 from mabia_model.script_m import MaxU
 import pythoncom
 def get_WEAP_flow_value():
+	"""
+	This function extract all WEAP flow variables
+	:return:
+	"""
 	### Initialize win32com object###
 	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###
@@ -54,6 +63,11 @@ def get_WEAP_flow_value():
 	return flow, timeRange
 
 def get_WEAP_flow_value_by_Scenario():
+	"""
+	This is a duplicate function for extracting WEAP flow variables
+	Currently NOT used
+	:return:
+	"""
 	### Initialize win32com object###
 	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###
@@ -105,6 +119,11 @@ def get_WEAP_flow_value_by_Scenario():
 	return flow, timeRange
 
 def set_mabia_input():
+	"""
+	This function was used for the testing of mpm coupling to WEAP
+	This function is OBSOLETE and NOT used currently
+	:return:
+	"""
 	### Initialize win32com object###
 	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###
@@ -124,6 +143,11 @@ def set_mabia_input():
 
 ### This function works to set the MABIA parameters to default ###
 def set_mabia_default():
+	"""
+	This function is NO loger used
+	Refer to "MPMmodel/transform_to_inputs" for mpm related functions
+	:return:
+	"""
 	pythoncom.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	default_percentage = {
@@ -145,6 +169,11 @@ def set_mabia_default():
 	pythoncom.CoUninitialize()
 
 def get_WEAP_inputs():
+	"""
+	This function was used for testing WEAP API
+	This function is OBSOLETE and NOT used currently
+	:return:
+	"""
 	### Initialize win32com object###
 	pythoncom.CoInitialize()
 	### Initialize WEAP application communication port###

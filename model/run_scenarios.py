@@ -1,3 +1,7 @@
+"""
+This module fetches the created scenarios from the frontend and run each scenario
+"""
+
 import win32com.client
 import json
 import logging
@@ -46,6 +50,13 @@ def save_all_parameters():
 
 
 def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
+	"""
+	Run all scenarios created in teh frontend
+	:param scenarios: created scenarios
+	:param sustainability_variables: variables used to create sustainability indices
+	:param loaded_group_index: sustainability indices
+	:return:
+	"""
 	pythoncom.CoInitialize()
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	# WEAP.ActiveArea = 'Ag_MABIA_v14'
@@ -381,7 +392,6 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 	with open('run_results.json', 'w') as outfile:
 		json.dump({'weap-flow': weap_flow, 'leap-data': leap_data,  "food-data":food_data, "sustainability_variables": sustainability_variables, "loaded_group_index": loaded_group_index}, outfile)
 	return weap_flow, leap_data, food_data, sustainability_variables, loaded_group_index
-
 
 def append_log(log_file, message):
 	now = datetime.now()

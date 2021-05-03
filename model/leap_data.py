@@ -1,3 +1,8 @@
+"""
+This module is OBSOLETE and no longer used
+It was used for testing some LEAP API functions
+"""
+
 import win32com.client
 
 ### This module is still under development and is used to extract LEAP results###

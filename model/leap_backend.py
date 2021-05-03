@@ -1,12 +1,14 @@
+"""
+This script can generate all variable addresses and branch names in the LEAP model
+"""
+
 import win32com.client
 import json
 import pandas as pd
 import numpy as np
 import time
 import pythoncom
-"""
-	THIS MODULE IS THE LEAP-BACKEND FOR FEWSIM SYSTEM
-"""
+
 
 input_variable = ['Activity Level','Load Shape', 'Final Energy Intensity', 'Final Energy Intensity Time Sliced',
                   'Planning Reserve Margin', 'Optimize', 'Additions to Reserves', 'Resource Imports',

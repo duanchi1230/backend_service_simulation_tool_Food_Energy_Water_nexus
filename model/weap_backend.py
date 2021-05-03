@@ -1,3 +1,7 @@
+"""
+This script can generate all variable addresses and branch names in the WEAP model
+"""
+
 import win32com.client
 import json
 import pandas as pd
@@ -6,10 +10,6 @@ import time
 import pythoncom
 from pandas import ExcelWriter
 from pandas import ExcelFile
-
-"""
-	THIS MODULE IS THE WEAP-BACKEND FOR FEWSIM SYSTEM
-"""
 
 
 def generate_WEAP_variables():

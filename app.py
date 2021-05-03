@@ -1,3 +1,7 @@
+"""
+RUN this script to start the FEWSim backend
+"""
+
 #########!env python3
 from flask import Flask, request
 from flask_restful import Resource, Api, abort
@@ -7,9 +11,10 @@ from resources.project import Project, ProjectList
 from resources.scenario import Scenario, ScenarioList, Input_List, Run_Sceanrios, Get_Run_Log, Load_Existing_Scenarios, \
     Get_Coupled_Variable, Load_Sustainability_Index, Save_Simulation_Result, Sensitivity_Graph, Load_Simulation_History
 
+
+# route the RESTFUL API addresses
 app = Flask(__name__)
 api = Api(app)
-
 api.add_resource(ProjectList, '/proj')
 api.add_resource(Project, '/proj/<string:pid>')
 api.add_resource(ScenarioList, '/proj/<string:pid>/<string:model>/scenario')

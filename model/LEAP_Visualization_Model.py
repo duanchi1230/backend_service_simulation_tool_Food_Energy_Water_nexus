@@ -1,3 +1,8 @@
+"""
+For simulation results extraction
+This module is the LEAP Visualization backend for results extraction
+"""
+
 import win32com.client
 from mabia_model.script_m import MaxU
 import pythoncom
@@ -6,6 +11,10 @@ import pandas as pd
 import numpy as np
 
 def LEAP_visualization_variables():
+	"""
+	Run this function to geenrate all LEAP result variables' addresses and branch names
+	:return:
+	"""
 	# "Unmet Requirements" "Efficiency", , "Self-sufficiency" and "Primary Requirements: Allocated to Demands" are not included since LEAP API is giving
 	# error for those two variables.
 	pythoncom.CoInitialize()
@@ -64,12 +73,15 @@ def LEAP_visualization_variables():
 				except:
 					pass
 	print(variables_to_visualize)
-
 	with open('D:\\Project\\Food_Energy_Water\\fewsim-backend\model\\LEAP_visualization_variables.json', 'w') as file:
 		json.dump(variables_to_visualize, file)
 	pythoncom.CoUninitialize()
 
 def get_LEAP_value():
+	"""
+	This function extracts simulation results for all LEAP variables
+	:return:
+	"""
 	pythoncom.CoInitialize()
 	with open('D:\\Project\\Food_Energy_Water\\fewsim-backend\\model\\LEAP_visualization_variables.json', 'r') as file:
 		variables = json.load(file)

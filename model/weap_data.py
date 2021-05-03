@@ -1,3 +1,8 @@
+"""
+This module is OBSOLETE and no longer used
+It was used for testing some WEAP API functions
+"""
+
 import win32com.client
 import json
 import numpy as np
