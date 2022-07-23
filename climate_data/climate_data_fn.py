@@ -34,7 +34,6 @@ class Climate_Data():
         pythoncom.CoUninitialize()
 
     def intiate_climate_data(self):
-
         path = self.root_path
         CMIP5 = listdir(path + "\\CMIP5")
         CMIP6 = listdir(path + "\\CMIP6")

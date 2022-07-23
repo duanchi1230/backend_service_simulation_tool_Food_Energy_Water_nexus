@@ -62,7 +62,7 @@ def get_food_variables():
     for col in mpm_outputs.columns:
         food_result["mpm"].append({"crop": crops[int(col)], "value": (mpm_outputs.loc[start_year+1:end_year, col].to_numpy()*total_Croprea).tolist()})
         # print(mpm_outputs.loc[start_year+1:end_year, col].to_numpy().tolist())
-    print(food_result)
+
     return food_result
 
 def get_mpm_variables_tree():

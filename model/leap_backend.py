@@ -34,9 +34,6 @@ def generate_LEAP_variables():
 	LEAP_input = []
 	LEAP_output = []
 	for b in LEAP.Branches:
-		print('\n')
-		print(b.FullName)
-		print(b.Name)
 		for v in LEAP.Branch(b.FullName).Variables:
 			value = []
 			if v != None:
@@ -61,7 +58,7 @@ def generate_LEAP_variables():
 			else:
 				type_of_variable = 'output'
 				LEAP_output = tree_insert_node(path, node, type_of_variable, LEAP_output)
-			print(node)
+
 			# LEAP_input = tree_insert_node(path_parser(v.FullName), node, LEAP_input)
 		# if v.IsResultVariable == True:
 		# 	print(v.name)
@@ -69,7 +66,7 @@ def generate_LEAP_variables():
 		# path = b.FullName + ":" +v.name
 		# print(LEAP.ResultValue(path, 2002, 1, 'Linkage', 2002,12, 'Total'))
 	# print(LEAP.Branch("\Demand\Water unrelated\Per capita demand").Variable('Energy Demand Final Units').Value(2002, 'MWH'))
-	print(LEAP_input)
+
 	with open('LEAP_variables.json', 'w') as outfile:
 		json.dump([{'name': 'leap-input', 'children': LEAP_input},
 		           {'name': 'leap-output', 'children': LEAP_output}], outfile)
@@ -188,7 +185,7 @@ def get_LEAP_variables_from_file(file_path):
 		variables = json.load(f)
 	input_list = []
 	input_list = expand_tree(variables, input_list)
-	print(input_list[0])
+
 	return input_list
 
 def get_LEAP_variables_tree(file_path):

@@ -102,7 +102,7 @@ def projection(data_test,data_pred,Rpath,writeOut,out):
             r('data <- rbind(cbind(r_data, y = 1, wt = r_data$w), cbind(r_data, y = 0, wt = 1 - r_data$w))')
             # print(i, r('print(data)'))
             r('mod <- glm(y ~ y_cotton+y_corn+y_barley+y_durum+y_alfalfa+p_cotton+p_corn+p_barley+p_durum+p_alfalfa+temp+precipitation, weights = wt, subset = (wt > 0), data = data, family = binomial)')
-            print(r("summary(mod)"))
+
             #
             #print("Prediction ","for",str(i),"by using R \n")
             #print(r('predict(mod,newdata=r_data_test, type="response")[1:(nrow(data)/2)]'))

@@ -27,7 +27,7 @@ class Scenario(Resource):
 
         flow, timeRange = WEAP_model.get_WEAP_flow_value()
         value = flow[list(flow.keys())[sid]]
-        print(value)
+
         return {
                    "sid": sid,
                    "name": list(flow.keys())[sid],
@@ -40,7 +40,7 @@ class Scenario(Resource):
 
     def post(self, pid, model, sid):
         data = request.get_json(self)
-        print(data)
+
         win32com.CoInitialize()
         WEAP = win32com.client.Dispatch("WEAP.WEAPApplication")
         start_year = WEAP.BaseYear
@@ -122,8 +122,6 @@ class Input_List(Resource):
                 "type": "none",
                 "children": [weap_variables[0], weap_variables[1], leap_variables[0], leap_variables[1], food_inputs, food_output],
                 }
-        print(data)
-
         root_path = "D:\\Project\\Food_Energy_Water\\fewsim-backend\\model"
         climate_file = pd.read_csv(root_path + "\\Climate_variables.csv", index_col=0)
         climate_scenarios = []
@@ -143,7 +141,6 @@ class Run_Sceanrios(Resource):
     def get(self, scenario):
         with open("run_results.json", "r") as outfile:
             result = json.load(outfile)
-            print("get result: ", result)
         now = datetime.now()
         dt_string = now.strftime('%d/%m/%Y %H:%M:%S')
         log = pd.DataFrame([[dt_string, 'Started']], columns=['time', 'message'])
@@ -156,7 +153,6 @@ class Run_Sceanrios(Resource):
         scenarios = packed_scenarios[0]
         sustainability_variables = packed_scenarios[1]
         loaded_group_index = packed_scenarios[2]
-        print("+++", packed_scenarios)
         with open("para.json", "w") as outfile:
             json.dump(packed_scenarios, outfile)
         weap_flow, leap_data, food_data, s_variables, loaded_group_index = run_scenarios.run_all_secanrios(scenarios,
@@ -241,7 +237,6 @@ class Load_Sustainability_Index(Resource):
 
     def post(self):
         sustainability_index = request.get_json(self)
-        print("~~~~~~~~~~~~~", sustainability_index)
         with open(".\\sustainability_index\\sustainability_index.json", "w") as file:
             json.dump(sustainability_index, file)
         return "Sustainability Index is Saved Successfully!", 201

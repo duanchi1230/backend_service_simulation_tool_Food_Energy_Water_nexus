@@ -209,4 +209,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Project related folder
+climate_data/CMIP5/
+climate_data/CMIP6/
+simulation_history/
+
 # End of https://www.gitignore.io/api/python,pycharm

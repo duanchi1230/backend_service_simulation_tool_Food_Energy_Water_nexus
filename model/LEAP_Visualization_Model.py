@@ -72,7 +72,7 @@ def LEAP_visualization_variables():
 					variables_to_visualize['Resource'][v.name].append({'branch': b.FullName, 'variable': v.name})
 				except:
 					pass
-	print(variables_to_visualize)
+
 	with open('D:\\Project\\Food_Energy_Water\\fewsim-backend\model\\LEAP_visualization_variables.json', 'w') as file:
 		json.dump(variables_to_visualize, file)
 	pythoncom.CoUninitialize()
@@ -112,7 +112,6 @@ def get_LEAP_value():
 	print(data)
 	pythoncom.CoUninitialize()
 	return data, timeRange
-
 # get_LEAP_value()
 # LEAP_visualization_variables()
 # LEAP = win32com.client.Dispatch('LEAP.LEAPApplication')

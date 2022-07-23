@@ -20,8 +20,8 @@ def save_all_parameters():
 	WEAP = win32com.client.Dispatch('WEAP.WEAPApplication')
 	# start_year = WEAP.BaseYear
 	# end_year = WEAP.EndYear
-	WEAP.ActiveArea = 'Ag_MABIA_v14'
-	WEAP.ActiveScenario = WEAP.Scenarios[1]
+	# WEAP.ActiveArea = 'Ag_MABIA_v14'
+	# WEAP.ActiveScenario = WEAP.Scenarios[1]
 	weap_default_paramters = []
 	mabia_catchment = pd.read_excel('Mabia_Catchments.xlsx', index_col=0)
 	print(bool(np.intersect1d(['Tonopah'], np.array(mabia_catchment['variables']))))
@@ -167,7 +167,7 @@ def run_all_secanrios(scenarios, sustainability_variables, loaded_group_index):
 			if climate_scenatio_type != "Hist":
 				climate_input = climate_path.loc[(climate_path["type"] == climate_scenatio_type) & (climate_path["climate_scenario"] == climate_scenario_name)]["mpm_path"].iloc[0]
 				MPM.set_MPM_climate(WEAP, climate_input=climate_input)
-			if climate_scenatio_type != "Hist":
+			if climate_scenatio_type == "Hist":
 				MPM.set_MPM_default(WEAP)
 		# for variable in scenario['mabia']:
 		#
